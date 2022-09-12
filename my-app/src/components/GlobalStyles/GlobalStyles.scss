@@ -1,0 +1,37 @@
+@import 'normalize.css';
+
+:root {
+    --primary: #BC74A5;
+    --primary1: #0E54AE;
+    --color-black: #000000;
+    --color-white: #fff;
+    // config
+    --default-layout-width: 1150px;
+    --default-layout-header-height: 60px;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    text-rendering: optimizeSpeed;
+}
+
+button,
+input {
+    border: none;
+    outline: none;
+}
+a {
+    text-decoration: none;
+    color: var(--color-black);
+}

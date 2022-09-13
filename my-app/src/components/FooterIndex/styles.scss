@@ -1,3 +1,22 @@
-.bg{
+.title{
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary1) ;
+}
+.hr{
+    width: 70px;
+    height: 3px;
+    background-color: var(--primary) ;
+}
+.icon{
     color: var(--primary1);
+    font-size: 20px;
+    padding-right: 10px;
+}
+.subFooter{
+    background-color: var(--primary1);
+    padding: 0  50px;
+}
+.footer{
+    padding: 0  50px;
 }

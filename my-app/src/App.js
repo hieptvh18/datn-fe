@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import Test from './components/Test';
 import WebsiteLayout from './layouts/WebsiteLayout';
 import HomePage from './pages/HomePage';
+<script src="https://unpkg.com/primereact/primereact.all.min.js"></script>
 
 function App() {
   return (

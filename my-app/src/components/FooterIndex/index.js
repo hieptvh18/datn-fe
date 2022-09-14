@@ -7,9 +7,9 @@ import './styles.scss'
 
 const FooterIndex = () => {
     return (
-        <div>
-            <div className="footer">
-                <div className="grid ">
+        <div className="">
+            <div className='footer'>
+                <div className="grid   ">
                     <div className="col-12 pb-8 lg:col">
                         <div className=" h-full">
                             <div className="h-full flex flex-column">
@@ -40,7 +40,6 @@ const FooterIndex = () => {
                             <div className="  h-full flex flex-column">
                                 <div className="title">About</div>
                                 <hr className="hr" />
-
                                 <ul className="list-none p-0 m-0 flex-grow-1 pt-5">
                                     <li className="flex align-items-center mb-3">
 
@@ -114,25 +113,23 @@ const FooterIndex = () => {
                             </div>
                         </div>
                     </div>
-
-
                 </div>
             </div>
-            <div className='flex flex-wrap justify-content-between align-items-center subFooter py-5'>
-                <div className='text-white'>Copyright 2020 by <strong>BoldThemes.</strong> All rights reserved.</div>
+            <div className=' subFooter py-5'>
+                <div className='footer flex flex-wrap justify-content-between align-items-center'>
+                    <div className='text-white'>Copyright 2020 by <strong>BoldThemes.</strong> All rights reserved.</div>
+                    <div className="pt-5 lg:pt-0">
+                        <div className=" flex gap-5 uppercase text-white ">
+                            <NavLink to="/product" className='text-white' >Sản phẩm</NavLink>
 
-                <div className="pt-5 lg:pt-0">
-                    <div className=" flex gap-5 uppercase text-white ">
-                        <NavLink to="/product" className='text-white' >Sản phẩm</NavLink>
+                            <NavLink to="/new" className='text-white' >Tin tức</NavLink>
 
-                        <NavLink to="/new" className='text-white' >Tin tức</NavLink>
+                            <NavLink to="#" className='text-white' >Giới Thiệu</NavLink>
+                            <NavLink to="/contact" className='text-white' >Liên hệ</NavLink>
 
-                        <NavLink to="#" className='text-white' >Giới Thiệu</NavLink>
-                        <NavLink to="/contact" className='text-white' >Liên hệ</NavLink>
-
+                        </div>
                     </div>
                 </div>
-
 
             </div>
         </div>

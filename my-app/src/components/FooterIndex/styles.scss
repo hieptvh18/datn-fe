@@ -15,8 +15,10 @@
 }
 .subFooter{
     background-color: var(--primary1);
-    padding: 0  50px;
 }
 .footer{
-    padding: 0  50px;
+    width: var(--default-layout-width);
+    margin: 0 auto;
+    padding: 0 50px;
+
 }

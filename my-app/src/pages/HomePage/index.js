@@ -16,7 +16,7 @@ const HomePage = () => {
 
         <>
             {/* Specialiezd team */}
-            <div className="mb-8  ">
+            <div className="paddingBottom">
                 <div className="relative">
                     <div className="w-4 text-center absolute Specialized">
                         <div className="contact font-medium text-6xl">DentiCare</div>
@@ -27,127 +27,127 @@ const HomePage = () => {
                         <img style={{ width: '20%' }} src='http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/02/img-signature.png' />
                     </div>
                     <img style={{ width: '100%' }} src='http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/background-3.jpg' />
-                    <div className='footer'>
-                        <div className="grid   ">
-                            <div className="col-12 pb-8 lg:col">
-                                <div className=" h-full">
-                                    <div className="h-full flex flex-column">
-                                        <img style={{ width: '100%' }} src="http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/people-01.jpg" />
-                                        <div className="title pt-5 font-medium">Alex Terrel</div>
-                                        <hr className="hr" />
-                                        <div className="text-600 text-2xl pt-5">Senior Orthodontist
-                                        </div>
-                                        <div className="text-600 text-2xl pt-5">Appropriately empower dynamic leadership skills after business portals. Globally myocardinate interactive supply chains with quality.
-                                        </div>
-                                        <ul className="flex pb-5 pt-7 lg:pt-7">
-                                            <li className="flex align-items-center mb-3">
-                                                <i className="pi pi-facebook text-5xl icon"></i>
-                                            </li>
-                                            <li className="flex align-items-center mb-3">
-                                                <i className="pi pi-youtube text-5xl text-red-500 icon"></i>
-
-                                            </li>
-                                            <li className="flex align-items-center mb-3">
-                                                <i className="pi pi-twitter text-5xl icon"></i>
-
-                                            </li>
-                                            <li className="flex align-items-center mb-3">
-                                                <i className="pi pi-telegram text-5xl icon"></i>
-
-                                            </li>
-                                        </ul>
-                                    </div>
+                </div>
+            </div>
+            <div className='footer infoDoctor'>
+                <div className="grid">
+                    <div className="col-12 pb-8 sm:col-6 lg:col-3">
+                        <div className=" h-full">
+                            <div className="h-full flex flex-column">
+                                <img style={{ width: '100%' }} src="http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/people-01.jpg" />
+                                <div className="title pt-5 font-medium">Alex Terrel</div>
+                                <hr className="hr" />
+                                <div className="text-600 text-2xl pt-5">Senior Orthodontist
                                 </div>
+                                <div className="text-600 text-2xl pt-5">Appropriately empower dynamic leadership skills after business portals. Globally myocardinate interactive supply chains with quality.
+                                </div>
+                                <ul className="flex pb-5 pt-7 lg:pt-7">
+                                    <li className="flex align-items-center mb-3">
+                                        <i className="pi pi-facebook text-5xl icon"></i>
+                                    </li>
+                                    <li className="flex align-items-center mb-3">
+                                        <i className="pi pi-youtube text-5xl text-red-500 icon"></i>
+
+                                    </li>
+                                    <li className="flex align-items-center mb-3">
+                                        <i className="pi pi-twitter text-5xl icon"></i>
+
+                                    </li>
+                                    <li className="flex align-items-center mb-3">
+                                        <i className="pi pi-telegram text-5xl icon"></i>
+
+                                    </li>
+                                </ul>
                             </div>
-                            <div className="col-12 lg:col">
-                                <div className=" h-full">
-                                    <div className="  h-full flex flex-column">
-                                        <img style={{ width: '100%' }} src="http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/people-02.jpg" />
-                                        <div className="title pt-5 font-medium">Michél Anderson</div>
-                                        <hr className="hr" />
-                                        <div className="text-600 text-2xl pt-5">Pediatric Dentist
-                                        </div>
-                                        <div className="text-600 text-2xl pt-5">Enthusiastically mesh long-term high-impact infrastructures vis-a-vis efficient customer service leadership rather than prospective experiences.
-                                        </div>
-                                        <ul className="flex pb-5 pt-7 lg:pt-7">
-                                            <li className="flex align-items-center mb-3">
-                                                <i className="pi pi-facebook text-5xl icon"></i>
-                                            </li>
-                                            <li className="flex align-items-center mb-3">
-                                                <i className="pi pi-youtube text-5xl text-red-500 icon"></i>
-
-                                            </li>
-                                            <li className="flex align-items-center mb-3">
-                                                <i className="pi pi-twitter text-5xl icon"></i>
-
-                                            </li>
-                                            <li className="flex align-items-center mb-3">
-                                                <i className="pi pi-telegram text-5xl icon"></i>
-
-                                            </li>
-                                        </ul>
-                                    </div>
+                        </div>
+                    </div>
+                    <div className="col-12 pb-8 sm:col-6 lg:col-3">
+                        <div className=" h-full">
+                            <div className="  h-full flex flex-column">
+                                <img style={{ width: '100%' }} src="http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/people-02.jpg" />
+                                <div className="title pt-5 font-medium">Michél Anderson</div>
+                                <hr className="hr" />
+                                <div className="text-600 text-2xl pt-5">Pediatric Dentist
                                 </div>
+                                <div className="text-600 text-2xl pt-5">Enthusiastically mesh long-term high-impact infrastructures vis-a-vis efficient customer service leadership rather than prospective experiences.
+                                </div>
+                                <ul className="flex pb-5 pt-7 lg:pt-7">
+                                    <li className="flex align-items-center mb-3">
+                                        <i className="pi pi-facebook text-5xl icon"></i>
+                                    </li>
+                                    <li className="flex align-items-center mb-3">
+                                        <i className="pi pi-youtube text-5xl text-red-500 icon"></i>
+
+                                    </li>
+                                    <li className="flex align-items-center mb-3">
+                                        <i className="pi pi-twitter text-5xl icon"></i>
+
+                                    </li>
+                                    <li className="flex align-items-center mb-3">
+                                        <i className="pi pi-telegram text-5xl icon"></i>
+
+                                    </li>
+                                </ul>
                             </div>
-                            <div className="col-12 lg:col">
-                                <div className=" h-full">
-                                    <div className="  h-full flex flex-column">
-                                        <img style={{ width: '100%' }} src="http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/people-03.jpg" />
-                                        <div className="title pt-5 font-medium">Edwin Southgate</div>
-                                        <hr className="hr" />
-                                        <div className="text-600 text-2xl pt-5">Senior Orthodontist
-                                        </div>
-                                        <div className="text-600 text-2xl pt-5">Objectively integrate enterprise-wide strategic theme areas with good infrastructures. Interactively productize premium technologies.
-                                        </div>
-                                        <ul className="flex pb-5 pt-7 lg:pt-7">
-                                            <li className="flex align-items-center mb-3">
-                                                <i className="pi pi-facebook text-5xl icon"></i>
-                                            </li>
-                                            <li className="flex align-items-center mb-3">
-                                                <i className="pi pi-youtube text-5xl text-red-500 icon"></i>
-
-                                            </li>
-                                            <li className="flex align-items-center mb-3">
-                                                <i className="pi pi-twitter text-5xl icon"></i>
-
-                                            </li>
-                                            <li className="flex align-items-center mb-3">
-                                                <i className="pi pi-telegram text-5xl icon"></i>
-
-                                            </li>
-                                        </ul>
-                                    </div>
+                        </div>
+                    </div>
+                    <div className="col-12 pb-8 sm:col-6 lg:col-3">
+                        <div className=" h-full">
+                            <div className="  h-full flex flex-column">
+                                <img style={{ width: '100%' }} src="http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/people-03.jpg" />
+                                <div className="title pt-5 font-medium">Edwin Southgate</div>
+                                <hr className="hr" />
+                                <div className="text-600 text-2xl pt-5">Senior Orthodontist
                                 </div>
+                                <div className="text-600 text-2xl pt-5">Objectively integrate enterprise-wide strategic theme areas with good infrastructures. Interactively productize premium technologies.
+                                </div>
+                                <ul className="flex pb-5 pt-7 lg:pt-7">
+                                    <li className="flex align-items-center mb-3">
+                                        <i className="pi pi-facebook text-5xl icon"></i>
+                                    </li>
+                                    <li className="flex align-items-center mb-3">
+                                        <i className="pi pi-youtube text-5xl text-red-500 icon"></i>
+
+                                    </li>
+                                    <li className="flex align-items-center mb-3">
+                                        <i className="pi pi-twitter text-5xl icon"></i>
+
+                                    </li>
+                                    <li className="flex align-items-center mb-3">
+                                        <i className="pi pi-telegram text-5xl icon"></i>
+
+                                    </li>
+                                </ul>
                             </div>
-                            <div className="col-12 lg:col">
-                                <div className=" h-full">
-                                    <div className="  h-full flex flex-column">
-                                        <img style={{ width: '100%' }} src="http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/people-04.jpg" />
-                                        <div className="title pt-5 font-medium">Carlie Addison</div>
-                                        <hr className="hr" />
-                                        <div className="text-600 text-2xl pt-5">Dental Nurse
-                                        </div>
-                                        <div className="text-600 text-2xl pt-5">Uniquely deploy cross-unit benefits with wireless testing procedures. Build backward compatible relationships whereas tactical paradigms.
-                                        </div>
-                                        <ul className="flex pb-5 pt-7 lg:pt-7">
-                                            <li className="flex align-items-center mb-3">
-                                                <i className="pi pi-facebook text-5xl icon"></i>
-                                            </li>
-                                            <li className="flex align-items-center mb-3">
-                                                <i className="pi pi-youtube text-5xl text-red-500 icon"></i>
-
-                                            </li>
-                                            <li className="flex align-items-center mb-3">
-                                                <i className="pi pi-twitter text-5xl icon"></i>
-
-                                            </li>
-                                            <li className="flex align-items-center mb-3">
-                                                <i className="pi pi-telegram text-5xl icon"></i>
-
-                                            </li>
-                                        </ul>
-                                    </div>
+                        </div>
+                    </div>
+                    <div className="col-12 pb-8 sm:col-6 lg:col-3">
+                        <div className=" h-full">
+                            <div className="  h-full flex flex-column">
+                                <img style={{ width: '100%' }} src="http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/people-04.jpg" />
+                                <div className="title pt-5 font-medium">Carlie Addison</div>
+                                <hr className="hr" />
+                                <div className="text-600 text-2xl pt-5">Dental Nurse
                                 </div>
+                                <div className="text-600 text-2xl pt-5">Uniquely deploy cross-unit benefits with wireless testing procedures. Build backward compatible relationships whereas tactical paradigms.
+                                </div>
+                                <ul className="flex pb-5 pt-7 lg:pt-7">
+                                    <li className="flex align-items-center mb-3">
+                                        <i className="pi pi-facebook text-5xl icon"></i>
+                                    </li>
+                                    <li className="flex align-items-center mb-3">
+                                        <i className="pi pi-youtube text-5xl text-red-500 icon"></i>
+
+                                    </li>
+                                    <li className="flex align-items-center mb-3">
+                                        <i className="pi pi-twitter text-5xl icon"></i>
+
+                                    </li>
+                                    <li className="flex align-items-center mb-3">
+                                        <i className="pi pi-telegram text-5xl icon"></i>
+
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -155,11 +155,11 @@ const HomePage = () => {
             </div>
 
             {/* ContactDentiCare */}
-            <div className="mb-8  ">
+            <div className="paddingBottom">
                 <div className="text-700 text-center">
-                    <span className="contact font-medium text-7xl mb-3 mr-2">Contact</span>{" "}
-                    <span className="denticare font-bold text-7xl mb-3">DentiCare</span>
-                    <div className="text-800 text-2xl mb-5">
+                    <span className="contact font-medium text-7xl mr-2">Contact</span>
+                    <span className="denticare font-bold text-7xl ">DentiCare</span>
+                    <div className="text-800 text-2xl mt-3 mb-8">
                         Globally incubate standards compliant channels before scalable
                         benefits.
                         <br /> Quickly disseminate superior deliverables whereas web-enabled

@@ -1,6 +1,13 @@
 .contact{
     color: var(--primary);
 }
+
+.colorPrimary{
+    color: var(--primary);
+}
+.colorPrimary1{
+    color: var(--primary1);
+}
 .sectionContact{
     width: var(--default-layout-width);
     margin: 0 auto;
@@ -47,4 +54,14 @@
 }
 .paddingBottom{
     margin-bottom: 70px;
+}
+
+.imageBooking{
+    background-image: url('http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/03/background-doctor.jpg');
+    background-position: 50% -20.025px;
+}
+.bookingContent{
+    position: relative;
+    width: 1200px;
+    max-width: calc(100% - 60px);
 }

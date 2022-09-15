@@ -1,20 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles.scss";
 import image12 from "../../assets/image/image12.png";
 import image13 from "../../assets/image/image13.png";
 import image14 from "../../assets/image/image14.png";
 import image15 from "../../assets/image/image15.png";
 import image11 from "../../assets/image/image 11.png";
-import hero_2 from "../../assets/image/hero-2.png";
 
-
-
+import { InputText } from 'primereact/inputtext';
+import { Dropdown } from 'primereact/dropdown';
 import { Button } from "primereact/button";
+import { Calendar } from 'primereact/calendar';
 
 const HomePage = () => {
+    const [value11, setValue11] = useState(null);
+    const [value5, setValue5] = useState(null);
+    const cities = [
+        { name: 'New York', code: 'NY' },
+        { name: 'Rome', code: 'RM' },
+        { name: 'London', code: 'LDN' },
+        { name: 'Istanbul', code: 'IST' },
+        { name: 'Paris', code: 'PRS' }
+    ];
     return (
-
         <>
+
             {/* Specialiezd team */}
             <div className="paddingBottom">
                 <div className="relative">
@@ -153,7 +162,61 @@ const HomePage = () => {
                     </div>
                 </div>
             </div>
+            {/* Book at your service */}
+            <div className="paddingBottom imageBooking">
+                <div className="align-items-start">
+                    <div className="bookingContent m-auto">
+                        <div className="flex justify-content-between align-content-start">
+                            <div className="flex justify-content-start text-left">
+                                <img className="w-8" src="http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/doctor.png" />
+                            </div>
+                            <div className=" justify-content-center text-left" >
+                                <div>
+                                    <div className="colorPrimary text-5xl pt-3">Book Your Visit At</div>
+                                    <div className="colorPrimary1 text-7xl font-bold pb-4">Đức Nghĩa</div>
+                                    <div className="font-medium text-2xl">Have an emergency? Do book with us with this simple form below and superior deliverables whereas web-enabled applications. Continually reintermediate integrated processes through technically sound intellectual capital.
+                                    </div>
+                                </div>
+                                <hr className="hr my-6 w-full" />
+                                <div className="p-fluid grid">
+                                    <div className="field col-12 md:col-6">
+                                        <span className="p-float-label">
+                                            <InputText id="inputtext" className="py-4 text-2xl" />
+                                            <label htmlFor="inputtext">Họ và tên</label>
+                                        </span>
+                                    </div>
+                                    <div className="field col-12 md:col-6">
+                                        <span className="p-float-label">
+                                            <InputText id="inputtext" className=" py-4 text-2xl" />
+                                            <label htmlFor="inputtext">Số điện thoại</label>
+                                        </span>
+                                    </div>
+                                    <div className="field col-12 md:col-6">
+                                        <span className="p-float-label">
+                                            <Dropdown className=" py-3 text-2xl" aria-setsize inputId="dropdown" value={value11} options={cities} onChange={(e) => setValue11(e.value)} optionLabel="name" />
+                                            <label htmlFor="dropdown">Chọn bác sĩ</label>
+                                        </span>
+                                    </div>
+                                    <div className="field col-12 md:col-6">
+                                        <span className="p-float-label ">
+                                            <Calendar style={{ height: '50px' }} id="calendar" value={value5} onChange={(e) => setValue5(e.value)} />
+                                            <label htmlFor="calendar">Calendar</label>
+                                        </span>
 
+                                    </div>
+                                    <div className="field col-12 md:col-6 m-auto">
+                                        <Button label="Book Appponment Now" className="py-4 text-3xl" />
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
             {/* ContactDentiCare */}
             <div className="paddingBottom">
                 <div className="text-700 text-center">

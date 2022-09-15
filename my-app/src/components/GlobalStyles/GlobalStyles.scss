@@ -36,3 +36,18 @@ a {
     color: var(--color-black);
 }
 
+
+.wrapper-menu{
+    background-color: #fff !important;
+    border: none !important;
+    padding: 10px 0px !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    color: black !important;
+    letter-spacing: 1px;
+    padding: 0px !important;
+}
+.wrapper-menu .p-menuitem-link {
+    padding: 1.75rem 2.25rem !important;
+    border-radius: 0px !important;
+}

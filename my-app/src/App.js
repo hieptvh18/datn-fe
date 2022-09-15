@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import Test from './components/Test';
 import WebsiteLayout from './layouts/WebsiteLayout';
 import HomePage from './pages/HomePage';
+import NewsPage from './pages/News';
 <script src="https://unpkg.com/primereact/primereact.all.min.js"></script>
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
       <Routes>
         <Route path='/' element={<WebsiteLayout />}>
           <Route index element={<HomePage />} />
-          <Route path='test' element={Test} />
+          <Route path='/news' element={<NewsPage />} />
         </Route>
       </Routes>
     </div>

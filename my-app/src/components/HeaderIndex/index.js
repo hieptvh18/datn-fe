@@ -153,7 +153,7 @@ const HeaderIndex = () => {
         </div>
       </div>
       <div className={cx("wrapper-header2")}>
-        <Menubar className={cx("wrapper-menu")} model={items} />
+        <Menubar className="wrapper-menu" model={items} />
       </div>
     </div>
   );

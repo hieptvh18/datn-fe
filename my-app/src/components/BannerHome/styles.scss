@@ -1,0 +1,31 @@
+.wrapper-banner-home{
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+.content-banner-home{
+    padding: 0px 20px;
+    width: 800px;
+}
+.c-primary{
+    color: var(--primary);
+}
+.c-primary1{
+    color: var(--primary1);
+}
+.cs-text-banne-home{
+    font-size: 85px;
+    margin-top: 20px;
+    color: var(--primary1);
+}
+.text-img-icon-banner-home{
+    letter-spacing: 0.5px;
+}
+.btn-banner-home{
+    border-radius: 5px;
+    background-color: var(--primary);
+    padding: 20px 30px;
+    color: #fff;
+    cursor: pointer;
+}

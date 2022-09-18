@@ -15,6 +15,7 @@ import { Button } from "primereact/button";
 import { Calendar } from "primereact/calendar";
 import BannerHome from "../../components/BannerHome";
 import BookingBanner from "../../components/BookingBanner";
+import List4Top from "../../components/List4Top";
 
 const HomePage = () => {
   const [value11, setValue11] = useState(null);
@@ -28,8 +29,8 @@ const HomePage = () => {
   ];
   const settings = {
     dots: false,
-    autoplay: true,
-    autoplaySpeed: 3000,
+    // autoplay: true,
+    // autoplaySpeed: 3000,
     arrows: false,
     speed: 300,
     slidesToShow: 1,
@@ -38,14 +39,16 @@ const HomePage = () => {
   return (
     <>
       <div className="relative">
-        <Slider {...settings}>
-          <BannerHome />
-          <BannerHome />
-          <BannerHome />
-        </Slider>
-        <div className="absolute -cs-bottom-25 left-50 -translate-x-50 z-1 w-full flex align-items-center justify-content-center">
-          <div className="flex px-7">
-            <div className="bg-primary2 text-center w-7 p-5 z-2 mx-0 my-8">
+        <div>
+          <Slider {...settings}>
+            <BannerHome />
+            <BannerHome />
+            <BannerHome />
+          </Slider>
+        </div>
+        <div className="w-default absolute -cs-bottom-25 left-50 -translate-x-50 z-1 flex align-items-center justify-content-center">
+          <div className="flex px-5">
+            <div className="bg-primary2 text-center p-5 z-2 mx-0 my-8 w-6">
               <hr className="hr my-7 w-4 m-auto"></hr>
               <p className="text-white font-normal line-height-4 text-5xl">
                 My family trusts Dr Fischer completely, he’s been with us for
@@ -57,12 +60,17 @@ const HomePage = () => {
                 src="https://res.cloudinary.com/dbpw1enlu/image/upload/v1663399845/signature_tqtnbs.png"
               />
             </div>
-            <div className="cs-w-booking bg-white w-full z-1 flex justify-content-end">
+            <div className="cs-w-booking bg-white w-8 z-1 flex justify-content-end">
               <div style={{width: "calc(100% - 100%/7)"}} className="py-7 px-7">
                   <BookingBanner/>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div style={{background: "url(https://res.cloudinary.com/dbpw1enlu/image/upload/v1663491749/background_dpo5ge.jpg)"}} className="h-800px relative">
+        <div className="absolute -cs-bottom-70px left-50 -translate-x-50 z-1">
+          <List4Top/>
         </div>
       </div>
       {/* Specialiezd team */}

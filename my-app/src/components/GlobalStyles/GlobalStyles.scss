@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@200;300;400;500;600&family=Roboto:wght@300;400;500&display=swap');
 @import 'normalize.css';
                
 :root {
@@ -20,7 +21,7 @@ html {
 }
 
 body {
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Heebo', sans-serif !important;
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;

@@ -73,8 +73,14 @@
 .bg-primary2{
     background-color: var(--primary1);
 }
+.bg-primary1{
+    background-color: var(--primary);
+}
 .-cs-bottom-25{
-    bottom: -370px;
+    bottom: -420px;
+}
+.-cs-bottom-70px{
+    bottom: -120px;
 }
 .cs-text-booking-banner{
     font-size: 20px;
@@ -82,4 +88,10 @@
 .cs-w-booking{
     margin-left: -8.33%;
     max-width: calc(100%/12*6 + 8.333333%);
+}
+.h-800px{
+    height: 900px;
+}
+.w-default{
+    width: var(--default-layout-width);
 }

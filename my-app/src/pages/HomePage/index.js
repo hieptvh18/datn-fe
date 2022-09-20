@@ -255,7 +255,7 @@ const HomePage = () => {
                     </p>
                 </div>
             </Dialog>
-            formData   <div className="paddingBottom imageBooking">
+            <div className="paddingBottom imageBooking">
                 <div className="align-items-start">
                     <div className="bookingContent m-auto">
                         <div className="flex justify-content-between align-content-start">

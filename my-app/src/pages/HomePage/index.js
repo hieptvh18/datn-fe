@@ -9,6 +9,7 @@ import image14 from "../../assets/image/image14.png";
 import image15 from "../../assets/image/image15.png";
 import image11 from "../../assets/image/image 11.png";
 import { InputTextarea } from 'primereact/inputtextarea';
+import { Dialog } from 'primereact/dialog';
 import { InputText } from "primereact/inputtext";
 import { Dropdown } from "primereact/dropdown";
 import { Button } from "primereact/button";
@@ -20,6 +21,7 @@ import { useDispatch } from "react-redux";
 import { Controller, useForm } from "react-hook-form";
 import { addAccount } from "../../feature/AccountSlice";
 import classNames from "classnames";
+import moment from "moment/moment";
 
 const HomePage = () => {
 
@@ -27,17 +29,13 @@ const HomePage = () => {
     const { control, handleSubmit, formState: { errors }, reset } = useForm()
     const onSubmit = data => {
         dispatch(addAccount({ ...data }));
+        setFormData(data)
+        setShowMessage(true);
         reset()
     }
-    const [value11, setValue11] = useState(null);
-    const [value5, setValue5] = useState(null);
-    const cities = [
-        { name: "New York", code: "NY" },
-        { name: "Rome", code: "RM" },
-        { name: "London", code: "LDN" },
-        { name: "Istanbul", code: "IST" },
-        { name: "Paris", code: "PRS" },
-    ];
+    const [showMessage, setShowMessage] = useState(false);
+    const [formData, setFormData] = useState({});
+    console.log('sáas', formData);
     const settings = {
         dots: false,
         // autoplay: true,
@@ -47,6 +45,7 @@ const HomePage = () => {
         slidesToShow: 1,
         adaptiveHeight: true,
     };
+    const dialogFooter = <div className="flex justify-content-center"><Button label="OK" className="p-button-text" autoFocus onClick={() => setShowMessage(false)} /></div>;
     return (
         <>
             <div className="relative">
@@ -245,7 +244,18 @@ const HomePage = () => {
                 </div>
             </div>
             {/* Book at your service */}
-            <div className="paddingBottom imageBooking">
+            <Dialog visible={showMessage} onHide={() => setShowMessage(false)} position="top" footer={dialogFooter} showHeader={false} breakpoints={{ '960px': '80vw' }} style={{ width: '30vw' }}>
+                <div className="flex justify-content-center flex-column pt-6 px-3">
+                    <i className="pi pi-check-circle" style={{ fontSize: '5rem', paddingBottom: '10px', color: 'var(--primary)' }}></i>
+                    <h2 style={{ fontSize: '2rem', paddingBottom: '10px', color: 'var(--primary1)' }}>Đặt lịch thành công!</h2>
+                    <p style={{ fontSize: '14px' }}>
+                        Tài khoản của bạn được đăng k(ý bằng số điện thoại <b>{formData.phone}</b> <br />
+                        Ngày khám của bạn là <b>{Date(formData.date).toString()}</b> <br />
+                        <b>Nhân viên sẽ gọi tới bạn để xác nhận! </b>
+                    </p>
+                </div>
+            </Dialog>
+            formData   <div className="paddingBottom imageBooking">
                 <div className="align-items-start">
                     <div className="bookingContent m-auto">
                         <div className="flex justify-content-between align-content-start">
@@ -271,6 +281,7 @@ const HomePage = () => {
                                     </div>
                                 </div>
                                 <hr className="hr my-6 w-full" />
+
                                 <form onSubmit={handleSubmit(onSubmit)}>
                                     <div className="p-fluid grid">
 

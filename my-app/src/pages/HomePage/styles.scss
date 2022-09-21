@@ -29,8 +29,6 @@
     width: 450px;
     height: 500px;
     background-color: var(--primary1);
-    right: 50px;
-    margin-top: 150px;
 }
 .button{
     background-color: white;
@@ -52,15 +50,14 @@
 .infoDoctor{
     position: relative;
    margin-top: -150px;
+   padding-bottom: 150px;
 }
-.paddingBottom{
-    margin-bottom: 70px;
+.bg-img{
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
 }
 
-.imageBooking{
-    background-image: url('http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/03/background-doctor.jpg');
-    background-position: 50% -20.025px;
-}
 .bookingContent{
     position: relative;
     width: 1200px;

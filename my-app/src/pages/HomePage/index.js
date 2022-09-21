@@ -21,9 +21,11 @@ import { useDispatch } from "react-redux";
 import { Controller, useForm } from "react-hook-form";
 import { addAccount } from "../../feature/AccountSlice";
 import classNames from "classnames";
+import { InputTextarea } from 'primereact/inputtextarea';
 // import moment from "moment/moment";
 import Maps from "../../components/Maps";
 import Map from "../../components/Maps";
+import { Dialog } from "primereact/dialog";
 
 
 
@@ -38,16 +40,18 @@ const HomePage = () => {
     { name: "Paris", code: "PRS" },
   ];
   const dispatch = useDispatch()
-    const { control, handleSubmit, formState: { errors }, reset } = useForm()
-    const onSubmit = data => {
-        dispatch(addAccount({ ...data }));
-        setFormData(data)
-        setShowMessage(true);
-        reset()
-    }
-    const [showMessage, setShowMessage] = useState(false);
-    const [formData, setFormData] = useState({});
-    console.log('sáas', formData);
+  const { control, handleSubmit, formState: { errors }, reset } = useForm()
+  const onSubmit = data => {
+    dispatch(addAccount({ ...data }));
+    setFormData(data)
+    setShowMessage(true);
+    reset()
+  }
+  const [showMessage, setShowMessage] = useState(false);
+  const [formData, setFormData] = useState({});
+  const getFormErrorMessage = (name) => {
+    return errors[name] && <small className="p-error">{errors[name].message}</small>
+  };
   const settings = {
     dots: false,
     // autoplay: true,
@@ -288,6 +292,16 @@ const HomePage = () => {
         </div>
       </div>
       {/* Book at your service */}
+      <Dialog visible={showMessage} onHide={() => setShowMessage(false)} position="top" footer={dialogFooter} showHeader={false} breakpoints={{ '960px': '80vw' }} style={{ width: '30vw' }}>
+        <div className="flex justify-content-center flex-column pt-6 px-3">
+          <i className="pi pi-check-circle" style={{ fontSize: '5rem', color: 'var(--primary)' }}></i>
+          <h1 style={{ paddingTop: '5px', color: 'var(--primary1)' }}>Đặt lịch khám thành công!</h1>
+          <p style={{ lineHeight: 1.5, fontSize: '14px' }}>
+            Tài khoản của bạn được tạo dưới số điện thoại <b>{formData.phone}</b> <br />
+            Tên là <b>{formData.fullName}</b>!
+          </p>
+        </div>
+      </Dialog>
       <div style={{
         background: "url(http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/03/background-doctor.jpg)",
         height: "800px"
@@ -298,10 +312,10 @@ const HomePage = () => {
               <div className="w-full">
                 <div className="mt-8"></div>
                 <div className="w-full h-full">
-                  <div style={{background: "url(http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/doctor.png)"}} className="bg-img w-full h-full">
+                  <div style={{ background: "url(http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/doctor.png)" }} className="bg-img w-full h-full">
+                  </div>
                 </div>
-              </div>
-                
+
               </div>
               <div className=" flex align-items-center">
                 <div className="px-5">
@@ -320,51 +334,51 @@ const HomePage = () => {
                     </div>
                   </div>
                   <hr className="hr my-6 w-full" />
-                  <div className="p-fluid grid">
-                    <div className="field col-12 md:col-6">
-                      <span className="p-float-label">
-                        <InputText id="inputtext" className="py-4 text-2xl" />
-                        <label htmlFor="inputtext">Họ và tên</label>
-                      </span>
-                    </div>
-                    <div className="field col-12 md:col-6">
-                      <span className="p-float-label">
-                        <InputText id="inputtext" className=" py-4 text-2xl" />
-                        <label htmlFor="inputtext">Số điện thoại</label>
-                      </span>
-                    </div>
-                    <div className="field col-12 md:col-6">
-                      <span className="p-float-label">
-                        <Dropdown
-                          className=" py-3 text-2xl"
-                          aria-setsize
-                          inputId="dropdown"
-                          value={value11}
-                          options={cities}
-                          onChange={(e) => setValue11(e.value)}
-                          optionLabel="name"
+                  <form onSubmit={handleSubmit(onSubmit)}>
+                    <div className="p-fluid grid">
+                      <div className="field col-12 md:col-6">
+                        <span className="p-float-label">
+                          <Controller name="fullName" control={control} rules={{ required: 'Họ và tên bắt buộc nhập!' }} render={({ field, fieldState }) => (
+                            <InputText style={{ height: '50px', fontSize: '17px' }} id={field.name} {...field} autoFocus className={classNames({ 'p-invalid': fieldState.invalid })} />
+                          )} />
+                          <label htmlFor="fullName" className={classNames({ 'p-error': errors.fullName })}>Họ và tên</label>
+                        </span>
+                        {getFormErrorMessage('fullName')}
+                      </div>
+                      <div className="field col-12 md:col-6">
+                        <span className="p-float-label">
+                          <Controller name="phone" control={control} rules={{ required: 'Số điện thoại bắt buộc nhập!', pattern: { value: /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/i, message: 'Nhập đúng định dạnh số điện thoại' } }} render={({ field, fieldState }) => (
+                            <InputText style={{ height: '50px', fontSize: '17px' }} id={field.name} {...field} autoFocus className={classNames({ 'p-invalid': fieldState.invalid })} />
+                          )} />
+                          <label htmlFor="phone" className={classNames({ 'p-error': errors.phone })}>Số điện thoại</label>
+                        </span>
+                        {getFormErrorMessage('phone')}
+                      </div>
+                      <div className="field col-12 md:col-6">
+                        <span className="p-float-label">
+                          <Controller name="content" control={control} render={({ field, fieldState }) => (
+                            <InputTextarea id={field.name} style={{ height: '50px', fontSize: '17px' }} {...field} autoFocus className={classNames({ 'p-invalid': fieldState.invalid })} />
+                          )} />
+                          <label htmlFor="content" className={classNames({ 'p-error': errors.content })}>Nội dung</label>
+                        </span>
+                      </div>
+                      <div className="field col-12 md:col-6">
+                        <span className="p-float-label">
+                          <Controller name="date" control={control} render={({ field, fieldState }) => (
+                            <Calendar style={{ height: '50px', fontSize: '17px' }} id={field.name} {...field} className={classNames({ 'p-invalid': fieldState.invalid })} onChange={(e) => field.onChange(e.value)} dateFormat="dd/mm/yy" mask="99/99/9999" showIcon />
+                          )} />
+                          <label htmlFor="date" className={classNames({ 'p-error': errors.date })}>Ngày khám</label>
+                        </span>
+                      </div>
+                      <div className="field col-12 md:col-6 m-auto">
+                        <Button
+                          type="submit"
+                          label="Book Appponment Now"
+                          className="py-4 text-3xl"
                         />
-                        <label htmlFor="dropdown">Chọn bác sĩ</label>
-                      </span>
+                      </div>
                     </div>
-                    <div className="field col-12 md:col-6">
-                      <span className="p-float-label ">
-                        <Calendar
-                          style={{ height: "50px" }}
-                          id="calendar"
-                          value={value5}
-                          onChange={(e) => setValue5(e.value)}
-                        />
-                        <label htmlFor="calendar">Calendar</label>
-                      </span>
-                    </div>
-                    <div className="field col-12 md:col-6 m-auto">
-                      <Button
-                        label="Book Appponment Now"
-                        className="py-4 text-3xl"
-                      />
-                    </div>
-                  </div>
+                  </form>
                 </div>
               </div>
             </div>
@@ -385,68 +399,68 @@ const HomePage = () => {
         </div>
 
         <div className="mb-8 w-full">
-            <div className="flex w-default mx-auto px-5">
-              <div className="w-full">
-                <Map/>
-              </div>
-              <div className="workingHours px-6 py-4 -ml-6">
-                <div className="mb-5">
-                  <h2 className="text-white">Working Hours</h2>
-                  <p className="text-300">
-                    Check out DentiCare’s Office hours to plan your visit.
-                  </p>
-                </div>
-                <div>
-                  <div className="flex justify-content-between align-items-center mb-3">
-                    <div className="text-white col-5">Monday</div>
-                    <div className="text-right col-4">
-                      <div className="text-300  font-semibold">8AM-9PM</div>
-                    </div>
-
-                    <Button label="Book" className="button" icon="pi pi-clock" />
-                  </div>
-                  <div className="flex justify-content-between align-items-center mb-3">
-                    <div className="text-white col-5">Tuesday</div>
-                    <div className="text-right col-4">
-                      <div className="text-300  font-semibold">8AM-9PM</div>
-                    </div>
-                    <Button label="Book" className="button" icon="pi pi-clock" />
-                  </div>
-                  <div className="flex justify-content-between align-items-center mb-3">
-                    <div className="text-white col-5 ">Wednesday</div>
-                    <div className="text-right col-4">
-                      <div className="text-300  font-semibold">8AM-9PM</div>
-                    </div>
-                    <Button label="Book" className="button" icon="pi pi-clock" />
-                  </div>
-                  <div className="flex justify-content-between align-items-center mb-3">
-                    <div className="text-white col-5">Thursday</div>
-                    <div className="text-right col-4">
-                      <div className="text-300  font-semibold">8AM-9PM</div>
-                    </div>
-                    <Button label="Book" className="button" icon="pi pi-clock" />
-                  </div>
-                  <div className="flex justify-content-between align-items-center mb-3">
-                    <div className="text-white col-5 ">Friday</div>
-                    <div className="text-right col-4">
-                      <div className="text-300  font-semibold">8AM-9PM</div>
-                    </div>
-                    <Button label="Book" className="button" icon="pi pi-clock" />
-                  </div>
-                  <div className="flex justify-content-between align-items-center mb-3">
-                    <div className="text-white col-5">Saturday-Sunday</div>
-                    <div className="text-right col-4">
-                      <div className="text-300  font-semibold">Close</div>
-                    </div>
-                    <Button label="Book" className="button" icon="pi pi-clock" />
-                  </div>
-                </div>
-                <div className="text-white text-5xl font-bold mt-5 mb-2">
-                  Need Flexible Time?
-                </div>
-                <Button label="Suggest Checkup Time" className="buttonBig" />
-              </div>
+          <div className="flex w-default mx-auto px-5">
+            <div className="w-full">
+              <Map />
             </div>
+            <div className="workingHours px-6 py-4 -ml-6">
+              <div className="mb-5">
+                <h2 className="text-white">Working Hours</h2>
+                <p className="text-300">
+                  Check out DentiCare’s Office hours to plan your visit.
+                </p>
+              </div>
+              <div>
+                <div className="flex justify-content-between align-items-center mb-3">
+                  <div className="text-white col-5">Monday</div>
+                  <div className="text-right col-4">
+                    <div className="text-300  font-semibold">8AM-9PM</div>
+                  </div>
+
+                  <Button label="Book" className="button" icon="pi pi-clock" />
+                </div>
+                <div className="flex justify-content-between align-items-center mb-3">
+                  <div className="text-white col-5">Tuesday</div>
+                  <div className="text-right col-4">
+                    <div className="text-300  font-semibold">8AM-9PM</div>
+                  </div>
+                  <Button label="Book" className="button" icon="pi pi-clock" />
+                </div>
+                <div className="flex justify-content-between align-items-center mb-3">
+                  <div className="text-white col-5 ">Wednesday</div>
+                  <div className="text-right col-4">
+                    <div className="text-300  font-semibold">8AM-9PM</div>
+                  </div>
+                  <Button label="Book" className="button" icon="pi pi-clock" />
+                </div>
+                <div className="flex justify-content-between align-items-center mb-3">
+                  <div className="text-white col-5">Thursday</div>
+                  <div className="text-right col-4">
+                    <div className="text-300  font-semibold">8AM-9PM</div>
+                  </div>
+                  <Button label="Book" className="button" icon="pi pi-clock" />
+                </div>
+                <div className="flex justify-content-between align-items-center mb-3">
+                  <div className="text-white col-5 ">Friday</div>
+                  <div className="text-right col-4">
+                    <div className="text-300  font-semibold">8AM-9PM</div>
+                  </div>
+                  <Button label="Book" className="button" icon="pi pi-clock" />
+                </div>
+                <div className="flex justify-content-between align-items-center mb-3">
+                  <div className="text-white col-5">Saturday-Sunday</div>
+                  <div className="text-right col-4">
+                    <div className="text-300  font-semibold">Close</div>
+                  </div>
+                  <Button label="Book" className="button" icon="pi pi-clock" />
+                </div>
+              </div>
+              <div className="text-white text-5xl font-bold mt-5 mb-2">
+                Need Flexible Time?
+              </div>
+              <Button label="Suggest Checkup Time" className="buttonBig" />
+            </div>
+          </div>
         </div>
 
         <div className="sectionContact">

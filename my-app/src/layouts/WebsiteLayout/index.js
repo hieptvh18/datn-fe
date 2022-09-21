@@ -4,6 +4,7 @@ import FooterIndex from "../../components/FooterIndex";
 import HeaderIndex from "../../components/HeaderIndex";
 import classNames from "classnames/bind";
 import styles from "./styles.module.scss";
+import ModalBooking from "../../components/ModalBooking/Modal";
 
 const cx = classNames.bind(styles)
 const WebsiteLayout = () => {
@@ -18,6 +19,7 @@ const WebsiteLayout = () => {
       <footer>
         <FooterIndex />
       </footer>
+      <ModalBooking/>
     </div>
   );
 };

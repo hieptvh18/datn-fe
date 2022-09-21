@@ -17,6 +17,11 @@ import { Calendar } from "primereact/calendar";
 import BannerHome from "../../components/BannerHome";
 import BookingBanner from "../../components/BookingBanner";
 import List4Top from "../../components/List4Top";
+import { useDispatch } from "react-redux";
+import { Controller, useForm } from "react-hook-form";
+import { addAccount } from "../../feature/AccountSlice";
+import classNames from "classnames";
+// import moment from "moment/moment";
 import Maps from "../../components/Maps";
 import Map from "../../components/Maps";
 
@@ -32,6 +37,17 @@ const HomePage = () => {
     { name: "Istanbul", code: "IST" },
     { name: "Paris", code: "PRS" },
   ];
+  const dispatch = useDispatch()
+    const { control, handleSubmit, formState: { errors }, reset } = useForm()
+    const onSubmit = data => {
+        dispatch(addAccount({ ...data }));
+        setFormData(data)
+        setShowMessage(true);
+        reset()
+    }
+    const [showMessage, setShowMessage] = useState(false);
+    const [formData, setFormData] = useState({});
+    console.log('sáas', formData);
   const settings = {
     dots: false,
     // autoplay: true,
@@ -41,6 +57,7 @@ const HomePage = () => {
     slidesToShow: 1,
     adaptiveHeight: true,
   };
+  const dialogFooter = <div className="flex justify-content-center"><Button label="OK" className="p-button-text" autoFocus onClick={() => setShowMessage(false)} /></div>;
   return (
     <>
       <div className="relative">
@@ -372,7 +389,7 @@ const HomePage = () => {
               <div className="w-full">
                 <Map/>
               </div>
-              <div className="workingHours px-6 py-4">
+              <div className="workingHours px-6 py-4 -ml-6">
                 <div className="mb-5">
                   <h2 className="text-white">Working Hours</h2>
                   <p className="text-300">

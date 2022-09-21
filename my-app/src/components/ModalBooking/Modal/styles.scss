@@ -1,0 +1,23 @@
+.top-30{
+    top: 25%;
+}
+.z-999{
+    z-index: 999;
+}
+.pointer{
+    cursor: pointer;
+}
+.btn-booking{
+    transition: all 0.3s ease-in-out;
+    transform: translateX(81%);
+}
+.btn-booking:hover{
+    transition: all 0.3s ease-in;
+    transform: translateX(0%);
+}
+.cs-text-booking{
+    font-size: 13px;
+}
+.hover-btn:active{
+    opacity: 0.9;
+}

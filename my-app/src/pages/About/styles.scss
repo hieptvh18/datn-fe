@@ -1,0 +1,15 @@
+.cs-slick .slick-track{
+    display: flex;
+    column-gap: 50px;
+}
+.slick-prev:before {
+    content: "<";
+    color: red;
+    font-size: 30px;
+  }
+  
+  .slick-next:before {
+    content: ">";
+    color: red;
+    font-size: 30px;
+  }

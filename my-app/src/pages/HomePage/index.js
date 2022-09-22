@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Slider from "react-slick";
 import "./styles.scss";
+import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
 
@@ -54,8 +54,8 @@ const HomePage = () => {
   };
   const settings = {
     dots: false,
-    // autoplay: true,
-    // autoplaySpeed: 3000,
+    autoplay: true,
+    autoplaySpeed: 3000,
     arrows: false,
     speed: 300,
     slidesToShow: 1,

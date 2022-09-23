@@ -1,15 +1,30 @@
 .cs-slick .slick-track{
     display: flex;
-    column-gap: 50px;
+    column-gap: 70px;
 }
 .slick-prev:before {
-    content: "<";
-    color: red;
-    font-size: 30px;
-  }
+  content: url(https://res.cloudinary.com/dbpw1enlu/image/upload/v1663902730/svgviewer-png-output_3_r4mtuf.png);
+  cursor: pointer;
+}
   
-  .slick-next:before {
-    content: ">";
-    color: red;
-    font-size: 30px;
-  }
+.slick-next:before {
+  content: url(https://res.cloudinary.com/dbpw1enlu/image/upload/v1663902741/svgviewer-png-output_4_jcbhis.png);
+  cursor: pointer;
+}
+.slick-next{
+  position: absolute;
+  right: -40px;
+  top: 50%;
+}
+.slick-prev{
+  position: absolute;
+  left: -40px;
+  top: 50%;
+}
+.hover-scale{
+  transition: all 0.5s ease-out;
+}
+.hover-scale:hover{
+  transform: scale(1.2);
+  transition: all 0.5s ease-in;
+}

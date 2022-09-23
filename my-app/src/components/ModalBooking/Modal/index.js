@@ -15,6 +15,8 @@ const ModalBooking = () => {
         console.log(1);
         dispatch(addAccount({ ...data }))
         setFormData(data)
+
+        console.log(formData);
         setShowMessage(true);
         reset()
     }
@@ -43,10 +45,10 @@ const ModalBooking = () => {
                     <div>KHÁM</div>
                 </div>
                 <div className='flex flex-column'>
-                    <input {...register('fullName', { required: true })} className='w-full h-full px-4 text-2xl border-bottom-1 border-top-1 border-400' placeholder='Họ tên *' />
-                    <input {...register('phone', { required: true })} className='w-full h-full px-4 text-2xl border-bottom-1 border-400' placeholder='Số điện thoại *' />
-                    <input {...register('date', { required: true })} type="date" className='w-full h-full px-4 text-2xl border-bottom-1 border-400 ip-date' placeholder='Ngày *' />
-                    <textarea {...register('content')} className='w-full h-full px-4 text-2xl border-bottom-1 border-400' placeholder='Nội dung *' />
+                    <input name="fullname" {...register('fullName', { required: true })} className='w-full h-full px-4 text-2xl border-bottom-1 border-top-1 border-400' placeholder='Họ tên *' />
+                    <input name="phone" {...register('phone', { required: true })} className='w-full h-full px-4 text-2xl border-bottom-1 border-400' placeholder='Số điện thoại *' />
+                    <input name="date" {...register('date', { required: true })} type="date" className='w-full h-full px-4 text-2xl border-bottom-1 border-400 ip-date' placeholder='Ngày *' />
+                    <textarea name="content" {...register('content')} className='w-full h-full px-4 text-2xl border-bottom-1 border-400' placeholder='Nội dung *' />
                 </div>
                 <button type='submit' className='hover-btn flex flex-column justify-content-center row-gap-4 px-4 bg-primary1 align-items-center pointer text-white text-2xl font-medium'>
                     <img src='https://winsmile.vn/public/template/frontend/img/icon_18.png' />

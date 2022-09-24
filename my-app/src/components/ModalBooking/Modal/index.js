@@ -8,6 +8,7 @@ import { Button } from 'primereact/button';
 
 const ModalBooking = () => {
     const dispatch = useDispatch()
+    const [statusBooking, setStatusBooking] = useState(false)
     const [formData, setFormData] = useState({});
     const [showMessage, setShowMessage] = useState(false);
     const { register, handleSubmit, formState: { errors }, reset } = useForm()
@@ -15,10 +16,16 @@ const ModalBooking = () => {
         console.log(1);
         dispatch(addAccount({ ...data }))
         setFormData(data)
-
         console.log(formData);
         setShowMessage(true);
         reset()
+    }
+    const handleCloseB = (e) =>{
+        setStatusBooking(!statusBooking)
+        // if(e.target.closest()){
+
+        // }
+        console.log(e.target);
     }
     const dialogFooter = <div className="flex justify-content-center"><Button style={{ color: 'var(--primary1)', fontSize: '18px' }} label="OK" className="p-button-text" autoFocus onClick={() => setShowMessage(false)} /></div>;
     return (
@@ -33,10 +40,14 @@ const ModalBooking = () => {
                     </p>
                 </div>
             </Dialog>
-            <form onSubmit={handleSubmit(onSubmit)} className='fixed right-0 top-30 z-999 flex btn-booking'>
-                <div className='cs-text-booking bg-primary1 px-4 py-3 border-round-left-2xl pointer flex flex-column align-items-center justify-content-center text-white font-medium'>
+            <form onSubmit={handleSubmit(onSubmit)} className={`fixed right-0 top-30 z-999 flex btn-booking ${statusBooking ? 'active' : ''}`}>
+                <div onClick={(e) => handleCloseB(e)} className='cs-text-booking bg-primary1 px-4 py-3 border-round-left-2xl pointer flex flex-column align-items-center justify-content-center text-white font-medium'>
                     <div>
-                        <img src='https://winsmile.vn/public/template/frontend/img/icon_17.png' />
+                    {statusBooking ?
+                            <img src='https://res.cloudinary.com/dbpw1enlu/image/upload/v1663991580/svgviewer-png-output_6_pzvllg.png' />
+                         :
+                            <img src='https://winsmile.vn/public/template/frontend/img/icon_17.png' />
+                         }
                     </div>
                     <div className='mt-2'>ĐĂNG</div>
                     <div>KÝ</div>

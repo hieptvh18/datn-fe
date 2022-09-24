@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
 import FooterIndex from "../../components/FooterIndex";
 import HeaderIndex from "../../components/HeaderIndex";
@@ -8,6 +8,7 @@ import ModalBooking from "../../components/ModalBooking/Modal";
 
 const cx = classNames.bind(styles)
 const WebsiteLayout = () => {
+
   return (
     <div className={cx('wrapper-layout')}>
       <header>
@@ -19,7 +20,8 @@ const WebsiteLayout = () => {
       <footer>
         <FooterIndex />
       </footer>
-      <ModalBooking/>
+
+      <ModalBooking />
     </div>
   );
 };

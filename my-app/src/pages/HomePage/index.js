@@ -26,6 +26,7 @@ import { InputTextarea } from 'primereact/inputtextarea';
 import Maps from "../../components/Maps";
 import Map from "../../components/Maps";
 import { Dialog } from "primereact/dialog";
+import FeedBack from "../../components/FeedBack";
 
 
 
@@ -385,6 +386,10 @@ const HomePage = () => {
           </div>
         </div>
       </div>
+      {/* feed back client */}
+      
+      <FeedBack/>
+
       {/* ContactDentiCare */}
       <div className="paddingBottom mt-8">
         <div className="text-700 text-center">

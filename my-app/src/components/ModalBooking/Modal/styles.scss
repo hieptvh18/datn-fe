@@ -11,7 +11,7 @@
     transition: all 0.3s ease-in-out;
     transform: translateX(81%);
 }
-.btn-booking:hover{
+.btn-booking.active{
     transition: all 0.3s ease-in;
     transform: translateX(0%);
 }

@@ -62,7 +62,7 @@ const HomePage = () => {
     slidesToShow: 1,
     adaptiveHeight: true,
   };
-  const dialogFooter = <div className="flex justify-content-center"><Button label="OK" className="p-button-text" autoFocus onClick={() => setShowMessage(false)} /></div>;
+  const dialogFooter = <div className="flex justify-content-center"><Button label="OK" className="p-button-text" onClick={() => setShowMessage(false)} /></div>;
   return (
     <>
       <div className="relative">
@@ -340,7 +340,7 @@ const HomePage = () => {
                       <div className="field col-12 md:col-6">
                         <span className="p-float-label">
                           <Controller name="fullName" control={control} rules={{ required: 'Họ và tên bắt buộc nhập!' }} render={({ field, fieldState }) => (
-                            <InputText style={{ height: '50px', fontSize: '17px' }} id={field.name} {...field} autoFocus className={classNames({ 'p-invalid': fieldState.invalid })} />
+                            <InputText style={{ height: '50px', fontSize: '17px' }} id={field.name} {...field} className={classNames({ 'p-invalid': fieldState.invalid })} />
                           )} />
                           <label htmlFor="fullName" className={classNames({ 'p-error': errors.fullName })}>Họ và tên</label>
                         </span>
@@ -349,7 +349,7 @@ const HomePage = () => {
                       <div className="field col-12 md:col-6">
                         <span className="p-float-label">
                           <Controller name="phone" control={control} rules={{ required: 'Số điện thoại bắt buộc nhập!', pattern: { value: /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/i, message: 'Nhập đúng định dạnh số điện thoại' } }} render={({ field, fieldState }) => (
-                            <InputText style={{ height: '50px', fontSize: '17px' }} id={field.name} {...field} autoFocus className={classNames({ 'p-invalid': fieldState.invalid })} />
+                            <InputText style={{ height: '50px', fontSize: '17px' }} id={field.name} {...field} className={classNames({ 'p-invalid': fieldState.invalid })} />
                           )} />
                           <label htmlFor="phone" className={classNames({ 'p-error': errors.phone })}>Số điện thoại</label>
                         </span>
@@ -358,7 +358,7 @@ const HomePage = () => {
                       <div className="field col-12 md:col-6">
                         <span className="p-float-label">
                           <Controller name="content" control={control} render={({ field, fieldState }) => (
-                            <InputTextarea id={field.name} style={{ height: '50px', fontSize: '17px' }} {...field} autoFocus className={classNames({ 'p-invalid': fieldState.invalid })} />
+                            <InputTextarea id={field.name} style={{ height: '50px', fontSize: '17px' }} {...field} className={classNames({ 'p-invalid': fieldState.invalid })} />
                           )} />
                           <label htmlFor="content" className={classNames({ 'p-error': errors.content })}>Nội dung</label>
                         </span>

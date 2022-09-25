@@ -7,7 +7,10 @@ import LoginAccount from "../LoginAccount";
 import { Button } from "primereact/button";
 import { useDispatch, useSelector } from "react-redux";
 import { Logout } from "../../feature/AuthSlice";
+import { SplitButton } from 'primereact/splitbutton';
 const cx = classNames.bind(styles);
+
+
 
 const items = [
   {
@@ -132,6 +135,16 @@ const items = [
 const HeaderIndex = () => {
   const dispatch = useDispatch();
   const isUser = useSelector(data => data.user.value.user)
+  const infoAccount = [
+    {
+      label: 'Thông tin',
+      url: '/account/info'
+    },
+    {
+      label: 'Bệnh án',
+      url: '/account/info'
+    }
+  ]
   return (
     <div className={cx("wrapper-header")}>
       <div className={cx("wrapper-header1")}>
@@ -172,7 +185,10 @@ const HeaderIndex = () => {
               <br />
             </div>
           )}
-        </Popup> : <Button label="Đăng xuất" onClick={() => dispatch(Logout())} className="p-button-link text-2xl" />}
+        </Popup> : <div className="flex align-items-center">
+          <SplitButton label={isUser.username} model={infoAccount} className="p-button-text"></SplitButton>
+          <Button label="Đăng xuất" onClick={() => dispatch(Logout())} className="p-button-link text-2xl" />
+        </div>}
 
       </div>
     </div>

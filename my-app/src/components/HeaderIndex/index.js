@@ -2,6 +2,11 @@ import React from "react";
 import classNames from "classnames/bind";
 import styles from "./styles.module.scss";
 import { Menubar } from "primereact/menubar";
+import { Popup } from "reactjs-popup";
+import LoginAccount from "../LoginAccount";
+import { Button } from "primereact/button";
+import { useDispatch, useSelector } from "react-redux";
+import { Logout } from "../../feature/AuthSlice";
 const cx = classNames.bind(styles);
 
 const items = [
@@ -125,6 +130,8 @@ const items = [
 
 
 const HeaderIndex = () => {
+  const dispatch = useDispatch();
+  const isUser = useSelector(data => data.user.value.user)
   return (
     <div className={cx("wrapper-header")}>
       <div className={cx("wrapper-header1")}>
@@ -133,27 +140,40 @@ const HeaderIndex = () => {
         </div>
         <div className={cx("wrapper-timeline")}>
           <div className={cx("wrapper-timer-wroking")}>
-              <div className={cx("timer-img")}>
-                  <img src="https://res.cloudinary.com/dbpw1enlu/image/upload/v1663127402/image_1_tpkkww.png"/>
-              </div>
-              <div className={cx("timer-wrapper-text")}>
-                  <p className={cx("timer-text1")}>415-205-5550</p>
-                  <p className={cx("timer-text2")}>24/7 Emergency Phone</p>
-              </div>
+            <div className={cx("timer-img")}>
+              <img src="https://res.cloudinary.com/dbpw1enlu/image/upload/v1663127402/image_1_tpkkww.png" />
+            </div>
+            <div className={cx("timer-wrapper-text")}>
+              <p className={cx("timer-text1")}>415-205-5550</p>
+              <p className={cx("timer-text2")}>24/7 Emergency Phone</p>
+            </div>
           </div>
           <div className={cx("wrapper-timer-wroking")}>
-              <div className={cx("timer-img")}>
-                  <img src="https://res.cloudinary.com/dbpw1enlu/image/upload/v1663127408/image_2_nat93t.png"/>
-              </div>
-              <div className={cx("timer-wrapper-text")}>
-                  <p className={cx("timer-text1")}>Monday - Friday</p>
-                  <p className={cx("timer-text2")}>9:00 AM - 9:00 PM</p>
-              </div>
+            <div className={cx("timer-img")}>
+              <img src="https://res.cloudinary.com/dbpw1enlu/image/upload/v1663127408/image_2_nat93t.png" />
+            </div>
+            <div className={cx("timer-wrapper-text")}>
+              <p className={cx("timer-text1")}>Monday - Friday</p>
+              <p className={cx("timer-text2")}>9:00 AM - 9:00 PM</p>
+            </div>
           </div>
         </div>
       </div>
-      <div className={cx("wrapper-header2")}>
+      <div className='flex justify-content-between align-items-center'>
         <Menubar className="wrapper-menu" model={items} />
+        {isUser == null ? <Popup trigger={<Button label="Đăng nhập" className="p-button-link text-2xl" />} modal
+          nested>
+          {close => (
+            <div className="modal">
+              <button className={cx("close")} onClick={close}>
+                <i className="pi pi-times" style={{ 'fontSize': '20px', }}></i>
+              </button>
+              <LoginAccount />
+              <br />
+            </div>
+          )}
+        </Popup> : <Button label="Đăng xuất" onClick={() => dispatch(Logout())} className="p-button-link text-2xl" />}
+
       </div>
     </div>
   );

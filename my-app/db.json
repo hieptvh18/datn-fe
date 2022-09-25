@@ -42,5 +42,15 @@
       "content": "qwdsa",
       "id": 6
     }
+  ],
+  "users":[
+    {
+      "email": "anhtuans2783@gmail.com",
+      "password": "$2a$10$LrP3gUKB9Tzb3SMzjysl2OHd.0Uw5CiCPXcpSAAJx5DNo4onI0Xvu",
+      "username": "Nguyễn Anh Tuấn",
+      "address": "Dược Hạ -Tiên Dược - Sóc Sơn - Hà Nội",
+      "phone": "0165 357 4552",
+      "id": 1
+    }
   ]
 }

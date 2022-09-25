@@ -10,6 +10,7 @@ import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 import 'primeflex/primeflex.scss';
+import 'reactjs-popup/dist/index.css';
 const container = document.getElementById('root');
 const root = createRoot(container);
 

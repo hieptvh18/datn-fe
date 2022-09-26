@@ -52,5 +52,180 @@
       "phone": "0165 357 4552",
       "id": 1
     }
+  ],
+  "services":[
+    {
+      "id": 1,
+      "image" : "http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/home-services.jpg",
+      "title": "Sử dụng răng sứ được làm hoàn toàn từ sứ hoặc sứ kết hợp cùng kim loại để chụp lên phần răng khiếm khuyết hoặc hư tổn để tái tạo hình dáng, kích thước và màu sắc như răng thật.",
+      "service_name": "Bọc răng sứ",
+      "content": "",
+      "created_at": "",
+      "created_by": 2
+    },
+    {
+      "id": 2,
+      "image" : "http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/home-services-2.jpg",
+      "title": "Phương pháp sử dụng khí cụ chuyên dụng được gắn cố định hoặc tháo lắp trên răng để giúp dịch chuyển và sắp xếp răng về đúng vị trí. Từ đó, đảm bảo tạo lực kéo ổn định, giúp răng dịch chuyển về đúng vị trí và mang lại cho khách hàng một hàm răng đều, đẹp, đảm bảo chức năng ăn nhai, khớp cắn đúng…",
+      "service_name": "Niềng răng thẩm mĩ",
+      "content": "",
+      "created_at": "",
+      "created_by": 2
+    },
+    {
+      "id": 3,
+      "image" : "http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/home-services-3.jpg",
+      "title": "Nhổ răng khôn mọc ngầm không đau tại Nha Khoa Đức Nghĩa công nghệ hiện đại được coi là giải pháp tối ưu, nhanh chóng giúp bạn loại bỏ chiếc răng một cách nhẹ nhàng, an toàn và không đau nhức.",
+      "service_name": "Nhổ răng khôn",
+      "content": "",
+      "created_at": "",
+      "created_by": 2
+    },
+    {
+      "id": 4,
+      "image" : "http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/home-services-4.jpg",
+      "title": "Công nghệ hiện đại hoạt động dựa trên sự kết hợp đặc biệt giữa chất gel làm trắng với ánh sáng xanh dịu nhẹ, sẽ nhanh chóng phá vỡ các liên kết hóa học bên trong răng, giúp loại bỏ hiệu quả các lớp ngà răng ố vàng, đem đến vẻ trắng sáng cho hàm răng.",
+      "service_name": "Làm trắng răng",
+      "content": "",
+      "created_at": "",
+      "created_by": 2
+    }
+  ],
+  "teams" : [
+    {
+      "id": 1,
+      "role" : 1 ,
+      "name" : "Nguyễn Hữu Nam",
+      "image" : "https://nhakhoakim.com/wp-content/themes/kimdental-child/assets/images/doi-ngu-bac-sy/nguyen-huu-nam.png",
+      "specialist": "Chuyên sâu cấy ghép răng Implant, ghép xương, chỉnh hình răng thẩm mỹ",
+      "position" : [
+        "Giám đốc bệnh viện Thẩm mỹ Hàn Quốc 2016- 2018 chuyên sâu thẩm mỹ toàn diện cơ thể ngực, bụng, khuôn mặt.",
+        "Tốt nghiệp khoa chỉnh hình tại Úc năm 2004.",
+        "Tốt nghiệp Chuyên khoa Phẫu thuật hàm mặt 1999-2010 tại Viện Răng Hàm Mặt Trung Ương TP.HCM.",
+        "Tốt nghiệp Thạc sĩ năm 2007.",
+        "Học Tiến sĩ năm 2007-2010."
+      ]
+    },
+    {
+      "id": 2,
+      "role" : 2 ,
+      "name" : "Huỳnh Hà Thúy Hằng",
+      "image": "https://nhakhoakim.com/wp-content/uploads/2022/01/bs-thuy-hang.jpg",
+      "specialist": "Chuyên sâu lĩnh vực niềng răng, nắn chỉnh răng",
+      "position" : [
+        "Bs tốt ngiệp ĐH Y Dược TP HCM năm 2002- 2008",
+        "Kinh nghiệm đến năm 2022: 14 năm",
+        "Hoàn thành khóa chỉnh hình răng mặt 6 tháng tại Bệnh viện RHM Tp.HCM",
+        "Khóa đào tạo nâng cao chỉnh nha do USA tổ chức tháng 5/2017",
+        "Khóa chỉnh nha tháng 9/2017 Gs ĐH Georgia Health Science University"
+      ]
+    },
+    {
+      "id": 3,
+      "role" : 1 ,
+      "name" : "Trần Chí Oai",
+      "image": "https://nhakhoakim.com/wp-content/uploads/2019/05/Oai.jpg",
+      "specialist": "Chuyên gia chỉnh hình hàm mặt.",
+      "position" : [
+        "Tốt nghiệp Khoa Răng Hàm Mặt - Đại học Y Dược TP.HCM.",
+        "Kinh nghiệm đến năm 2022: 14 năm",
+        "Tham gia đào tạo cho các bác sĩ chỉnh nha",
+        "Trưởng ban chỉnh nha Nha Khoa Đức Nghĩa",
+        "17 năm kinh nghiệm trong lĩnh vực nha khoa."
+      ]
+    },
+    {
+      "id": 4,
+      "role" : 1 ,
+      "name" : "Lê Thị Thuỳ Dung",
+      "image": "https://nhakhoakim.com/wp-content/uploads/2022/07/dungbsnhakhoakim.jpg",
+      "specialist": "Chuyên gia chỉnh hình răng mặt.",
+      "position" : [
+        "Tốt nghiệp Bác sĩ Răng-Hàm-Mặt trường Đại học Y Dược TP.HCM khoá 2004-2010",
+        "Thạc sĩ chuyên ngành Răng-Hàm-Mặt tại trường Đại học Y Dược TP. HCM khoá 2011-2013",
+        "Chứng chỉ Chỉnh Hình Răng Mặt ",
+        "Kinh Nghiệm đến năm 2022: 12 năm",
+        "Tốt nghiệp loại giỏi"
+      ]
+    },
+    {
+      "id": 5,
+      "role" : 1 ,
+      "name" : "Tạ Công An Khang",
+      "image": "https://nhakhoakim.com/wp-content/uploads/2022/07/khangbsnhakhoakim.jpg",
+      "specialist": "Chuyên khoa Implant - Phẫu thuật miệng",
+      "position" : [
+        "Tốt nghiệp Bác sĩ Răng-Hàm-Mặt trường Đại học Y Dược TP.HCM khoá 2010-2016",
+        "Loại tốt nghiệp: Khá , ĐH Chính quy",
+        "Chứng chỉ Implant cơ bản - Đại học Y Dược TP.HCM năm 2020",
+        "Bác sĩ chuyên khoa Implant - Phẫu thuật miệng",
+        "Kinh nghiệm đến năm 2022: 06 năm"
+      ]
+    },
+    {
+      "id": 6,
+      "role" : 2 ,
+      "name" : "Tạ Công An Khang",
+      "image": "https://nhakhoakim.com/wp-content/uploads/2022/07/khangbsnhakhoakim.jpg",
+      "specialist": "Chuyên khoa làm răng Sứ",
+      "position" : [
+        "Tốt nghiệp Bác sĩ Răng-Hàm-Mặt trường Đại học Y Dược TP.HCM khoá 2011-2017",
+        "Thạc sĩ chuyên ngành Răng-Hàm-Mặt tại trường Đại học Y Dược TP. HCM khoá 2019-2021",
+        "Chứng chỉ “Sư phạm Y học cơ bản” - Đại học Y Hà Nội năm 2021",
+        "Chứng chỉ “Kỹ thuật tiêm Botulinum Toxin trong thẩm mỹ” - Bệnh viện Da liễu TP. HCM năm 2022",
+        "Trưởng ban Đào tạo - Nha khoa Đức Nghĩa"
+      ]
+    }
+  ],
+  "feedbacks" : [
+    {
+      "id": 1,
+      "name_account" : "Phương Trinh",
+      "image_account" : "https://nhakhoakim.com/wp-content/uploads/2021/05/Kh%C3%A1ch-h%C3%A0ng-Ph%C6%B0%C6%A1ng-Trinh.jpg",
+      "role_account" : "Khách hàng",
+      "content" : "Chắc chắn em sẽ giới thiệu bạn bè tới đây vì tại Nha Khoa Đức Nghĩa em được quan tâm rất tận tình, điều này em ưng nhất. "
+    },
+    {
+      "id": 2,
+      "name_account" : "Thanh Mai",
+      "image_account" : "https://nhakhoakim.com/wp-content/uploads/2021/05/Kh%C3%A1ch-h%C3%A0ng-Thanh-Mai-1.jpg",
+      "role_account" : "Khách hàng",
+      "content" : "Là một người khó tính, sau khi sử dụng dịch vụ, tôi đánh giá Nha Khoa Đức Nghĩa là số 1."
+    },
+    {
+      "id": 3,
+      "name_account" : "Thanh Hoàng",
+      "image_account" : "https://nhakhoakim.com/wp-content/uploads/2021/05/Kh%C3%A1ch-h%C3%A0ng-Thanh-Ho%C3%A0ng.jpg",
+      "role_account" : "Khách hàng",
+      "content" : "Trong thời gian niềng răng ở Nha Khoa Đức Nghĩa, em thấy các chị lễ tân rất vui vẻ, niềm nở; anh chị phụ tá thì nhiệt tình giúp đỡ, hướng dẫn em cách đeo niềng, chăm sóc răng miệng; bác sĩ điều trị rất chuyên nghiệp và cơ sở vật chất thì hiện đại. "
+    },
+    {
+      "id": 4,
+      "name_account" : "Cao Diệp",
+      "image_account" : "https://nhakhoakim.com/wp-content/uploads/2021/05/Khách-hàng-Cao-Diệp.jpg",
+      "role_account" : "Khách hàng",
+      "content" : "Em ấn tượng nhất tại Nha Khoa Đức Nghĩa là đội ngũ bác sĩ trẻ, giỏi, tận tình, tận tâm và rất nhẹ nhàng."
+    },
+    {
+      "id": 5,
+      "name_account" : "Phú Dưỡng",
+      "image_account" : "https://nhakhoakim.com/wp-content/uploads/2021/05/Khách-hàng-Phú-Dưỡng.jpg",
+      "role_account" : "Khách hàng",
+      "content" : "Đến Nha Khoa Đức Nghĩa, mình được tư vấn rất kỹ lưỡng, chi tiết. Bác sĩ luôn tạo tâm lý thoải mái cho mình trong quá trình điều trị và hướng dẫn cách bảo vệ, chăm sóc răng miệng rất tận tình."
+    },
+    {
+      "id": 6,
+      "name_account" : "Tuấn Anh",
+      "image_account" : "https://nhakhoakim.com/wp-content/uploads/2019/05/2.jpg",
+      "role_account" : "Khách hàng",
+      "content" : "Bác sĩ làm rất êm tay, tận tình và hoàn toàn không đau hay ê buốt. Nha Khoa Kim làm việc suốt tuần, cực kỳ thuận lợi cho Tuấn Anh đến thăm khám bất cứ lúc nào."
+    },
+    {
+      "id": 7,
+      "name_account" : "Bảo Quốc",
+      "image_account" : "https://nhakhoakim.com/wp-content/uploads/2021/05/Khách-hàng-Bảo-Quốc.jpg",
+      "role_account" : "Khách hàng",
+      "content" : "Anh cảm nhận nhân viên ở đây rất là nhiệt tình, bác sĩ tư vấn cho khách hàng rất chu đáo, kỹ càng về mọi thứ."
+    }
   ]
 }

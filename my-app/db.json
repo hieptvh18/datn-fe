@@ -96,7 +96,7 @@
       "id": 1,
       "role" : 1 ,
       "name" : "Nguyễn Hữu Nam",
-      "image" : "https://nhakhoakim.com/wp-content/themes/kimdental-child/assets/images/doi-ngu-bac-sy/nguyen-huu-nam.png",
+      "image" : "http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/people-01.jpg",
       "specialist": "Chuyên sâu cấy ghép răng Implant, ghép xương, chỉnh hình răng thẩm mỹ",
       "position" : [
         "Giám đốc bệnh viện Thẩm mỹ Hàn Quốc 2016- 2018 chuyên sâu thẩm mỹ toàn diện cơ thể ngực, bụng, khuôn mặt.",
@@ -110,7 +110,7 @@
       "id": 2,
       "role" : 2 ,
       "name" : "Huỳnh Hà Thúy Hằng",
-      "image": "https://nhakhoakim.com/wp-content/uploads/2022/01/bs-thuy-hang.jpg",
+      "image": "",
       "specialist": "Chuyên sâu lĩnh vực niềng răng, nắn chỉnh răng",
       "position" : [
         "Bs tốt ngiệp ĐH Y Dược TP HCM năm 2002- 2008",
@@ -124,7 +124,7 @@
       "id": 3,
       "role" : 1 ,
       "name" : "Trần Chí Oai",
-      "image": "https://nhakhoakim.com/wp-content/uploads/2019/05/Oai.jpg",
+      "image": "http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/people-03.jpg",
       "specialist": "Chuyên gia chỉnh hình hàm mặt.",
       "position" : [
         "Tốt nghiệp Khoa Răng Hàm Mặt - Đại học Y Dược TP.HCM.",
@@ -138,7 +138,7 @@
       "id": 4,
       "role" : 1 ,
       "name" : "Lê Thị Thuỳ Dung",
-      "image": "https://nhakhoakim.com/wp-content/uploads/2022/07/dungbsnhakhoakim.jpg",
+      "image": "http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/people-04.jpg",
       "specialist": "Chuyên gia chỉnh hình răng mặt.",
       "position" : [
         "Tốt nghiệp Bác sĩ Răng-Hàm-Mặt trường Đại học Y Dược TP.HCM khoá 2004-2010",
@@ -151,8 +151,8 @@
     {
       "id": 5,
       "role" : 1 ,
-      "name" : "Tạ Công An Khang",
-      "image": "https://nhakhoakim.com/wp-content/uploads/2022/07/khangbsnhakhoakim.jpg",
+      "name" : "Phùng Thi Trang",
+      "image": "http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/people-02.jpg",
       "specialist": "Chuyên khoa Implant - Phẫu thuật miệng",
       "position" : [
         "Tốt nghiệp Bác sĩ Răng-Hàm-Mặt trường Đại học Y Dược TP.HCM khoá 2010-2016",

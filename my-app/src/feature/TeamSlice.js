@@ -1,10 +1,10 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { getTeam, getTeamById } from "../api/team";
+import { getDoctor, getTeam, getTeamById } from "../api/team";
 
 export const listTeam = createAsyncThunk(
     'team/listTeam',
     async () => {
-        const { data } = await getTeam()
+        const { data } = await getDoctor()
         return data
     }
 )

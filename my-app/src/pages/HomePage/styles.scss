@@ -1,40 +1,48 @@
-.contact{
+.contact {
     color: var(--primary);
 }
 
-.colorPrimary{
+.colorPrimary {
     color: var(--primary);
 }
-.colorPrimary1{
+
+.colorPrimary1 {
     color: var(--primary1);
 }
-.sectionContact{
+
+.sectionContact {
     width: var(--default-layout-width);
     margin: 0 auto;
     padding: 0 50px;
 }
-.denticare{
+
+.denticare {
     color: var(--primary1);
 }
-.subcontact{
-    padding: 0  50px;
+
+.subcontact {
+    padding: 0 50px;
 }
-.hr{
+
+.hr {
     width: 70px;
     border: none;
     height: 2px;
-    background-color: var(--primary) ;
+    background-color: var(--primary);
 }
-.workingHours{
+
+.workingHours {
     width: 450px;
     height: 500px;
     background-color: var(--primary1);
 }
-.button{
+
+.button {
     background-color: white;
     color: var(--primary);
 }
-.buttonBig{
+
+.buttonBig {
     width: 300px;
     height: 70px;
     font-size: 20px;
@@ -43,52 +51,63 @@
     color: var(--primary);
 }
 
-.Specialized{
+.Specialized {
     margin-top: 200px;
     margin-left: 150px;
 }
-.infoDoctor{
+
+.infoDoctor {
     position: relative;
-   margin-top: -150px;
-   padding-bottom: 150px;
+    margin-top: -150px;
+    padding-bottom: 150px;
+    width: var(--default-layout-width);
 }
-.bg-img{
+
+.bg-img {
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
 }
 
-.bookingContent{
+.bookingContent {
     position: relative;
     width: 1200px;
     max-width: calc(100% - 60px);
 }
 
-.-translate-x-50{
+.-translate-x-50 {
     transform: translateX(-50%);
 }
-.bg-primary2{
+
+.bg-primary2 {
     background-color: var(--primary1);
 }
-.bg-primary1{
+
+.bg-primary1 {
     background-color: var(--primary);
 }
-.-cs-bottom-25{
+
+.-cs-bottom-25 {
     bottom: -420px;
 }
-.-cs-bottom-70px{
+
+.-cs-bottom-70px {
     bottom: -120px;
 }
-.cs-text-booking-banner{
+
+.cs-text-booking-banner {
     font-size: 20px;
 }
-.cs-w-booking{
+
+.cs-w-booking {
     margin-left: -8.33%;
     max-width: calc(100%/12*6 + 8.333333%);
 }
-.h-800px{
+
+.h-800px {
     height: 900px;
 }
-.w-default{
+
+.w-default {
     width: var(--default-layout-width);
 }

@@ -27,6 +27,7 @@ import Maps from "../../components/Maps";
 import Map from "../../components/Maps";
 import { Dialog } from "primereact/dialog";
 import FeedBack from "../../components/FeedBack";
+import SpecialiezdTeam from "../../components/SpecialiezdTeam";
 
 
 
@@ -136,162 +137,7 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      <div className="footer infoDoctor">
-        <div className="flex column-gap-5">
-          <div className="surface-200">
-            <div className=" h-full">
-              <div className="h-full flex flex-column">
-                <div className="w-full flex">
-                  <img
-                    style={{ width: "100%" }}
-                    src="http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/people-01.jpg"
-                  />
-                </div>
-                <div className="px-6">
-                  <div className="title pt-5 font-medium">Alex Terrel</div>
-                  <hr className="hr" />
-                  <div className="text-600 text-2xl pt-5">
-                    Senior Orthodontist
-                  </div>
-                  <div className="text-600 text-2xl pt-5">
-                    Appropriately empower dynamic leadership skills after
-                    business portals. Globally myocardinate interactive supply
-                    chains with quality.
-                  </div>
-                  <ul className="flex pb-5 pt-7 lg:pt-7">
-                    <li className="flex align-items-center mb-3">
-                      <i className="pi pi-facebook text-5xl icon"></i>
-                    </li>
-                    <li className="flex align-items-center mb-3">
-                      <i className="pi pi-youtube text-5xl text-red-500 icon"></i>
-                    </li>
-                    <li className="flex align-items-center mb-3">
-                      <i className="pi pi-twitter text-5xl icon"></i>
-                    </li>
-                    <li className="flex align-items-center mb-3">
-                      <i className="pi pi-telegram text-5xl icon"></i>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="surface-200">
-            <div className=" h-full">
-              <div className="h-full flex flex-column">
-                <div className="w-full flex">
-                  <img
-                    style={{ width: "100%" }}
-                    src="http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/people-01.jpg"
-                  />
-                </div>
-                <div className="px-6">
-                  <div className="title pt-5 font-medium">Alex Terrel</div>
-                  <hr className="hr" />
-                  <div className="text-600 text-2xl pt-5">
-                    Senior Orthodontist
-                  </div>
-                  <div className="text-600 text-2xl pt-5">
-                    Appropriately empower dynamic leadership skills after
-                    business portals. Globally myocardinate interactive supply
-                    chains with quality.
-                  </div>
-                  <ul className="flex pb-5 pt-7 lg:pt-7">
-                    <li className="flex align-items-center mb-3">
-                      <i className="pi pi-facebook text-5xl icon"></i>
-                    </li>
-                    <li className="flex align-items-center mb-3">
-                      <i className="pi pi-youtube text-5xl text-red-500 icon"></i>
-                    </li>
-                    <li className="flex align-items-center mb-3">
-                      <i className="pi pi-twitter text-5xl icon"></i>
-                    </li>
-                    <li className="flex align-items-center mb-3">
-                      <i className="pi pi-telegram text-5xl icon"></i>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="surface-200">
-            <div className=" h-full">
-              <div className="h-full flex flex-column">
-                <div className="w-full flex">
-                  <img
-                    style={{ width: "100%" }}
-                    src="http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/people-01.jpg"
-                  />
-                </div>
-                <div className="px-6">
-                  <div className="title pt-5 font-medium">Alex Terrel</div>
-                  <hr className="hr" />
-                  <div className="text-600 text-2xl pt-5">
-                    Senior Orthodontist
-                  </div>
-                  <div className="text-600 text-2xl pt-5">
-                    Appropriately empower dynamic leadership skills after
-                    business portals. Globally myocardinate interactive supply
-                    chains with quality.
-                  </div>
-                  <ul className="flex pb-5 pt-7 lg:pt-7">
-                    <li className="flex align-items-center mb-3">
-                      <i className="pi pi-facebook text-5xl icon"></i>
-                    </li>
-                    <li className="flex align-items-center mb-3">
-                      <i className="pi pi-youtube text-5xl text-red-500 icon"></i>
-                    </li>
-                    <li className="flex align-items-center mb-3">
-                      <i className="pi pi-twitter text-5xl icon"></i>
-                    </li>
-                    <li className="flex align-items-center mb-3">
-                      <i className="pi pi-telegram text-5xl icon"></i>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="surface-200">
-            <div className=" h-full">
-              <div className="h-full flex flex-column">
-                <div className="w-full flex">
-                  <img
-                    style={{ width: "100%" }}
-                    src="http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/people-01.jpg"
-                  />
-                </div>
-                <div className="px-6">
-                  <div className="title pt-5 font-medium">Alex Terrel</div>
-                  <hr className="hr" />
-                  <div className="text-600 text-2xl pt-5">
-                    Senior Orthodontist
-                  </div>
-                  <div className="text-600 text-2xl pt-5">
-                    Appropriately empower dynamic leadership skills after
-                    business portals. Globally myocardinate interactive supply
-                    chains with quality.
-                  </div>
-                  <ul className="flex pb-5 pt-7 lg:pt-7">
-                    <li className="flex align-items-center mb-3">
-                      <i className="pi pi-facebook text-5xl icon"></i>
-                    </li>
-                    <li className="flex align-items-center mb-3">
-                      <i className="pi pi-youtube text-5xl text-red-500 icon"></i>
-                    </li>
-                    <li className="flex align-items-center mb-3">
-                      <i className="pi pi-twitter text-5xl icon"></i>
-                    </li>
-                    <li className="flex align-items-center mb-3">
-                      <i className="pi pi-telegram text-5xl icon"></i>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <SpecialiezdTeam />
       {/* Book at your service */}
       <Dialog visible={showMessage} onHide={() => setShowMessage(false)} position="top" footer={dialogFooter} showHeader={false} breakpoints={{ '960px': '80vw' }} style={{ width: '30vw' }}>
         <div className="flex justify-content-center flex-column pt-6 px-3">
@@ -387,8 +233,8 @@ const HomePage = () => {
         </div>
       </div>
       {/* feed back client */}
-      
-      <FeedBack/>
+
+      <FeedBack />
 
       {/* ContactDentiCare */}
       <div className="paddingBottom mt-8">

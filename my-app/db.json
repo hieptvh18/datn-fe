@@ -50,6 +50,29 @@
       "username": "Nguyễn Anh Tuấn",
       "address": "Dược Hạ -Tiên Dược - Sóc Sơn - Hà Nội",
       "phone": "0165 357 4552",
+      "birthday": "16-03-2002",
+      "gender" : "Nam",
+      "cccd" : "001202032790",
+      "used_service" : "Nhổ răng khôn",
+      "appointment_schedule" : "1-10-2022",
+      "used_drug": [
+        {
+          "name_drug" : "Amoxicyclin",
+          "dosage" : "1 ngày 2 lần, sáng và tối sau khi ăn"
+        },
+        {
+          "name_drug" : "Doxycyclin",
+          "dosage" : "1 ngày 1 lần sau khi ăn, mỗi lần 2 viên"
+        },
+        {
+          "name_drug" : "Tetracylin",
+          "dosage" : "1 ngày 2 lần, sáng và tối sau khi ăn"
+        },
+        {
+          "name_drug" : "Amoxicyclin",
+          "dosage" : "1 ngày 2 lần, sáng và tối sau khi ăn"
+        }
+      ],
       "id": 1
     }
   ],

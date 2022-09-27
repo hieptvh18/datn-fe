@@ -30,38 +30,30 @@ const LoginAccount = () => {
     const dialogFooter = <div className="flex justify-content-center"><Button label="OK" className="p-button-text" autoFocus onClick={() => setShowMessage(false)} /></div>;
 
     return (
-        <div className="form-demo">
-            <Dialog visible={showMessage} onHide={() => setShowMessage(false)} position="top" footer={dialogFooter} showHeader={false} breakpoints={{ '960px': '80vw' }} style={{ width: '30vw' }}>
-                <div className="flex align-items-center flex-column pt-6 px-3">
-                    <i className="pi pi-check-circle" style={{ fontSize: '5rem', color: 'var(--primary)' }}></i>
-                    <h1 style={{ paddingTop: '5px', color: 'var(--primary1)' }}>Đăng nhập thành công!</h1>
+        <div>
+            <div className='px-5 py-6'>
+                <h2 className='text-center c-primary text-6xl'>ĐĂNG NHẬP</h2>
+                <p className='text-center font-italic text-500 text-1xl'>Chào mừng đến với nha khoa Đức Nghĩa</p>
+                <div className=" mt-7">
+                    <div className="p-inputgroup p">
+                        <span className="p-float-label border-bottom-1 border-300  p-input-icon-right">
+                            <i className="pi pi-phone text-2xl" />
+                            <InputText className='cs-ip-login pb-2 text-2xl' type="text" />
+                            <label htmlFor="inputgroup">Số điện thoại</label>
+                        </span>
+                    </div>
                 </div>
-            </Dialog>
-
-            <div className="flex justify-content-center">
-                <div className="card">
-                    <h2 style={{ color: 'var(--primary)' }} className="text-center">Đăng nhập</h2>
-                    <form onSubmit={handleSubmit(onSubmit)} className="p-fluid">
-                        <div className="field">
-                            <span className="p-float-label">
-                                <Controller name="email" control={control} render={({ field, fieldState }) => (
-                                    <InputText id={field.name} {...field} className={classNames({ 'p-invalid': fieldState.invalid })} />
-                                )} />
-                                <label htmlFor="email" className={classNames({ 'p-error': errors.email })}>Số điện thoại</label>
-                            </span>
-                            {getFormErrorMessage('email')}
-                        </div>
-                        <div className="field">
-                            <span className="p-float-label">
-                                <Controller name="password" control={control} rules={{ required: 'Mật khẩu bắt buộc nhập' }} render={({ field, fieldState }) => (
-                                    <Password id={field.name} {...field} toggleMask className={classNames({ 'p-invalid': fieldState.invalid })} />
-                                )} />
-                                <label htmlFor="password" className={classNames({ 'p-error': errors.password })}>Mật khẩu*</label>
-                            </span>
-                            {getFormErrorMessage('password')}
-                        </div>
-                        <Button type="submit" label="Submit" className="mt-2" />
-                    </form>
+                <div className="mt-6">
+                    <div className="p-inputgroup">
+                        <span className="p-float-label border-bottom-1 border-300  p-input-icon-right">
+                            <i className="pi pi-key text-2xl" />
+                            <InputText className='cs-ip-login pb-2 text-2xl' type="text" />
+                            <label htmlFor="inputgroup">Mật khẩu</label>
+                        </span>
+                    </div>
+                </div>
+                <div className='flex justify-content-center align-items-center'>
+                    <button className='text-center px-7 py-3 mt-6 pointer bg-primary1 text-white text-3xl font-normal' style={{borderRadius: "20px"}}>Đăng nhập</button>
                 </div>
             </div>
         </div>

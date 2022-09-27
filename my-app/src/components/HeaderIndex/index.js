@@ -177,7 +177,7 @@ const HeaderIndex = () => {
         {isUser == null ? <Popup trigger={<Button label="Đăng nhập" className="p-button-link text-2xl" />} modal
           nested>
           {close => (
-            <div className="modal">
+            <div className="modal" >
               <button className={cx("close")} onClick={close}>
                 <i className="pi pi-times" style={{ 'fontSize': '20px', }}></i>
               </button>

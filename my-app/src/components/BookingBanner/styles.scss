@@ -1,4 +1,7 @@
 .cs-input-calendar input{
-    padding: 1.5rem 10px !important;
+    padding: 1.2rem 10px !important;
     font-size: 14px;
+}
+.p-inputtext.p-invalid.p-component {
+    border-color: #e24c4c !important;
 }

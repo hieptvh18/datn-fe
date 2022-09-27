@@ -9,7 +9,7 @@
 }
 .btn-booking{
     transition: all 0.3s ease-in-out;
-    transform: translateX(81%);
+    transform: translateX(83%);
 }
 .btn-booking.active{
     transition: all 0.3s ease-in;
@@ -20,4 +20,13 @@
 }
 .hover-btn:active{
     opacity: 0.9;
+}
+.cs-ip-booking input{
+    font-size: 14px;
+    padding: 7px 15px;
+    border: none !important;
+    border-radius: 0px !important;
+}
+.cs-ip-booking input:enabled:focus{
+    box-shadow: none;
 }

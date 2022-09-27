@@ -1,46 +1,74 @@
 import { Calendar } from "primereact/calendar";
 import { Dropdown } from "primereact/dropdown";
 import { InputText } from "primereact/inputtext";
+import { InputNumber } from 'primereact/inputnumber';
 import React, { useState } from "react";
 import "./styles.scss";
+import { InputTextarea } from "primereact/inputtextarea";
+import { Controller, useForm } from "react-hook-form";
+import classNames from "classnames";
 
 const BookingBanner = () => {
-  const [value5, setValue5] = useState(null);
-  const cities = [
-    { name: 'New York', code: 'NY' },
-    { name: 'Rome', code: 'RM' },
-    { name: 'London', code: 'LDN' },
-    { name: 'Istanbul', code: 'IST' },
-    { name: 'Paris', code: 'PRS' }
-  ];
+  
+  const {control, handleSubmit, formState:{errors}} = useForm()
+  const getFormErrorMessage = (name) => {
+    return errors[name] && <small className="p-error">{errors[name].message}</small>
+  };
+  const onSubmit = data =>{
+    console.log(data);
+  }
+
   return (
     <div className="wrapper-booking-banner">
-      <h2 className="c-primary1 font-normal text-7xl ">
-        Book Your Appointment
+      <h2 className="c-primary1 font-normal text-6xl ">
+        ĐĂNG KÝ TƯ VẤN MIỄN PHÍ
       </h2>
       <div className="border-top-1 border-300 mt-4">
-        <div className="mt-6 flex align-content-center column-gap-4">
+        <div className="mt-6 flex align-item-center column-gap-4">
           <div className="text-center">
             <img
               src="https://res.cloudinary.com/dbpw1enlu/image/upload/v1663406464/img-booking_tdyggn.png"
               width={200}
             />
           </div>
-          <div className="w-full flex row-gap-5 flex-column">
-              <div className="p-float-label">
-                <InputText className="w-full py-4 border-300 text-2xl" id="inputtext"/>
-                <label className="text-1xl" htmlFor="inputtext">Your email address *</label>
+          <form onSubmit={handleSubmit(onSubmit)} className="w-full flex row-gap-5 flex-column">
+              <div>
+                <div className="p-float-label">
+                  <Controller name="name" control={control} rules={{required: "Bạn phải nhập họ tên!"}} 
+                    render={({field, fieldState}) =>(
+
+                    <InputText id={field.name} {...field} className={classNames({'p-invalid': fieldState.invalid}, 'w-full py-3 border-300 text-2xl')} />
+
+                  )}/>
+                  <label className={classNames({ 'p-error': errors.name }, 'text-1xl')} htmlFor="inputtext">Họ và tên *</label>
+                </div>
+                {getFormErrorMessage('name')}
+              </div>
+              
+              <div>
+                <div className="p-float-label">
+                  <Controller name="phone" control={control} rules={{required: "Bạn phải nhập số điện thoại!"}} 
+                    render={({field, fieldState}) =>(
+
+                      <InputText id={field.phone} {...field} className={classNames({'p-invalid': fieldState.invalid}, 'w-full py-3 border-300 text-2xl')} />
+                    
+
+                  )}/>
+                  <label className={classNames({ 'p-error': errors.name }, 'text-1xl')}>Số điện thoại *</label>
+                </div>
+                {getFormErrorMessage('phone')}
               </div>
               <div className="p-float-label">
-                <Dropdown className="w-full py-2 border-300 text-2xl" options={cities} optionLabel="name" id="dropdown"/>
-                <label className="text-1xl" htmlFor="inputtext">Select your dentist</label>
+                <Controller name="content" control={control} 
+                  render={({field, fieldState}) =>(
+                    
+                    <InputTextarea id={field.content} {...field} value="" className="w-full py-3" rows={5} autoResize/>
+
+                  )}/>
+                <label className="text-1xl" htmlFor="">Vấn đề bạn gặp phải</label>
               </div>
-              <div className="p-float-label">
-                <Calendar value={value5} onChange={(e) => setValue5(e.value)} className="w-full border-300 cs-input-calendar" id="Calendar"/>
-                <label className="text-1xl" htmlFor="inputtext">Calendar *</label>
-              </div>
-              <button className="text-white py-4 text-2xl border-round-lg bg-primary1 pointer-events-auto">Book your dentist</button>
-          </div>
+              <button type="submit" className="text-white py-4 text-2xl border-round-lg bg-primary1 pointer-events-auto">Book your dentist</button>
+          </form>
         </div>
       </div>
     </div>

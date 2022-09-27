@@ -5,13 +5,14 @@ import { addAccount } from '../../../feature/AccountSlice'
 import { Dialog } from 'primereact/dialog';
 import "./styles.scss"
 import { Button } from 'primereact/button';
+import { Calendar } from 'primereact/calendar';
 
 const ModalBooking = () => {
     const dispatch = useDispatch()
     const [statusBooking, setStatusBooking] = useState(false)
     const [formData, setFormData] = useState({});
     const [showMessage, setShowMessage] = useState(false);
-    const { register, handleSubmit, formState: { errors }, reset } = useForm()
+    const { control, register, handleSubmit, formState: { errors }, reset } = useForm()
     const onSubmit = data => {
         console.log(1);
         dispatch(addAccount({ ...data }))
@@ -20,13 +21,8 @@ const ModalBooking = () => {
         setShowMessage(true);
         reset()
     }
-    const handleCloseB = (e) =>{
-        setStatusBooking(!statusBooking)
-        // if(e.target.closest()){
-
-        // }
-        console.log(e.target);
-    }
+    let today = new Date();
+    let invalidDates = [today];
     const dialogFooter = <div className="flex justify-content-center"><Button style={{ color: 'var(--primary1)', fontSize: '18px' }} label="OK" className="p-button-text" autoFocus onClick={() => setShowMessage(false)} /></div>;
     return (
         <>
@@ -41,7 +37,7 @@ const ModalBooking = () => {
                 </div>
             </Dialog>
             <form onSubmit={handleSubmit(onSubmit)} className={`fixed right-0 top-30 z-999 flex btn-booking ${statusBooking ? 'active' : ''}`}>
-                <div onClick={(e) => handleCloseB(e)} className='cs-text-booking bg-primary1 px-4 py-3 border-round-left-2xl pointer flex flex-column align-items-center justify-content-center text-white font-medium'>
+                <div onClick={() => setStatusBooking(!statusBooking)} className='cs-text-booking bg-primary1 px-4 py-3 border-round-left-2xl pointer flex flex-column align-items-center justify-content-center text-white font-medium'>
                     <div>
                     {statusBooking ?
                             <img src='https://res.cloudinary.com/dbpw1enlu/image/upload/v1663991580/svgviewer-png-output_6_pzvllg.png' />
@@ -55,10 +51,10 @@ const ModalBooking = () => {
                     <div>LỊCH</div>
                     <div>KHÁM</div>
                 </div>
-                <div className='flex flex-column'>
+                <div style={{width: "250px"}} className='flex flex-column'>
                     <input name="fullname" {...register('fullName', { required: true })} className='w-full h-full px-4 text-2xl border-bottom-1 border-top-1 border-400' placeholder='Họ tên *' />
                     <input name="phone" {...register('phone', { required: true })} className='w-full h-full px-4 text-2xl border-bottom-1 border-400' placeholder='Số điện thoại *' />
-                    <input name="date" {...register('date', { required: true })} type="date" className='w-full h-full px-4 text-2xl border-bottom-1 border-400 ip-date' placeholder='Ngày *' />
+                    <input name="date" {...register('date', { required: true })} type="text" className='w-full h-full px-4 text-2xl border-bottom-1 border-400 ' placeholder='Email ' />
                     <textarea name="content" {...register('content')} className='w-full h-full px-4 text-2xl border-bottom-1 border-400' placeholder='Nội dung *' />
                 </div>
                 <button type='submit' className='hover-btn flex flex-column justify-content-center row-gap-4 px-4 bg-primary1 align-items-center pointer text-white text-2xl font-medium'>

@@ -4,7 +4,6 @@ import Test from './components/Test';
 import WebsiteLayout from './layouts/WebsiteLayout';
 import Page404 from './pages/404';
 import AboutPage from './pages/About';
-import AccountInfo from './pages/AccountInfo';
 import HomePage from './pages/HomePage';
 import NewsPage from './pages/News';
 import NewsDetail from './pages/NewsDetail';
@@ -19,7 +18,6 @@ function App() {
           <Route path='news' element={<NewsPage />} />
           <Route path='news/detail' element={<NewsDetail />} />
           <Route path='about' element={<AboutPage />} />
-          <Route path='infoAccount' element={<AccountInfo />} />
           <Route path='*' element={<Page404 />} />
         </Route>
 

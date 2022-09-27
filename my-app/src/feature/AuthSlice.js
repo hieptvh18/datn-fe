@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { getUserById, signIn } from "../api/auth";
+import { signIn, signUp } from "../api/auth";
 import { toast } from "react-toastify";
 export const Login = createAsyncThunk(
     "user/signin",
@@ -16,15 +16,6 @@ export const Login = createAsyncThunk(
 
     }
 )
-
-export const listUserById = createAsyncThunk(
-    "user/listUserById",
-    async (id) => {
-        const { data } = await getUserById(id)
-        return data
-    }
-)
-
 
 export const Logout = createAsyncThunk(
     "user/logout",
@@ -46,9 +37,6 @@ const AuthSlice = createSlice({
         })
         builder.addCase(Logout.fulfilled, (state, action) => {
             state.value = []
-        })
-        builder.addCase(listUserById.fulfilled, (state, action) => {
-            state.value = action.payload
         })
     }
 

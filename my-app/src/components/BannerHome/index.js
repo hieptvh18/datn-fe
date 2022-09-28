@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import "./styles.scss";
 
 const BannerHome = (props) => {
@@ -29,9 +30,9 @@ const BannerHome = (props) => {
               
             )}
           </div>
-          <a href={props.linkPost}>
+          <NavLink to={props.linkPost}>
             <button className="btn-banner-home mt-8">{props.titleBtn}</button>
-          </a>
+          </NavLink>
         </div>
       </div>
     </div>

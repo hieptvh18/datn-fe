@@ -8,6 +8,7 @@ import { Button } from "primereact/button";
 import { useDispatch, useSelector } from "react-redux";
 import { Logout } from "../../feature/AuthSlice";
 import { SplitButton } from 'primereact/splitbutton';
+import { NavLink } from "react-router-dom"
 const cx = classNames.bind(styles);
 
 
@@ -149,12 +150,14 @@ const HeaderIndex = () => {
     <div className={cx("wrapper-header")}>
       <div className={cx("wrapper-header1")}>
         <div className={cx("wrapper-main-logo")}>
-          <img src="https://res.cloudinary.com/dbpw1enlu/image/upload/v1663124409/denticare-logo_umln3a.png" />
+          <NavLink to="/">
+            <img src="https://res.cloudinary.com/dbpw1enlu/image/upload/v1663124409/denticare-logo_umln3a.png" width="170px"/>
+          </NavLink>
         </div>
         <div className={cx("wrapper-timeline")}>
           <div className={cx("wrapper-timer-wroking")}>
             <div className={cx("timer-img")}>
-              <img src="https://res.cloudinary.com/dbpw1enlu/image/upload/v1663127402/image_1_tpkkww.png" />
+              <img src="https://res.cloudinary.com/dbpw1enlu/image/upload/v1664338250/phone_hospital_g3ew1o.png" width="40px" />
             </div>
             <div className={cx("timer-wrapper-text")}>
               <p className={cx("timer-text1")}>415-205-5550</p>
@@ -163,7 +166,7 @@ const HeaderIndex = () => {
           </div>
           <div className={cx("wrapper-timer-wroking")}>
             <div className={cx("timer-img")}>
-              <img src="https://res.cloudinary.com/dbpw1enlu/image/upload/v1663127408/image_2_nat93t.png" />
+              <img src="https://res.cloudinary.com/dbpw1enlu/image/upload/v1664338205/clock_y7w724.png" width="40px" />
             </div>
             <div className={cx("timer-wrapper-text")}>
               <p className={cx("timer-text1")}>Monday - Friday</p>

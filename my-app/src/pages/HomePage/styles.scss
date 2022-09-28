@@ -92,7 +92,7 @@
 }
 
 .-cs-bottom-70px {
-    bottom: -120px;
+    bottom: -35%;
 }
 
 .cs-text-booking-banner {
@@ -110,4 +110,7 @@
 
 .w-default {
     width: var(--default-layout-width);
+}
+.cs-box-dow{
+    box-shadow: #1e1e1e 0px 39px 45px -50px;
 }

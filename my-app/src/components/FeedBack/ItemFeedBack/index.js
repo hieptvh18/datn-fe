@@ -10,8 +10,8 @@ const ItemFeedBack = (props) => {
                 <p className='mt-5 pb-5 text-2xl'>{props.content}</p>
             </div>
             <div className='flex align-items-center column-gap-4'>
-                <div className='overflow-hidden border-circle'>
-                    <img className='flex' src={props.image_account} width="90px" />
+                <div className='cs-avatar-feedback'>
+                    <img className='' src={props.image_account} />
                 </div>
                 <div>
                     <h4 className='c-primary text-3xl font-bold'>{props.name_account}</h4>

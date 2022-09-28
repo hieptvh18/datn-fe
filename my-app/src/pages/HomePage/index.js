@@ -72,7 +72,7 @@ const HomePage = () => {
       <Button
         label="OK"
         className="p-button-text"
-        autoFocus
+        
         onClick={() => setShowMessage(false)}
       />
     </div>
@@ -129,18 +129,17 @@ const HomePage = () => {
           background:
             "url(http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/background-3.jpg)",
           height: "900px",
+          marginTop: "280px"
         }}
         className="bg-img w-full"
       >
         <div className="relative w-default mx-auto">
-          <div className="w-4 text-center absolute Specialized">
-            <div className="contact font-medium text-6xl">DentiCare</div>
-            <div className="denticare font-bold text-8xl">Specialized Team</div>
+          <div className="w-5 text-center absolute Specialized">
+            <div className="contact font-normal text-6xl">NHA KHOA ĐỨC NGHĨA</div>
+            <div className="denticare font-bold text-8xl">ĐỘI NGŨ CỦA CHÚNG TÔI</div>
             <hr className="hr my-7 w-4 m-auto" />
             <div>
-              We are a team of dentists, hygienists and receptionists who work
-              together to ensure that you receive the best treatment that you
-              require at a very time that suits you.
+            Chúng tôi là một đội ngũ nha sĩ, nhân viên vệ sinh và lễ tân làm việc cùng nhau để đảm bảo rằng bạn nhận được sự điều trị tốt nhất mà bạn yêu cầu vào thời điểm phù hợp với bạn.
             </div>
             <hr className="hr my-7 w-4  m-auto" />
             <img
@@ -203,7 +202,7 @@ const HomePage = () => {
                 <div className="px-5">
                   <div>
                     <div className="colorPrimary text-5xl pt-3">
-                      Book Your Visit At
+                      Đặt Lịch Khám Của Bạn Với
                     </div>
                     <div className="colorPrimary1 text-7xl font-bold pb-4">
                       Đức Nghĩa
@@ -229,7 +228,7 @@ const HomePage = () => {
                                 style={{ height: "50px", fontSize: "17px" }}
                                 id={field.name}
                                 {...field}
-                                autoFocus
+                                
                                 className={classNames({
                                   "p-invalid": fieldState.invalid,
                                 })}
@@ -265,7 +264,7 @@ const HomePage = () => {
                                 style={{ height: "50px", fontSize: "17px" }}
                                 id={field.name}
                                 {...field}
-                                autoFocus
+                                
                                 className={classNames({
                                   "p-invalid": fieldState.invalid,
                                 })}
@@ -291,7 +290,7 @@ const HomePage = () => {
                                 id={field.name}
                                 style={{ height: "50px", fontSize: "17px" }}
                                 {...field}
-                                autoFocus
+                                
                                 className={classNames({
                                   "p-invalid": fieldState.invalid,
                                 })}
@@ -358,8 +357,8 @@ const HomePage = () => {
       {/* ContactDentiCare */}
       <div className="paddingBottom mt-8">
         <div className="text-700 text-center">
-          <span className="contact font-medium text-7xl mr-2">Contact</span>
-          <span className="denticare font-bold text-7xl ">DentiCare</span>
+          <span className="contact font-bold text-7xl mr-2">Liên Hệ với</span>
+          <span className="denticare font-bold text-7xl ">Nha Khoa Đức Nghĩa</span>
           <div className="text-800 text-2xl mt-3 mb-8">
             Globally incubate standards compliant channels before scalable
             benefits.
@@ -369,67 +368,8 @@ const HomePage = () => {
         </div>
 
         <div className="mb-8 w-full">
-          <div className="flex w-default mx-auto px-5">
-            <div className="w-full">
-              <Map />
-            </div>
-            <div className="workingHours px-6 py-4 -ml-6">
-              <div className="mb-5">
-                <h2 className="text-white">Working Hours</h2>
-                <p className="text-300">
-                  Check out DentiCare’s Office hours to plan your visit.
-                </p>
-              </div>
-              <div>
-                <div className="flex justify-content-between align-items-center mb-3">
-                  <div className="text-white col-5">Monday</div>
-                  <div className="text-right col-4">
-                    <div className="text-300  font-semibold">8AM-9PM</div>
-                  </div>
-
-                  <Button label="Book" className="button" icon="pi pi-clock" />
-                </div>
-                <div className="flex justify-content-between align-items-center mb-3">
-                  <div className="text-white col-5">Tuesday</div>
-                  <div className="text-right col-4">
-                    <div className="text-300  font-semibold">8AM-9PM</div>
-                  </div>
-                  <Button label="Book" className="button" icon="pi pi-clock" />
-                </div>
-                <div className="flex justify-content-between align-items-center mb-3">
-                  <div className="text-white col-5 ">Wednesday</div>
-                  <div className="text-right col-4">
-                    <div className="text-300  font-semibold">8AM-9PM</div>
-                  </div>
-                  <Button label="Book" className="button" icon="pi pi-clock" />
-                </div>
-                <div className="flex justify-content-between align-items-center mb-3">
-                  <div className="text-white col-5">Thursday</div>
-                  <div className="text-right col-4">
-                    <div className="text-300  font-semibold">8AM-9PM</div>
-                  </div>
-                  <Button label="Book" className="button" icon="pi pi-clock" />
-                </div>
-                <div className="flex justify-content-between align-items-center mb-3">
-                  <div className="text-white col-5 ">Friday</div>
-                  <div className="text-right col-4">
-                    <div className="text-300  font-semibold">8AM-9PM</div>
-                  </div>
-                  <Button label="Book" className="button" icon="pi pi-clock" />
-                </div>
-                <div className="flex justify-content-between align-items-center mb-3">
-                  <div className="text-white col-5">Saturday-Sunday</div>
-                  <div className="text-right col-4">
-                    <div className="text-300  font-semibold">Close</div>
-                  </div>
-                  <Button label="Book" className="button" icon="pi pi-clock" />
-                </div>
-              </div>
-              <div className="text-white text-5xl font-bold mt-5 mb-2">
-                Need Flexible Time?
-              </div>
-              <Button label="Suggest Checkup Time" className="buttonBig" />
-            </div>
+          <div style={{height: "400px"}}>
+            <Map />
           </div>
         </div>
 

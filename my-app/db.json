@@ -250,5 +250,73 @@
       "role_account" : "Khách hàng",
       "content" : "Anh cảm nhận nhân viên ở đây rất là nhiệt tình, bác sĩ tư vấn cho khách hàng rất chu đáo, kỹ càng về mọi thứ."
     }
+  ],
+  "bannerHome": [
+    {
+      "id" : 1,
+      "title": "Chăm sóc nụ cười của bạn",
+      "subTitle": "Cam kết xuất sắc",
+      "bgImg": "http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/02/hero-2.jpg",
+      "item" : [
+        {
+          "id" : 1,
+          "icon" : "https://res.cloudinary.com/dbpw1enlu/image/upload/v1664333706/dental-insurance_z051w3.png",
+          "title" : "Làm trắng",
+          "subTitle" : "Lặp lại hoàn toàn các lĩnh vực chủ đề chiến lược cộng hóa trị thông qua thị trường điện tử chính xác."
+        },
+        {
+          "id" : 2,
+          "icon" : "https://res.cloudinary.com/dbpw1enlu/image/upload/v1664333732/dentist-chair_oavr3q.png",
+          "title" : "Chân giả",
+          "subTitle" : "Thúc đẩy toàn diện các phương pháp luận ưu việt mà không có các phương pháp hay nhất theo định hướng thị trường."
+        }
+      ],
+      "titleBtn" : "Giải pháp nha khoa",
+      "linkPost" : "/news"
+    },
+    {
+      "id" : 2,
+      "title": "Chăm sóc suốt đời",
+      "subTitle": "Hãy để chúng tôi làm rạng rỡ nụ cười của bạn",
+      "bgImg": "http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/hero-1.jpg",
+      "item" : [
+        {
+          "id" : 1,
+          "icon" : "https://res.cloudinary.com/dbpw1enlu/image/upload/v1664334172/dental-insurance_3_ki8cyf.png",
+          "title" : "Cấy ghép",
+          "subTitle" : "Lặp lại hoàn toàn các lĩnh vực chủ đề chiến lược cộng hóa trị thông qua thị trường điện tử chính xác."
+        },
+        {
+          "id" : 2,
+          "icon" : "https://res.cloudinary.com/dbpw1enlu/image/upload/v1664334179/dental-insurance_2_ufc6gc.png",
+          "title" : "Căn chỉnh",
+          "subTitle" : "Thúc đẩy toàn diện các phương pháp luận ưu việt mà không có các phương pháp hay nhất theo định hướng thị trường."
+        }
+      ],
+      "titleBtn" : "Quy trình của chúng tôi",
+      "linkPost" : "/news"
+    },
+    {
+      "id" : 3,
+      "title": "Cam kết xuất sắc",
+      "subTitle": "Cá nhân hóa & thoải mái",
+      "bgImg": "http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/02/hero-3.jpg",
+      "item" : [
+        {
+          "id" : 1,
+          "icon" : "https://res.cloudinary.com/dbpw1enlu/image/upload/v1664334172/dental-insurance_3_ki8cyf.png",
+          "title" : "Bảo vệ an toàn",
+          "subTitle" : "Lặp lại hoàn toàn các lĩnh vực chủ đề chiến lược cộng hóa trị thông qua thị trường điện tử chính xác."
+        },
+        {
+          "id" : 2,
+          "icon" : "https://res.cloudinary.com/dbpw1enlu/image/upload/v1664334179/dental-insurance_2_ufc6gc.png",
+          "title" : "Dịch vụ hoàn chỉnh",
+          "subTitle" : "Thúc đẩy toàn diện các phương pháp luận ưu việt mà không có các phương pháp hay nhất theo định hướng thị trường."
+        }
+      ],
+      "titleBtn" : "Dịch vụ của chúng tôi",
+      "linkPost" : "/news"
+    }
   ]
 }

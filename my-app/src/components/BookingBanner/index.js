@@ -9,12 +9,12 @@ import { Controller, useForm } from "react-hook-form";
 import classNames from "classnames";
 
 const BookingBanner = () => {
-  
-  const {control, handleSubmit, formState:{errors}} = useForm()
+
+  const { control, handleSubmit, formState: { errors } } = useForm()
   const getFormErrorMessage = (name) => {
     return errors[name] && <small className="p-error">{errors[name].message}</small>
   };
-  const onSubmit = data =>{
+  const onSubmit = data => {
     console.log(data);
   }
 
@@ -32,42 +32,42 @@ const BookingBanner = () => {
             />
           </div>
           <form onSubmit={handleSubmit(onSubmit)} className="w-full flex row-gap-5 flex-column">
-              <div>
-                <div className="p-float-label">
-                  <Controller name="name" control={control} rules={{required: "Bạn phải nhập họ tên!"}} 
-                    render={({field, fieldState}) =>(
-
-                    <InputText id={field.name} {...field} className={classNames({'p-invalid': fieldState.invalid}, 'w-full py-3 border-300 text-2xl')} />
-
-                  )}/>
-                  <label className={classNames({ 'p-error': errors.name }, 'text-1xl')} htmlFor="inputtext">Họ và tên *</label>
-                </div>
-                {getFormErrorMessage('name')}
-              </div>
-              
-              <div>
-                <div className="p-float-label">
-                  <Controller name="phone" control={control} rules={{required: "Bạn phải nhập số điện thoại!"}} 
-                    render={({field, fieldState}) =>(
-
-                      <InputText id={field.phone} {...field} className={classNames({'p-invalid': fieldState.invalid}, 'w-full py-3 border-300 text-2xl')} />
-                    
-
-                  )}/>
-                  <label className={classNames({ 'p-error': errors.name }, 'text-1xl')}>Số điện thoại *</label>
-                </div>
-                {getFormErrorMessage('phone')}
-              </div>
+            <div>
               <div className="p-float-label">
-                <Controller name="content" control={control} 
-                  render={({field, fieldState}) =>(
-                    
-                    <InputTextarea id={field.content} {...field} value="" className="w-full py-3" rows={5} autoResize/>
+                <Controller name="name" control={control} rules={{ required: "Bạn phải nhập họ tên!" }}
+                  render={({ field, fieldState }) => (
 
-                  )}/>
-                <label className="text-1xl" htmlFor="">Vấn đề bạn gặp phải</label>
+                    <InputText id={field.name} {...field} className={classNames({ 'p-invalid': fieldState.invalid }, 'w-full py-3 border-300 text-2xl')} />
+
+                  )} />
+                <label className={classNames({ 'p-error': errors.name }, 'text-1xl')} htmlFor="inputtext">Họ và tên *</label>
               </div>
-              <button type="submit" className="text-white py-4 text-2xl border-round-lg bg-primary1 pointer-events-auto">Book your dentist</button>
+              {getFormErrorMessage('name')}
+            </div>
+
+            <div>
+              <div className="p-float-label">
+                <Controller name="phone" control={control} rules={{ required: "Bạn phải nhập số điện thoại!" }}
+                  render={({ field, fieldState }) => (
+
+                    <InputText id={field.phone} {...field} className={classNames({ 'p-invalid': fieldState.invalid }, 'w-full py-3 border-300 text-2xl')} />
+
+
+                  )} />
+                <label className={classNames({ 'p-error': errors.name }, 'text-1xl')}>Số điện thoại *</label>
+              </div>
+              {getFormErrorMessage('phone')}
+            </div>
+            <div className="p-float-label">
+              <Controller name="content" control={control}
+                render={({ field, fieldState }) => (
+
+                  <InputTextarea id={field.content} {...field} value="" className="w-full py-3" rows={5} autoResize />
+
+                )} />
+              <label className="text-1xl" htmlFor="">Vấn đề bạn gặp phải</label>
+            </div>
+            <button type="submit" className="text-white py-4 text-2xl border-round-lg bg-primary1 pointer-events-auto">Gửi cho chúng tôi</button>
           </form>
         </div>
       </div>

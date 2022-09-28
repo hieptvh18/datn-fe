@@ -33,7 +33,7 @@ import { getBannerHome } from "../../feature/BannerHomeSlice";
 const HomePage = () => {
   const dispatch = useDispatch();
   const bannerHome = useSelector(data => data.bannerHome.value)
-  const { control, handleSubmit, formState: { errors }, reset} = useForm();
+  const { control, handleSubmit, formState: { errors }, reset } = useForm();
   const [showMessage, setShowMessage] = useState(false);
   const [formData, setFormData] = useState({});
   const settings = {
@@ -50,8 +50,8 @@ const HomePage = () => {
     d.setDate(d.getDate() - i)
     return d
   })
-  
-  useEffect(() =>{
+
+  useEffect(() => {
     dispatch(getBannerHome())
   }, [])
 
@@ -72,7 +72,7 @@ const HomePage = () => {
       <Button
         label="OK"
         className="p-button-text"
-        
+
         onClick={() => setShowMessage(false)}
       />
     </div>
@@ -83,7 +83,7 @@ const HomePage = () => {
         <div>
           <Slider {...settings}>
             {bannerHome?.map(item =>
-              <BannerHome title={item.title} subTitle={item.subTitle} bgImg={item.bgImg} titleBtn={item.titleBtn} linkPost={item.linkPost} item={item.item}/>
+              <BannerHome title={item.title} subTitle={item.subTitle} bgImg={item.bgImg} titleBtn={item.titleBtn} linkPost={item.linkPost} item={item.item} />
             )}
           </Slider>
         </div>
@@ -139,7 +139,7 @@ const HomePage = () => {
             <div className="denticare font-bold text-8xl">ĐỘI NGŨ CỦA CHÚNG TÔI</div>
             <hr className="hr my-7 w-4 m-auto" />
             <div>
-            Chúng tôi là một đội ngũ nha sĩ, nhân viên vệ sinh và lễ tân làm việc cùng nhau để đảm bảo rằng bạn nhận được sự điều trị tốt nhất mà bạn yêu cầu vào thời điểm phù hợp với bạn.
+              Chúng tôi là một đội ngũ nha sĩ, nhân viên vệ sinh và lễ tân làm việc cùng nhau để đảm bảo rằng bạn nhận được sự điều trị tốt nhất mà bạn yêu cầu vào thời điểm phù hợp với bạn.
             </div>
             <hr className="hr my-7 w-4  m-auto" />
             <img
@@ -228,7 +228,7 @@ const HomePage = () => {
                                 style={{ height: "50px", fontSize: "17px" }}
                                 id={field.name}
                                 {...field}
-                                
+
                                 className={classNames({
                                   "p-invalid": fieldState.invalid,
                                 })}
@@ -264,7 +264,7 @@ const HomePage = () => {
                                 style={{ height: "50px", fontSize: "17px" }}
                                 id={field.name}
                                 {...field}
-                                
+
                                 className={classNames({
                                   "p-invalid": fieldState.invalid,
                                 })}
@@ -290,7 +290,7 @@ const HomePage = () => {
                                 id={field.name}
                                 style={{ height: "50px", fontSize: "17px" }}
                                 {...field}
-                                
+
                                 className={classNames({
                                   "p-invalid": fieldState.invalid,
                                 })}
@@ -338,7 +338,7 @@ const HomePage = () => {
                       <div className="field col-12 md:col-6 m-auto">
                         <Button
                           type="submit"
-                          label="Book Appponment Now"
+                          label="Đặt lịch ngày bây giờ"
                           className="py-4 text-3xl"
                         />
                       </div>
@@ -368,7 +368,7 @@ const HomePage = () => {
         </div>
 
         <div className="mb-8 w-full">
-          <div style={{height: "400px"}}>
+          <div style={{ height: "400px" }}>
             <Map />
           </div>
         </div>

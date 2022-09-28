@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./styles.scss";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -17,7 +17,7 @@ import { Calendar } from "primereact/calendar";
 import BannerHome from "../../components/BannerHome";
 import BookingBanner from "../../components/BookingBanner";
 import List4Top from "../../components/List4Top";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Controller, useForm } from "react-hook-form";
 import { addAccount } from "../../feature/AccountSlice";
 import classNames from "classnames";
@@ -28,36 +28,14 @@ import Map from "../../components/Maps";
 import { Dialog } from "primereact/dialog";
 import FeedBack from "../../components/FeedBack";
 import SpecialiezdTeam from "../../components/SpecialiezdTeam";
+import { getBannerHome } from "../../feature/BannerHomeSlice";
 
 const HomePage = () => {
-  const dates = [...Array(30)].map((_, i) => {
-    const d = new Date()
-    d.setDate(d.getDate() - i)
-    return d
-  })
-  let today =  new Date();
-  let invalidDates = [today];
-  console.log(invalidDates);
   const dispatch = useDispatch();
-  const {
-    control,
-    handleSubmit,
-    formState: { errors },
-    reset,
-  } = useForm();
-  const onSubmit = (data) => {
-    dispatch(addAccount({ ...data }));
-    setFormData(data);
-    setShowMessage(true);
-    reset();
-  };
+  const bannerHome = useSelector(data => data.bannerHome.value)
+  const { control, handleSubmit, formState: { errors }, reset} = useForm();
   const [showMessage, setShowMessage] = useState(false);
   const [formData, setFormData] = useState({});
-  const getFormErrorMessage = (name) => {
-    return (
-      errors[name] && <small className="p-error">{errors[name].message}</small>
-    );
-  };
   const settings = {
     dots: false,
     autoplay: true,
@@ -66,6 +44,28 @@ const HomePage = () => {
     speed: 300,
     slidesToShow: 1,
     adaptiveHeight: true,
+  };
+  const dates = [...Array(30)].map((_, i) => {
+    const d = new Date()
+    d.setDate(d.getDate() - i)
+    return d
+  })
+  
+  useEffect(() =>{
+    dispatch(getBannerHome())
+  }, [])
+
+  const onSubmit = (data) => {
+    dispatch(addAccount({ ...data }));
+    setFormData(data);
+    setShowMessage(true);
+    reset();
+  };
+
+  const getFormErrorMessage = (name) => {
+    return (
+      errors[name] && <small className="p-error">{errors[name].message}</small>
+    );
   };
   const dialogFooter = (
     <div className="flex justify-content-center">
@@ -82,9 +82,9 @@ const HomePage = () => {
       <div className="relative">
         <div>
           <Slider {...settings}>
-            <BannerHome />
-            <BannerHome />
-            <BannerHome />
+            {bannerHome?.map(item =>
+              <BannerHome title={item.title} subTitle={item.subTitle} bgImg={item.bgImg} titleBtn={item.titleBtn} linkPost={item.linkPost} item={item.item}/>
+            )}
           </Slider>
         </div>
         <div className="w-default absolute -cs-bottom-25 left-50 -translate-x-50 z-1 flex align-items-center justify-content-center">

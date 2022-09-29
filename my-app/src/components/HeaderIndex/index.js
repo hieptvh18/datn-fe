@@ -54,7 +54,7 @@ const HeaderIndex = () => {
   ];
   
   return (
-    <div className={cx("wrapper-header")}>
+    <div className={cx("wrapper-header", 'w-default')}>
       <div className={cx("wrapper-header1")}>
         <div className={cx("wrapper-main-logo")}>
           <NavLink to="/">

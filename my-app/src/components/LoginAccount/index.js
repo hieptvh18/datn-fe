@@ -1,11 +1,9 @@
 
-import React, { useEffect, useState } from 'react';
-import { useFormik } from 'formik';
+import React, { useState } from 'react';
+
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
-import { Password } from 'primereact/password';
-import { Dialog } from 'primereact/dialog';
-import { Divider } from 'primereact/divider';
+
 import { classNames } from 'primereact/utils';
 import './styles.scss';
 import { Controller, useForm } from 'react-hook-form';

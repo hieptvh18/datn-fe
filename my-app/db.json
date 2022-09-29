@@ -43,7 +43,7 @@
       "id": 6
     }
   ],
-  "users":[
+  "users": [
     {
       "email": "anhtuans2783@gmail.com",
       "password": "$2a$10$LrP3gUKB9Tzb3SMzjysl2OHd.0Uw5CiCPXcpSAAJx5DNo4onI0Xvu",
@@ -51,35 +51,35 @@
       "address": "Dược Hạ -Tiên Dược - Sóc Sơn - Hà Nội",
       "phone": "0165 357 4552",
       "birthday": "16-03-2002",
-      "gender" : "Nam",
-      "cccd" : "001202032790",
-      "used_service" : "Nhổ răng khôn",
-      "appointment_schedule" : "1-10-2022",
+      "gender": "Nam",
+      "cccd": "001202032790",
+      "used_service": "Nhổ răng khôn",
+      "appointment_schedule": "1-10-2022",
       "used_drug": [
         {
-          "name_drug" : "Amoxicyclin",
-          "dosage" : "1 ngày 2 lần, sáng và tối sau khi ăn"
+          "name_drug": "Amoxicyclin",
+          "dosage": "1 ngày 2 lần, sáng và tối sau khi ăn"
         },
         {
-          "name_drug" : "Doxycyclin",
-          "dosage" : "1 ngày 1 lần sau khi ăn, mỗi lần 2 viên"
+          "name_drug": "Doxycyclin",
+          "dosage": "1 ngày 1 lần sau khi ăn, mỗi lần 2 viên"
         },
         {
-          "name_drug" : "Tetracylin",
-          "dosage" : "1 ngày 2 lần, sáng và tối sau khi ăn"
+          "name_drug": "Tetracylin",
+          "dosage": "1 ngày 2 lần, sáng và tối sau khi ăn"
         },
         {
-          "name_drug" : "Amoxicyclin",
-          "dosage" : "1 ngày 2 lần, sáng và tối sau khi ăn"
+          "name_drug": "Amoxicyclin",
+          "dosage": "1 ngày 2 lần, sáng và tối sau khi ăn"
         }
       ],
       "id": 1
     }
   ],
-  "services":[
+  "services": [
     {
       "id": 1,
-      "image" : "http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/home-services.jpg",
+      "image": "http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/home-services.jpg",
       "title": "Sử dụng răng sứ được làm hoàn toàn từ sứ hoặc sứ kết hợp cùng kim loại để chụp lên phần răng khiếm khuyết hoặc hư tổn để tái tạo hình dáng, kích thước và màu sắc như răng thật.",
       "service_name": "Bọc răng sứ",
       "content": "",
@@ -88,7 +88,7 @@
     },
     {
       "id": 2,
-      "image" : "http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/home-services-2.jpg",
+      "image": "http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/home-services-2.jpg",
       "title": "Phương pháp sử dụng khí cụ chuyên dụng được gắn cố định hoặc tháo lắp trên răng để giúp dịch chuyển và sắp xếp răng về đúng vị trí. ",
       "service_name": "Niềng răng thẩm mĩ",
       "content": "",
@@ -97,7 +97,7 @@
     },
     {
       "id": 3,
-      "image" : "http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/home-services-3.jpg",
+      "image": "http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/home-services-3.jpg",
       "title": "Nhổ răng khôn mọc ngầm không đau tại Nha Khoa Đức Nghĩa công nghệ hiện đại được coi là giải pháp tối ưu, nhanh chóng giúp bạn loại bỏ chiếc răng một cách nhẹ nhàng.",
       "service_name": "Nhổ răng khôn",
       "content": "",
@@ -106,7 +106,7 @@
     },
     {
       "id": 4,
-      "image" : "http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/home-services-4.jpg",
+      "image": "http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/home-services-4.jpg",
       "title": "Công nghệ hiện đại hoạt động dựa trên sự kết hợp đặc biệt giữa chất gel làm trắng với ánh sáng xanh dịu nhẹ .",
       "service_name": "Làm trắng răng",
       "content": "",
@@ -114,14 +114,14 @@
       "created_by": 2
     }
   ],
-  "teams" : [
+  "teams": [
     {
       "id": 1,
-      "role" : 1 ,
-      "name" : "Nguyễn Hữu Nam",
-      "image" : "http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/people-01.jpg",
+      "role": 1,
+      "name": "Nguyễn Hữu Nam",
+      "image": "http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/people-01.jpg",
       "specialist": "Chuyên sâu cấy ghép răng Implant, ghép xương, chỉnh hình răng thẩm mỹ",
-      "position" : [
+      "position": [
         "Giám đốc bệnh viện Thẩm mỹ Hàn Quốc 2016- 2018 chuyên sâu thẩm mỹ toàn diện cơ thể ngực, bụng, khuôn mặt.",
         "Tốt nghiệp khoa chỉnh hình tại Úc năm 2004.",
         "Tốt nghiệp Chuyên khoa Phẫu thuật hàm mặt 1999-2010 tại Viện Răng Hàm Mặt Trung Ương TP.HCM.",
@@ -131,11 +131,11 @@
     },
     {
       "id": 2,
-      "role" : 2 ,
-      "name" : "Huỳnh Hà Thúy Hằng",
+      "role": 2,
+      "name": "Huỳnh Hà Thúy Hằng",
       "image": "",
       "specialist": "Chuyên sâu lĩnh vực niềng răng, nắn chỉnh răng",
-      "position" : [
+      "position": [
         "Bs tốt ngiệp ĐH Y Dược TP HCM năm 2002- 2008",
         "Kinh nghiệm đến năm 2022: 14 năm",
         "Hoàn thành khóa chỉnh hình răng mặt 6 tháng tại Bệnh viện RHM Tp.HCM",
@@ -145,11 +145,11 @@
     },
     {
       "id": 3,
-      "role" : 1 ,
-      "name" : "Trần Chí Oai",
+      "role": 1,
+      "name": "Trần Chí Oai",
       "image": "http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/people-03.jpg",
       "specialist": "Chuyên gia chỉnh hình hàm mặt.",
-      "position" : [
+      "position": [
         "Tốt nghiệp Khoa Răng Hàm Mặt - Đại học Y Dược TP.HCM.",
         "Kinh nghiệm đến năm 2022: 14 năm",
         "Tham gia đào tạo cho các bác sĩ chỉnh nha",
@@ -159,11 +159,11 @@
     },
     {
       "id": 4,
-      "role" : 1 ,
-      "name" : "Lê Thị Thuỳ Dung",
+      "role": 1,
+      "name": "Lê Thị Thuỳ Dung",
       "image": "http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/people-04.jpg",
       "specialist": "Chuyên gia chỉnh hình răng mặt.",
-      "position" : [
+      "position": [
         "Tốt nghiệp Bác sĩ Răng-Hàm-Mặt trường Đại học Y Dược TP.HCM khoá 2004-2010",
         "Thạc sĩ chuyên ngành Răng-Hàm-Mặt tại trường Đại học Y Dược TP. HCM khoá 2011-2013",
         "Chứng chỉ Chỉnh Hình Răng Mặt ",
@@ -173,11 +173,11 @@
     },
     {
       "id": 5,
-      "role" : 1 ,
-      "name" : "Phùng Thi Trang",
+      "role": 1,
+      "name": "Phùng Thi Trang",
       "image": "http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/people-02.jpg",
       "specialist": "Chuyên khoa Implant - Phẫu thuật miệng",
-      "position" : [
+      "position": [
         "Tốt nghiệp Bác sĩ Răng-Hàm-Mặt trường Đại học Y Dược TP.HCM khoá 2010-2016",
         "Loại tốt nghiệp: Khá , ĐH Chính quy",
         "Chứng chỉ Implant cơ bản - Đại học Y Dược TP.HCM năm 2020",
@@ -187,11 +187,11 @@
     },
     {
       "id": 6,
-      "role" : 2 ,
-      "name" : "Tạ Công An Khang",
+      "role": 2,
+      "name": "Tạ Công An Khang",
       "image": "https://nhakhoakim.com/wp-content/uploads/2022/07/khangbsnhakhoakim.jpg",
       "specialist": "Chuyên khoa làm răng Sứ",
-      "position" : [
+      "position": [
         "Tốt nghiệp Bác sĩ Răng-Hàm-Mặt trường Đại học Y Dược TP.HCM khoá 2011-2017",
         "Thạc sĩ chuyên ngành Răng-Hàm-Mặt tại trường Đại học Y Dược TP. HCM khoá 2019-2021",
         "Chứng chỉ “Sư phạm Y học cơ bản” - Đại học Y Hà Nội năm 2021",
@@ -200,123 +200,146 @@
       ]
     }
   ],
-  "feedbacks" : [
+  "feedbacks": [
     {
       "id": 1,
-      "name_account" : "Phương Trinh",
-      "image_account" : "https://nhakhoakim.com/wp-content/uploads/2021/05/Kh%C3%A1ch-h%C3%A0ng-Ph%C6%B0%C6%A1ng-Trinh.jpg",
-      "role_account" : "Khách hàng",
-      "content" : "Chắc chắn em sẽ giới thiệu bạn bè tới đây vì tại Nha Khoa Đức Nghĩa em được quan tâm rất tận tình, điều này em ưng nhất. "
+      "name_account": "Phương Trinh",
+      "image_account": "https://nhakhoakim.com/wp-content/uploads/2021/05/Kh%C3%A1ch-h%C3%A0ng-Ph%C6%B0%C6%A1ng-Trinh.jpg",
+      "role_account": "Khách hàng",
+      "content": "Chắc chắn em sẽ giới thiệu bạn bè tới đây vì tại Nha Khoa Đức Nghĩa em được quan tâm rất tận tình, điều này em ưng nhất. "
     },
     {
       "id": 2,
-      "name_account" : "Thanh Mai",
-      "image_account" : "https://nhakhoakim.com/wp-content/uploads/2021/05/Kh%C3%A1ch-h%C3%A0ng-Thanh-Mai-1.jpg",
-      "role_account" : "Khách hàng",
-      "content" : "Là một người khó tính, sau khi sử dụng dịch vụ, tôi đánh giá Nha Khoa Đức Nghĩa là số 1."
+      "name_account": "Thanh Mai",
+      "image_account": "https://nhakhoakim.com/wp-content/uploads/2021/05/Kh%C3%A1ch-h%C3%A0ng-Thanh-Mai-1.jpg",
+      "role_account": "Khách hàng",
+      "content": "Là một người khó tính, sau khi sử dụng dịch vụ, tôi đánh giá Nha Khoa Đức Nghĩa là số 1."
     },
     {
       "id": 3,
-      "name_account" : "Thanh Hoàng",
-      "image_account" : "https://nhakhoakim.com/wp-content/uploads/2021/05/Kh%C3%A1ch-h%C3%A0ng-Thanh-Ho%C3%A0ng.jpg",
-      "role_account" : "Khách hàng",
-      "content" : "Trong thời gian niềng răng ở Nha Khoa Đức Nghĩa, em thấy các chị lễ tân rất vui vẻ, niềm nở; anh chị phụ tá thì nhiệt tình giúp đỡ, hướng dẫn em cách đeo niềng, chăm sóc răng miệng; bác sĩ điều trị rất chuyên nghiệp "
+      "name_account": "Thanh Hoàng",
+      "image_account": "https://nhakhoakim.com/wp-content/uploads/2021/05/Kh%C3%A1ch-h%C3%A0ng-Thanh-Ho%C3%A0ng.jpg",
+      "role_account": "Khách hàng",
+      "content": "Trong thời gian niềng răng ở Nha Khoa Đức Nghĩa, em thấy các chị lễ tân rất vui vẻ, niềm nở; anh chị phụ tá thì nhiệt tình giúp đỡ, hướng dẫn em cách đeo niềng, chăm sóc răng miệng; bác sĩ điều trị rất chuyên nghiệp "
     },
     {
       "id": 4,
-      "name_account" : "Cao Diệp",
-      "image_account" : "https://nhakhoakim.com/wp-content/uploads/2021/05/Khách-hàng-Cao-Diệp.jpg",
-      "role_account" : "Khách hàng",
-      "content" : "Em ấn tượng nhất tại Nha Khoa Đức Nghĩa là đội ngũ bác sĩ trẻ, giỏi, tận tình, tận tâm và rất nhẹ nhàng."
+      "name_account": "Cao Diệp",
+      "image_account": "https://nhakhoakim.com/wp-content/uploads/2021/05/Khách-hàng-Cao-Diệp.jpg",
+      "role_account": "Khách hàng",
+      "content": "Em ấn tượng nhất tại Nha Khoa Đức Nghĩa là đội ngũ bác sĩ trẻ, giỏi, tận tình, tận tâm và rất nhẹ nhàng."
     },
     {
       "id": 5,
-      "name_account" : "Phú Dưỡng",
-      "image_account" : "https://nhakhoakim.com/wp-content/uploads/2021/05/Khách-hàng-Phú-Dưỡng.jpg",
-      "role_account" : "Khách hàng",
-      "content" : "Đến Nha Khoa Đức Nghĩa, mình được tư vấn rất kỹ lưỡng, chi tiết. Bác sĩ luôn tạo tâm lý thoải mái cho mình trong quá trình điều trị và hướng dẫn cách bảo vệ, chăm sóc răng miệng rất tận tình."
+      "name_account": "Phú Dưỡng",
+      "image_account": "https://nhakhoakim.com/wp-content/uploads/2021/05/Khách-hàng-Phú-Dưỡng.jpg",
+      "role_account": "Khách hàng",
+      "content": "Đến Nha Khoa Đức Nghĩa, mình được tư vấn rất kỹ lưỡng, chi tiết. Bác sĩ luôn tạo tâm lý thoải mái cho mình trong quá trình điều trị và hướng dẫn cách bảo vệ, chăm sóc răng miệng rất tận tình."
     },
     {
       "id": 6,
-      "name_account" : "Tuấn Anh",
-      "image_account" : "https://nhakhoakim.com/wp-content/uploads/2019/05/2.jpg",
-      "role_account" : "Khách hàng",
-      "content" : "Bác sĩ làm rất êm tay, tận tình và hoàn toàn không đau hay ê buốt. Nha Khoa Kim làm việc suốt tuần, cực kỳ thuận lợi cho Tuấn Anh đến thăm khám bất cứ lúc nào."
+      "name_account": "Tuấn Anh",
+      "image_account": "https://nhakhoakim.com/wp-content/uploads/2019/05/2.jpg",
+      "role_account": "Khách hàng",
+      "content": "Bác sĩ làm rất êm tay, tận tình và hoàn toàn không đau hay ê buốt. Nha Khoa Kim làm việc suốt tuần, cực kỳ thuận lợi cho Tuấn Anh đến thăm khám bất cứ lúc nào."
     },
     {
       "id": 7,
-      "name_account" : "Bảo Quốc",
-      "image_account" : "https://nhakhoakim.com/wp-content/uploads/2021/05/Khách-hàng-Bảo-Quốc.jpg",
-      "role_account" : "Khách hàng",
-      "content" : "Anh cảm nhận nhân viên ở đây rất là nhiệt tình, bác sĩ tư vấn cho khách hàng rất chu đáo, kỹ càng về mọi thứ."
+      "name_account": "Bảo Quốc",
+      "image_account": "https://nhakhoakim.com/wp-content/uploads/2021/05/Khách-hàng-Bảo-Quốc.jpg",
+      "role_account": "Khách hàng",
+      "content": "Anh cảm nhận nhân viên ở đây rất là nhiệt tình, bác sĩ tư vấn cho khách hàng rất chu đáo, kỹ càng về mọi thứ."
     }
   ],
   "bannerHome": [
     {
-      "id" : 1,
+      "id": 1,
       "title": "Chăm sóc nụ cười của bạn",
       "subTitle": "Cam kết xuất sắc",
       "bgImg": "http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/02/hero-2.jpg",
-      "item" : [
+      "item": [
         {
-          "id" : 1,
-          "icon" : "https://res.cloudinary.com/dbpw1enlu/image/upload/v1664333706/dental-insurance_z051w3.png",
-          "title" : "Làm trắng",
-          "subTitle" : "Lặp lại hoàn toàn các lĩnh vực chủ đề chiến lược cộng hóa trị thông qua thị trường điện tử chính xác."
+          "id": 1,
+          "icon": "https://res.cloudinary.com/dbpw1enlu/image/upload/v1664333706/dental-insurance_z051w3.png",
+          "title": "Làm trắng",
+          "subTitle": "Lặp lại hoàn toàn các lĩnh vực chủ đề chiến lược cộng hóa trị thông qua thị trường điện tử chính xác."
         },
         {
-          "id" : 2,
-          "icon" : "https://res.cloudinary.com/dbpw1enlu/image/upload/v1664333732/dentist-chair_oavr3q.png",
-          "title" : "Chân giả",
-          "subTitle" : "Thúc đẩy toàn diện các phương pháp luận ưu việt mà không có các phương pháp hay nhất theo định hướng thị trường."
+          "id": 2,
+          "icon": "https://res.cloudinary.com/dbpw1enlu/image/upload/v1664333732/dentist-chair_oavr3q.png",
+          "title": "Chân giả",
+          "subTitle": "Thúc đẩy toàn diện các phương pháp luận ưu việt mà không có các phương pháp hay nhất theo định hướng thị trường."
         }
       ],
-      "titleBtn" : "Giải pháp nha khoa",
-      "linkPost" : "/news"
+      "titleBtn": "Giải pháp nha khoa",
+      "linkPost": "/news"
     },
     {
-      "id" : 2,
+      "id": 2,
       "title": "Chăm sóc suốt đời",
       "subTitle": "Hãy để chúng tôi làm rạng rỡ nụ cười của bạn",
       "bgImg": "http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/hero-1.jpg",
-      "item" : [
+      "item": [
         {
-          "id" : 1,
-          "icon" : "https://res.cloudinary.com/dbpw1enlu/image/upload/v1664334172/dental-insurance_3_ki8cyf.png",
-          "title" : "Cấy ghép",
-          "subTitle" : "Lặp lại hoàn toàn các lĩnh vực chủ đề chiến lược cộng hóa trị thông qua thị trường điện tử chính xác."
+          "id": 1,
+          "icon": "https://res.cloudinary.com/dbpw1enlu/image/upload/v1664334172/dental-insurance_3_ki8cyf.png",
+          "title": "Cấy ghép",
+          "subTitle": "Lặp lại hoàn toàn các lĩnh vực chủ đề chiến lược cộng hóa trị thông qua thị trường điện tử chính xác."
         },
         {
-          "id" : 2,
-          "icon" : "https://res.cloudinary.com/dbpw1enlu/image/upload/v1664334179/dental-insurance_2_ufc6gc.png",
-          "title" : "Căn chỉnh",
-          "subTitle" : "Thúc đẩy toàn diện các phương pháp luận ưu việt mà không có các phương pháp hay nhất theo định hướng thị trường."
+          "id": 2,
+          "icon": "https://res.cloudinary.com/dbpw1enlu/image/upload/v1664334179/dental-insurance_2_ufc6gc.png",
+          "title": "Căn chỉnh",
+          "subTitle": "Thúc đẩy toàn diện các phương pháp luận ưu việt mà không có các phương pháp hay nhất theo định hướng thị trường."
         }
       ],
-      "titleBtn" : "Quy trình của chúng tôi",
-      "linkPost" : "/news"
+      "titleBtn": "Quy trình của chúng tôi",
+      "linkPost": "/news"
     },
     {
-      "id" : 3,
+      "id": 3,
       "title": "Cam kết xuất sắc",
       "subTitle": "Cá nhân hóa & thoải mái",
       "bgImg": "http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/02/hero-3.jpg",
-      "item" : [
+      "item": [
         {
-          "id" : 1,
-          "icon" : "https://res.cloudinary.com/dbpw1enlu/image/upload/v1664334172/dental-insurance_3_ki8cyf.png",
-          "title" : "Bảo vệ an toàn",
-          "subTitle" : "Lặp lại hoàn toàn các lĩnh vực chủ đề chiến lược cộng hóa trị thông qua thị trường điện tử chính xác."
+          "id": 1,
+          "icon": "https://res.cloudinary.com/dbpw1enlu/image/upload/v1664334172/dental-insurance_3_ki8cyf.png",
+          "title": "Bảo vệ an toàn",
+          "subTitle": "Lặp lại hoàn toàn các lĩnh vực chủ đề chiến lược cộng hóa trị thông qua thị trường điện tử chính xác."
         },
         {
-          "id" : 2,
-          "icon" : "https://res.cloudinary.com/dbpw1enlu/image/upload/v1664334179/dental-insurance_2_ufc6gc.png",
-          "title" : "Dịch vụ hoàn chỉnh",
-          "subTitle" : "Thúc đẩy toàn diện các phương pháp luận ưu việt mà không có các phương pháp hay nhất theo định hướng thị trường."
+          "id": 2,
+          "icon": "https://res.cloudinary.com/dbpw1enlu/image/upload/v1664334179/dental-insurance_2_ufc6gc.png",
+          "title": "Dịch vụ hoàn chỉnh",
+          "subTitle": "Thúc đẩy toàn diện các phương pháp luận ưu việt mà không có các phương pháp hay nhất theo định hướng thị trường."
         }
       ],
-      "titleBtn" : "Dịch vụ của chúng tôi",
-      "linkPost" : "/news"
+      "titleBtn": "Dịch vụ của chúng tôi",
+      "linkPost": "/news"
+    }
+  ],
+  "advisories": [
+    {
+      "id": 1,
+      "advisory_name": "Nguyễn Anh Tuấn",
+      "advisory_phone": "0398861434",
+      "advisory_content": "ăn đồ lạnh bị nhức răng"
+    },
+    {
+      "advisory_name": "Nguyễn Anh Tuấn",
+      "advisory_phone": "0398861434",
+      "id": 2
+    },
+    {
+      "advisory_name": "Nguyễn Anh Tuấn",
+      "advisory_phone": "0398861434",
+      "id": 3
+    },
+    {
+      "advisory_name": "Nguyễn Anh Tuấn",
+      "advisory_phone": "62162626262",
+      "id": 4
     }
   ]
 }

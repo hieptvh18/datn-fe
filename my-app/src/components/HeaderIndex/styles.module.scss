@@ -1,7 +1,6 @@
 .wrapper-header {
     display: flex;
     flex-direction: column;
-    width: 1260px;
     margin: 0 auto;
     padding: 0 2rem;
 }
@@ -55,3 +54,31 @@
 .popup{
     background-color: transparent;
 }
+.w-default {
+    width: 100%;
+}
+
+// responsive 1025px (từ size này trở lên là danh cho desktop thông thường).
+@media (min-width: 1025px) {
+    .w-default {
+        max-width: var(--default-layout-width);
+    }
+}
+// max-width: 1024px (máy tính bảng loại to, hiển thị chiều ngang)
+@media (max-width: 1024px) {}
+
+/*---------------- CSS for only tablet -------------------*/
+@media (min-width: 768px) and (max-width: 1024px) {}
+
+/*---------------- Custom CSS for only mobile -------------------*/
+@media (max-width: 767px){
+    .wrapper-timeline{
+        display: none;
+    }
+    .wrapper-header1{
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px){}

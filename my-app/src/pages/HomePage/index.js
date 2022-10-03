@@ -87,11 +87,11 @@ const HomePage = () => {
             )}
           </Slider>
         </div>
-        <div className="w-default absolute -cs-bottom-25 left-50 -translate-x-50 z-1 flex align-items-center justify-content-center">
-          <div className="flex px-5">
-            <div className="bg-primary2 text-center p-5 z-2 mx-0 my-8 w-6">
+        <div className="w-default absolute -mt-8 md:-mt-0 md:-cs-bottom-25 left-50 -translate-x-50 z-1 flex align-items-center justify-content-center">
+          <div className="flex px-0 md:px-5 flex-column lg:flex-row md:flex-row">
+            <div className="bg-primary2 text-center p-5 z-2 md:my-8 lg:w-6 md:w-6 sm:w-full">
               <hr className="hr my-7 w-4 m-auto"></hr>
-              <p className="text-white font-normal line-height-3 text-5xl">
+              <p className="text-white font-normal line-height-3 sm:text-3xl lg:text-5xl">
                 Triết lý của ĐỨC NGHĨA sẽ giúp bạn khỏe mạnh, hạnh phúc vì chúng
                 tôi hiểu vai trò quan trọng trong sức khỏe răng miệng của bạn.
               </p>
@@ -101,10 +101,10 @@ const HomePage = () => {
                 src="https://res.cloudinary.com/dbpw1enlu/image/upload/v1663399845/signature_tqtnbs.png"
               />
             </div>
-            <div className="cs-w-booking bg-white w-8 z-1 flex justify-content-end">
+            <div className="cs-w-booking cs-box-dow bg-white z-1 flex justify-content-center md:justify-content-end w-full md:w-8 lg:w-8">
               <div
                 style={{ width: "calc(100% - 100%/7)" }}
-                className="py-7 px-7"
+                className="py-7 px-0 md:px-7"
               >
                 <BookingBanner />
               </div>
@@ -119,7 +119,7 @@ const HomePage = () => {
         }}
         className="h-800px relative bg-img"
       >
-        <div className="absolute -cs-bottom-70px left-50 -translate-x-50 z-1">
+        <div className="absolute -cs-bottom-70px left-50 -translate-x-50 z-1 w-full">
           <List4Top />
         </div>
       </div>

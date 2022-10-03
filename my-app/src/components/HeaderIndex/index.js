@@ -50,8 +50,57 @@ const HeaderIndex = () => {
       command: (event) => {
         navigate('/infoaccount')
       }
+    },
+    {
+      label: "Dịch vụ",
+      items: [
+        {
+          label: "Nhổ răng",
+          items:[
+            {
+              label: "Nhổ răng khôn"
+            },
+            {
+              label: "Nhổ răng sữa"
+            },
+            {
+              label: "Nhổ răng số 8"
+            }
+          ]
+        },
+        {
+          label: "Niềng răng",
+          items:[
+            {
+              label: "Niềng răng trong suốt"
+            }
+          ]
+        },
+        {
+          label: "Nhổ răng"
+        },
+        {
+          label: "Nhổ răng"
+        }
+      ]
     }
   ];
+
+  const start = isUser == null ? <Popup trigger={<Button label="Đăng nhập" className="p-button-link text-2xl" />} modal
+  nested>
+  {close => (
+    <div className="modal" >
+      <button className={cx("close")} onClick={close}>
+        <i className="pi pi-times" style={{ 'fontSize': '20px', }}></i>
+      </button>
+      <LoginAccount />
+      <br />
+    </div>
+  )}
+</Popup> : <div className="flex align-items-center">
+  <SplitButton label={isUser.username} model={infoAccount} className="p-button-text"></SplitButton>
+  <Button label="Đăng xuất" onClick={() => dispatch(Logout())} className="p-button-link text-2xl" />
+</div>
   
   return (
     <div className={cx("wrapper-header", 'w-default')}>
@@ -82,23 +131,8 @@ const HeaderIndex = () => {
           </div>
         </div>
       </div>
-      <div className='flex justify-content-between align-items-center'>
-        <Menubar className="wrapper-menu" model={items} />
-        {isUser == null ? <Popup trigger={<Button label="Đăng nhập" className="p-button-link text-2xl" />} modal
-          nested>
-          {close => (
-            <div className="modal" >
-              <button className={cx("close")} onClick={close}>
-                <i className="pi pi-times" style={{ 'fontSize': '20px', }}></i>
-              </button>
-              <LoginAccount />
-              <br />
-            </div>
-          )}
-        </Popup> : <div className="flex align-items-center">
-          <SplitButton label={isUser.username} model={infoAccount} className="p-button-text"></SplitButton>
-          <Button label="Đăng xuất" onClick={() => dispatch(Logout())} className="p-button-link text-2xl" />
-        </div>}
+      <div className=''>
+        <Menubar className="wrapper-menu" model={items} end={start}/>
 
       </div>
     </div>

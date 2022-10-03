@@ -4,7 +4,7 @@
 }
 .content-banner-home{
     padding: 0px 20px;
-    width: 650px;
+    width: 750px;
 }
 .c-primary{
     color: var(--primary);
@@ -27,4 +27,47 @@
     padding: 20px 30px;
     color: #fff;
     cursor: pointer;
+}
+
+// max-width: 1024px (máy tính bảng loại to, hiển thị chiều ngang)
+@media (max-width: 1024px) {
+    .content-banner-home{
+        width: 100%;
+    }
+}
+
+/*---------------- CSS for only tablet -------------------*/
+@media (min-width: 768px) and (max-width: 1024px) {
+    .content-banner-home .text-7xl.font-normal.c-primary{
+        font-size: 27px !important;
+    }
+    .content-banner-home .cs-text-banne-home{
+        font-size: 50px !important;
+    }
+    .content-banner-home .text-img-icon-banner-home{
+        font-size: 17px !important;
+    }
+}
+
+/*---------------- Custom CSS for only mobile -------------------*/
+@media (max-width: 767px){
+    .content-banner-home .text-7xl.font-normal.c-primary{
+        font-size: 20px !important;
+    }
+    .content-banner-home .cs-text-banne-home{
+        font-size: 40px !important;
+    }
+    .content-banner-home .text-img-icon-banner-home{
+        font-size: 15px !important;
+    }
+    .content-banner-home .res-flex-row{
+        flex-direction: column;
+        row-gap: 20px;
+    }
+}
+
+@media (max-width: 480px){
+    .content-banner-home .text-img-icon-banner-home{
+        font-size: 13px !important;
+    }
 }

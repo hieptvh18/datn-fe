@@ -10,7 +10,7 @@ const cx = classNames.bind(styles)
 const WebsiteLayout = () => {
 
   return (
-    <div className={cx('wrapper-layout')}>
+    <div>
       <header>
         <HeaderIndex />
       </header>

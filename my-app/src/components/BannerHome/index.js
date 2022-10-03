@@ -16,7 +16,7 @@ const BannerHome = (props) => {
           <h1 className="cs-text-banne-home line-height-1">
           {props.subTitle}
           </h1>
-          <div className="flex mt-8">
+          <div className="flex mt-8 res-flex-row">
             {props.item.map(item =>
               <div className="flex column-gap-5">
                 <div className="img-icon-banner-home">

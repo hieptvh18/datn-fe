@@ -57,13 +57,14 @@ const BookingBanner = () => {
         </div>
       </Dialog>
       <div className="wrapper-booking-banner">
-        <h2 className="c-primary1 font-normal text-6xl ">
+        <h2 className="c-primary1 font-normal text-3xl md:text-4xl lg:text-6xl ">
           ĐĂNG KÝ TƯ VẤN MIỄN PHÍ
         </h2>
         <div className="border-top-1 border-300 mt-4">
-          <div className="mt-6 flex align-item-center column-gap-4">
-            <div className="text-center">
+          <div className="mt-6 flex flex-column md:flex-row align-item-center column-gap-4">
+            <div className="text-center lg:block md:hidden">
               <img
+                className=""
                 src="https://res.cloudinary.com/dbpw1enlu/image/upload/v1663406464/img-booking_tdyggn.png"
                 width={200}
               />

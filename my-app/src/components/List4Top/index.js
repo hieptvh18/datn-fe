@@ -9,7 +9,7 @@ const List4Top = () => {
         dispatch(listService())
     }, []);
     return (
-        <div className='w-default px-5'>
+        <div className='w-default px-5 mx-auto'>
             <div className='flex justify-content-between align-content-center'>
                 <div>
                     <h3 className='c-primary text-6xl font-medium'>Trải nghiệm</h3>

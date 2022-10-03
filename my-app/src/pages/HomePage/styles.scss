@@ -112,3 +112,29 @@
 .cs-box-dow{
     box-shadow: #1e1e1e 0px 39px 45px -50px;
 }
+
+
+// max-width: 1024px (máy tính bảng loại to, hiển thị chiều ngang)
+@media (max-width: 1024px) {
+
+}
+
+/*---------------- CSS for only tablet -------------------*/
+@media (min-width: 768px) and (max-width: 1024px) {}
+
+/*---------------- Custom CSS for only mobile -------------------*/
+@media (max-width: 767px){
+    .wrapper-timeline{
+        display: none;
+    }
+    .wrapper-header1{
+        justify-content: center;
+        align-items: center;
+    }
+    .cs-w-booking{
+        margin-left: 0px;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px){}

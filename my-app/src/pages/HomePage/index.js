@@ -117,9 +117,9 @@ const HomePage = () => {
           background:
             "url(https://res.cloudinary.com/dbpw1enlu/image/upload/v1663491749/background_dpo5ge.jpg)",
         }}
-        className="h-800px relative bg-img"
+        className="res-mobile h-800px md:relative bg-img"
       >
-        <div className="absolute -cs-bottom-70px left-50 -translate-x-50 z-1 w-full">
+        <div className="md:absolute -cs-bottom-70px z-1 w-full">
           <List4Top />
         </div>
       </div>

@@ -105,7 +105,10 @@
 }
 
 .h-800px {
-    height: 900px;
+    height: 900px !important;
+}
+.cs-mt-990px{
+    margin-top: 990px;
 }
 
 
@@ -135,6 +138,13 @@
         margin-left: 0px;
         max-width: 100%;
     }
+
 }
 
-@media (max-width: 480px){}
+@media (max-width: 765px){
+    .res-mobile.h-800px{
+        height: 100% !important;
+        padding-top: 990px;
+        padding-bottom: 50px;
+    }
+}

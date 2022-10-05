@@ -18,28 +18,36 @@ const FeedBack = () => {
         autoplay: true,
         autoplaySpeed: 3000,
         arrows: false,
+        initialSlide: 0,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings:{
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    infinite: true
+                }
+            },
+            {
+                breakpoint: 765,
+                settings:{
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: false
+                }
+            }
+        ],
         appendDots: dots => <ul>{dots}</ul>,
         customPaging: i => (
             <div className="ft-slick__dots--custom"></div>
         ),
-        responsive: [
-            {
-                breakpoint: 1024,
-                slidesToShow: 2,
-                slidesToScroll: 2
-            },
-            {
-                breakpoint: 765,
-                slidesToShow: 1,
-                slidesToScroll: 1
-            }
-        ]
     };
     return (
         <div className='w-full bg-img' style={{ background: "url(https://res.cloudinary.com/dbpw1enlu/image/upload/v1663491749/background_dpo5ge.jpg)" }}>
             <div className='w-default mx-auto'>
                 <div className='px-5 mt-8 pb-8 fb-slick'>
-                    <h2 className='text-7xl font-normal c-primary1 py-8 text-center'>Khách hàng nói gì về ĐỨC NGHĨA </h2>
+                    <h2 className='text-6xl md:text-7xl font-normal c-primary1 py-8 text-center'>Khách hàng nói gì về ĐỨC NGHĨA </h2>
                     <Slider {...settings}>
                         {feedback?.map((item) => {
                             return <ItemFeedBack {...item} />

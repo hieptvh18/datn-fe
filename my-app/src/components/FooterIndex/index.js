@@ -8,7 +8,9 @@ import './styles.scss'
 const FooterIndex = () => {
     return (
         <>
-            <div className=''>
+            <div className='bg-img pt-8'
+                style={{background: "url(https://res.cloudinary.com/dbpw1enlu/image/upload/v1663491749/background_dpo5ge.jpg)"}}
+            >
                 <div className='w-default px-5 mx-auto'>
                     <div className="grid   ">
                         <div className="col-12  md:col-6 lg:col">

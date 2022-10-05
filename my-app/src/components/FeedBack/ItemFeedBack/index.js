@@ -7,7 +7,7 @@ const ItemFeedBack = (props) => {
         <div>
             <div className='cs-block-feefBack'>
                 <img width='30px' src={iconQuote} />
-                <p className='mt-5 pb-5 text-2xl'>{props.content}</p>
+                <p className='mt-5 z-4 pb-5 text-2xl'>{props.content}</p>
             </div>
             <div className='flex align-items-center column-gap-4'>
                 <div className='cs-avatar-feedback'>

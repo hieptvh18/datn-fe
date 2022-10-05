@@ -148,8 +148,10 @@
 }
 
 @media (max-width: 765px){
-    .res-mobile.h-800px{
+    .h-800px{
         height: 100% !important;
+    }
+    .res-mobile.h-800px{
         padding-top: 990px;
         padding-bottom: 50px;
     }

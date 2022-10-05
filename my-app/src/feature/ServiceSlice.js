@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { getService, getServiceById } from "../api/service";
+import { getListTop4, getService, getServiceById } from "../api/service";
 
 export const listService = createAsyncThunk(
     'service/listService',
@@ -15,6 +15,13 @@ export const listServiceOne = createAsyncThunk(
         return data
     }
 )
+export const listTop4 = createAsyncThunk(
+    'service/listTop4',
+    async () => {
+        const { data } = await getListTop4()
+        return data
+    }
+)
 
 const ServiceSlice = createSlice({
     name: 'service',
@@ -26,6 +33,9 @@ const ServiceSlice = createSlice({
             state.value = action.payload
         })
         builder.addCase(listServiceOne.fulfilled, (state, action) => {
+            state.value = action.payload
+        })
+        builder.addCase(listTop4.fulfilled, (state, action) => {
             state.value = action.payload
         })
     }

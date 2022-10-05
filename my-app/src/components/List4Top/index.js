@@ -1,16 +1,16 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import './styles.scss'
-import { listService } from '../../feature/ServiceSlice';
+import { listService, listTop4 } from '../../feature/ServiceSlice';
 
 const List4Top = () => {
     const service = useSelector(service => service.service.value);
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(listService())
+        dispatch(listTop4())
     }, []);
     return (
-        <div className='w-default px-5 mx-auto'> 
+        <div className='w-default px-5 mx-auto'>
             <div className='flex justify-content-between align-content-center'>
                 <div>
                     <h3 className='c-primary md:text-6xl font-medium'>Trải nghiệm</h3>

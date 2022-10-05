@@ -21,7 +21,19 @@ const FeedBack = () => {
         appendDots: dots => <ul>{dots}</ul>,
         customPaging: i => (
             <div className="ft-slick__dots--custom"></div>
-        )
+        ),
+        responsive: [
+            {
+                breakpoint: 1024,
+                slidesToShow: 2,
+                slidesToScroll: 2
+            },
+            {
+                breakpoint: 765,
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        ]
     };
     return (
         <div className='w-full bg-img' style={{ background: "url(https://res.cloudinary.com/dbpw1enlu/image/upload/v1663491749/background_dpo5ge.jpg)" }}>

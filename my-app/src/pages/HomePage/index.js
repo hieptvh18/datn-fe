@@ -176,24 +176,16 @@ const HomePage = () => {
       <div
         style={{
           background:
-            "url(http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/03/background-doctor.jpg)",
-          height: "800px",
+            "url(http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/03/background-doctor.jpg)"
         }}
-        className="bg-img imageBooking overflow-hidden"
+        className="bg-img mt-8 md:mt-0 imageBooking overflow-hidden h-800px"
       >
-        <div className="h-full">
+        <div className="h-full px-5">
           <div className="w-default relative m-auto h-full">
-            <div className="flex justify-content-between align-content-start h-full">
-              <div className="w-full">
-                <div className="mt-8"></div>
-                <div className="w-full h-full">
-                  <div
-                    style={{
-                      background:
-                        "url(http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/doctor.png)",
-                    }}
-                    className="bg-img w-full h-full"
-                  ></div>
+            <div className="flex flex-column-reverse row-gap-8 lg:flex-row flex-column md:justify-content-center lg:justify-content-between md:align-item-center lg:align-content-start h-full">
+              <div className="w-full flex align-items-end md:hidden lg:flex">
+                <div className="">
+                  <img className="w-full h-full grid" src="http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/doctor.png"/>
                 </div>
               </div>
               <div className=" flex align-items-center">

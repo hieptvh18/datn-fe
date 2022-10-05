@@ -52,8 +52,8 @@
 }
 
 .Specialized {
-    margin-top: 200px;
-    margin-left: 150px;
+    top: 170px;
+    left: 120px;
 }
 
 .infoDoctor {
@@ -115,6 +115,12 @@
 .cs-box-dow{
     box-shadow: #1e1e1e 0px 39px 45px -50px;
 }
+.cs-mt-280px{
+    margin-top: 280px;
+}
+.bg-img.w-full.cs-mt-280px.h-900px{
+    height: 900px;
+}
 
 
 // max-width: 1024px (máy tính bảng loại to, hiển thị chiều ngang)
@@ -146,5 +152,15 @@
         height: 100% !important;
         padding-top: 990px;
         padding-bottom: 50px;
+    }
+    .Specialized{
+        left: 0;
+        top: 100px;
+    }
+    .cs-mt-280px{
+        margin-top: 0px;
+    }
+    .bg-img.w-full.cs-mt-280px.h-900px{
+        height: 600px;
     }
 }

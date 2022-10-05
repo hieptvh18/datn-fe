@@ -1,0 +1,33 @@
+.box-img:hover .btn-read-more{
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+}
+.btn-read-more{
+    bottom: 20px;
+    left: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+}
+.btn-read-more i{
+    transition: all 0.3s ease-in;
+}
+.btn-read-more:hover i{
+    transition: all 0.3s ease-in;
+    transform: translateX(5px);
+}
+.btn-read-more:hover{
+    opacity: 0.9;
+}
+@media (min-width: 768px) and (max-width: 1024px){
+    .list-4top-item:last-child{
+        display: none;
+    }
+}
+@media (max-width: 765px){
+    .btn-read-more{
+        visibility: visible;
+        opacity: 1;
+    }
+}

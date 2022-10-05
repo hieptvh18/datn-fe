@@ -121,6 +121,9 @@
 .bg-img.w-full.cs-mt-280px.h-900px{
     height: 900px;
 }
+.mapboxgl-ctrl-bottom-right{
+    display: none !important;
+}
 
 
 // max-width: 1024px (máy tính bảng loại to, hiển thị chiều ngang)

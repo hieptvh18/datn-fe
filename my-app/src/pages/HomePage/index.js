@@ -127,18 +127,16 @@ const HomePage = () => {
       <div
         style={{
           background:
-            "url(http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/background-3.jpg)",
-          height: "900px",
-          marginTop: "280px"
+            "url(http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/background-3.jpg)"
         }}
-        className="bg-img w-full"
+        className="bg-img w-full cs-mt-280px h-900px"
       >
         <div className="relative w-default mx-auto">
-          <div className="w-5 text-center absolute Specialized">
-            <div className="contact font-normal text-6xl">NHA KHOA ĐỨC NGHĨA</div>
-            <div className="denticare font-bold text-8xl">ĐỘI NGŨ CỦA CHÚNG TÔI</div>
+          <div className="lg:w-5 md:w-6 px-8 md:px-0 w-full text-center absolute Specialized">
+            <div className="contact font-normal text-4xl md:text-5xl xl:text-6xl">NHA KHOA ĐỨC NGHĨA</div>
+            <div className="denticare font-bold text-6xl md:text-7xl xl:text-8xl">ĐỘI NGŨ CỦA CHÚNG TÔI</div>
             <hr className="hr my-7 w-4 m-auto" />
-            <div>
+            <div className="text-3xl md:text-3xl">
               Chúng tôi là một đội ngũ nha sĩ, nhân viên vệ sinh và lễ tân làm việc cùng nhau để đảm bảo rằng bạn nhận được sự điều trị tốt nhất mà bạn yêu cầu vào thời điểm phù hợp với bạn.
             </div>
             <hr className="hr my-7 w-4  m-auto" />

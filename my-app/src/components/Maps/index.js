@@ -1,22 +1,31 @@
-import React, { useState } from 'react'
-import ReactMapGL from 'react-map-gl';
+import React, { useEffect, useState } from 'react'
+import { GMap } from 'primereact/gmap';
+import { loadGoogleMaps, removeGoogleMaps } from './GoogleMaps';
+
 
 const Map = () => {
-  const [viewport, setViewport] = useState({
-      width: "100%",
-      height: "100%",
-      latitude: 21.0244246,
-      longitude: 105.7938072,
-      zoom: 16
-  })
+  const [googleMapsReady, setGoogleMapsReady] = useState(false);
+  useEffect(() => {
+    loadGoogleMaps(() => {
+        setGoogleMapsReady(true);
+    });
+
+    return () => {
+        removeGoogleMaps();
+    }
+  },[])
+  const options = {
+    center: {lat: 36.890257, lng: 30.707417},
+    zoom: 12
+  };
+
   return (
-    <ReactMapGL
-      {...viewport}
-      mapStyle="mapbox://styles/mapbox/streets-v11"
-      onViewportChage={(viewport) => setViewport(viewport)}
-      mapboxAccessToken="pk.eyJ1IjoibmdoaWEtbWFzdGVyZGV2IiwiYSI6ImNsOGIzc3psajAxajkzdnNzZGx2aXExNXkifQ.Ipy2nlFOel5-F-EY0L-DEA"
-    />
-  );
+    googleMapsReady && (
+      <div className="card">
+          <GMap options={options} style={{width: '100%', minHeight: '320px'}} />
+      </div>
+    )
+  )
 }
 
-export default Map;
+export default Map

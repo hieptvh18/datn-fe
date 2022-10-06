@@ -4,12 +4,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
 
-import image12 from "../../assets/image/image12.png";
-import image13 from "../../assets/image/image13.png";
-import image14 from "../../assets/image/image14.png";
-import image15 from "../../assets/image/image15.png";
-import image11 from "../../assets/image/image 11.png";
-
 import { InputText } from "primereact/inputtext";
 import { Dropdown } from "primereact/dropdown";
 import { Button } from "primereact/button";
@@ -23,7 +17,6 @@ import { addAccount } from "../../feature/AccountSlice";
 import classNames from "classnames";
 import { InputTextarea } from "primereact/inputtextarea";
 // import moment from "moment/moment";
-import Maps from "../../components/Maps";
 import Map from "../../components/Maps";
 import { Dialog } from "primereact/dialog";
 import FeedBack from "../../components/FeedBack";

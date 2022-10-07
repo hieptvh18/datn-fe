@@ -526,5 +526,50 @@
         }
       ]
     }
-  ]
+  ],
+  "equipment": [
+    {
+      "id": 1,
+      "name": "Máy chụp X-quang răng Conebeam",
+      "title": "Máy chụp X-quang răng 3D chụp phim toàn cảnh cho hình ảnh không gian 3 chiều giúp bác sĩ quan sát được các cấu trúc răng và xương hàm. \n Ảnh X-quang chụp bằng hệ thống Conebeam thấy rõ được sự tương quan giữa răng và các cấu trúc quanh răng như dây thần kinh, xoang hàm.Đây là thiết bị nha khoa hiện đại ứng dụng trong hầu hết các dịch vụ tại Nha khoa Trẻ. Bác sĩ sẽ kiểm tra sang thương sâu bên trong răng ở tình trạng sâu răng viêm tủy, hỗ trợ xác định vị trí mức độ phức tạp của răng khôn, xác định cấu trúc răng và xương hàm để lên kế hoạch niềng răng, hỗ trợ cấy ghép Implant.",
+      "image" :"https://thietbinhakhoadanang.com/wp-content/uploads/2020/07/Pax-i-3D.png",
+      "caption": "Máy X-quang Conebeam hỗ trợ chẩn đoán và điều trị hầu hết các bệnh răng miệng"
+  },
+  {
+    "id": 2,
+    "name": "Máy scan răng Irero",
+    "title": "Một trong những thiết bị nha khoa hiện đại mà không phải nha khoa nào cũng có được sử dụng tại Nha khoa Trẻ là máy Scan răng Itero. Sử dụng Itero trong chỉnh nha sẽ giúp lấy dấu răng nhanh chóng, chính xác, xem trước được kết quả niềng răng thông qua một ứng dụng lên kết với máy là “Clincheck”. \n Việc scan mẫu hàm chính xác sẽ giúp bác sĩ thiết kế khay niềng đạt độ chính xác cao, thiết kế các giải pháp điều trị, dự đoán kết quả điều trị đạt hiệu quả cao.",
+    "image" :"https://nhakhoatre.com/wp-content/uploads/2021/06/cap-nhat-thiet-bi-nha-khoa-hien-dai-2.jpg",
+    "caption": "Scan Itero lấy dấu răng nhanh chóng, chính xác để hỗ trợ chỉnh nha"
+  },
+  {
+  "id": 3,
+  "name": "Máy lấy cao răng siêu âm",
+  "title": "Thiết bị nha khoa cơ bản không thể thiếu tại các nha khoa là máy lấy cao răng. Hiện nay, dòng máy lấy cao răng siêu âm giúp bệnh nhân loại bỏ được nỗi lo đau nhức, ê buốt răng sau điều trị. \n  Thiết bị này loại bỏ được vôi răng hiệu quả nhất, mảng bám và cao răng trên bề mặt răng, kẽ răng và dưới nướu nhờ vào đầu siêu âm cực nhỏ, kết hợp với độ rung và tia phun nước nhỏ để làm sạch mọi ngóc ngách của răng.",
+  "image" :"https://baothinhmedical.vn/wp-content/uploads/2017/04/m%C3%A1y-l%E1%BA%A5y-cao-si%C3%AAu-%C3%A2m-P5-Newtron.jpg",
+  "caption": "Scan Itero lấy dấu răng nhanh chóng, chính xác để hỗ trợ chỉnh nha"
+  },
+  {
+  "id": 4,
+  "name": "Máy tẩy trắng răng Laser Whitening",
+  "title": "Tẩy trắng răng Laser Whitening thực hiện điều trị trong 60 phút là bạn đã sở hữu hàm răng trắng răng mà lại hoàn toàn không tổn hại gì đến men răng cũng như sức khỏe răng miệng. \n Khác với các thiết bị nha khoa tẩy trắng răng trước đó thì đây là phương pháp được khuyên dùng, tẩy trắng răng Laser có bổ sung fluor kết hợp với bước sóng Laser sẽ thâm nhập vào sâu bên trong men răng, từ đó làm trắng răng một cách vượt trội và kết quả duy trì lâu dài.",
+  "image" :"https://nhakhoatre.com/wp-content/uploads/2021/06/cap-nhat-thiet-bi-nha-khoa-hien-dai-3.jpg",
+  "caption": "Tẩy trắng răng Laser hiệu quả trong 1 lần thực hiện, kết quả duy trì lâu dài"
+  },
+  {
+  "id": 5,
+  "name": "Máy cắt răng Bien Air",
+  "title": "Nhổ răng khôn không đau cũng cần đến sự hỗ trợ của máy cắt răng Bien Air. Lưỡi cắt răng được thiết kế một cách thông minh, khác hẳn với lưỡi dao cắt tiểu phẫu thông thường. Nhổ răng bằng máy cắt răng Bien Air không sử dụng nhiều tác động cơ học từ tay của các bác sĩ mà dựa vào lực tác động giúp chia cắt thân răng một cách nhanh chóng, dễ dàng và chính xác. \n Máy Bien Air được thiết kế và kiểm soát bằng hệ thống máy vi tính đi kèm, nhờ đó quá trình gây tê hay lượng thuốc tê sử dụng sẽ được kiểm soát một cách chính xác, chặt chẽ nhất. \n Với thiết bị nha khoa hiện đại sẽ giúp quá trình điều trị của bạn tại nha khoa diễn ra suôn sẻ và thuận lợi. Đồng thời các bác sĩ cần có chuyên môn cao, giàu kinh nghiệm để ứng dụng linh hoạt và hiệu quả các thiết bị nha khoa thì mới giúp khách hàng đạt kết quả tốt nhất. Đảm bảo được đầy đủ các yếu tố này nên Nha khoa Trẻ luôn được khách hàng tin tưởng và yên tâm giao phó nụ cười của mình. \n Nếu bạn cần tư vấn hoặc thăm khám bất kỳ một dịch vụ nào của Nha khoa Trẻ thì bạn có thể liên hệ trực tiếp với chúng tôi để được bác sĩ giàu kinh nghiệm hỗ trợ nhanh chóng.",
+  "image" :"https://nhakhoatre.com/wp-content/uploads/2021/06/cap-nhat-thiet-bi-nha-khoa-hien-dai-4.jpg",
+  "caption": "Nhổ răng khôn không đau cần sự hỗ trợ của máy Piezotome và máy cắt răng Bien Air"
+  },
+  {
+  "id": 6,
+  "name": "Máy nhổ răng siêu âm Piezotome",
+  "title": "Thiết bị nha khoa ứng dụng trong dịch vụ nhổ răng khôn không đau tại Nha khoa Trẻ là máy siêu âm Piezotome. Các trường hợp răng khôn mọc lệch, mọc ngầm hay các trường hợp răng khôn phức tạp hơn nữa thì việc ứng dụng các thiết bị nha khoa hiện đại là rất cần thiết để đảm bảo an toàn, tránh biến chứng không mong muốn và giúp bệnh nhân không đau nhức nhiều khi nhổ răng. \n Máy Piezotome sử dụng chuyển động linh hoạt với tần số chọn lọc từ 28-36 KHz, chỉ tác động lên các mô cứng, hạn chế tối đa việc tác động đến mô mềm. Đồng thời giúp tái tạo tế bào mới một cách tối ưu, giảm bớt những cơn đau sau điều trị, làm lành vết thương tốt hơn.",
+  "image" :"https://nhakhoathuyanh.com/wp-content/uploads/2019/10/may-sieu-am-piezotome.jpg",
+  "caption": "Tẩy trắng răng Laser hiệu quả trong 1 lần thực hiện, kết quả duy trì lâu dài"
+  }
+]
+  
 }

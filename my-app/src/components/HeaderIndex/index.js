@@ -21,7 +21,26 @@ const HeaderIndex = () => {
   useEffect(() =>{
     dispatch(listMenuServices())
   }, [])
-  console.log(menuServices);
+  const menu = menuServices.map(item =>{
+    return (
+      {
+        label: item.label,
+        items: item.items.map(i =>{
+          return (
+            {
+              label: i.label,
+              command: (event) => {
+                navigate(`${i.link}`)
+              }
+            }
+          )
+        })
+      }
+    )
+      
+  })
+  console.log(menu);
+  // console.log(menuServices);
   const infoAccount = [
     {
       label: 'Thông tin',
@@ -33,12 +52,6 @@ const HeaderIndex = () => {
     }
   ]
   const items = [
-    {
-      label: 'Trang chủ',
-      command: (event) => {
-        navigate('/')
-      }
-    },
     {
       label: "Về chúng tôi",
       command: (event) => {
@@ -56,10 +69,6 @@ const HeaderIndex = () => {
       command: (event) => {
         navigate('/infoaccount')
       }
-    },
-    {
-      label: "Dịch vụ",
-      items: menuServices
     }
   ];
 
@@ -109,7 +118,7 @@ const HeaderIndex = () => {
         </div>
       </div>
       <div className=''>
-        <Menubar className="wrapper-menu" model={items} end={start}/>
+        <Menubar className="wrapper-menu" model={[...menu, ...items]}/>
 
       </div>
     </div>

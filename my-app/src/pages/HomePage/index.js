@@ -28,10 +28,10 @@ const HomePage = () => {
   const dispatch = useDispatch();
   const bannerHome = useSelector(data => data.bannerHome.value)
   const menuServices = useSelector(data => data.menuServices.value)
-  useEffect(() =>{
+  useEffect(() => {
     dispatch(listMenuServices)
   }, [])
-  const services = menuServices.map(item =>{
+  const services = menuServices.map(item => {
     return {
       "name": item.label,
       "code": item.label
@@ -60,7 +60,9 @@ const HomePage = () => {
   }, [])
 
   const onSubmit = (data) => {
-    dispatch(addAccount({ ...data }));
+    console.log(data);
+    const service = data.service.name;
+    dispatch(addAccount({ ...data, service: service }));
     setFormData(data);
     setShowMessage(true);
     reset();
@@ -189,7 +191,7 @@ const HomePage = () => {
             <div className="flex flex-column-reverse row-gap-8 lg:flex-row flex-column md:justify-content-center lg:justify-content-between md:align-item-center lg:align-content-start h-full">
               <div className="w-full flex align-items-end md:hidden lg:flex">
                 <div className="">
-                  <img className="w-full h-full grid" src="http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/doctor.png"/>
+                  <img className="w-full h-full grid" src="http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/doctor.png" />
                 </div>
               </div>
               <div className=" flex align-items-center">
@@ -277,15 +279,17 @@ const HomePage = () => {
                       <div className="field col-12 md:col-6">
                         <span className="p-float-label">
                           <Controller
-                            name="content"
+                            name="service"
                             control={control}
                             render={({ field, fieldState }) => (
                               <Dropdown
                                 id={field.name}
+                                value={field.value}
                                 style={{ height: "50px", fontSize: "17px" }}
                                 {...field}
                                 options={services}
                                 optionLabel="name"
+                                onChange={(e) => field.onChange(e.value)}
                                 className={classNames({
                                   "p-invalid": fieldState.invalid,
                                 })}
@@ -293,9 +297,9 @@ const HomePage = () => {
                             )}
                           />
                           <label
-                            htmlFor="content"
+                            htmlFor="service"
                             className={classNames({
-                              "p-error": errors.content,
+                              "p-error": errors.service,
                             })}
                           >
                             Dịch vụ
@@ -372,35 +376,35 @@ const HomePage = () => {
       {/* section info */}
       <div className="w-default mx-auto">
         <div className="w-full px-5 mb-8">
-            <div className="grid row-gap-3">
-              <div className="col-12 md:col-6 lg:col flex flex-column align-items-center justify-content-center">
-                <img src="https://res.cloudinary.com/dbpw1enlu/image/upload/v1664338250/phone_hospital_g3ew1o.png" width="80px"/>
-                <h3 className="text-4xl font-medium mt-3">Điện thoại liên hệ</h3>
-                <p className="text-600 mt-5">0372559460</p>
-                <p className="text-600">Gọi cho chúng tôi bất cứ lúc nào 24/7</p>
-              </div>
-
-              <div className="col-12 md:col-6 lg:col flex flex-column align-items-center justify-content-center">
-                <img src="https://res.cloudinary.com/dbpw1enlu/image/upload/v1664963443/hospital_location_kf4fkx.png" width="80px"/>
-                <h3 className="text-4xl font-medium mt-3">Địa chỉ</h3>
-                <p className="text-600 mt-5">Số 5 Trịnh Văn Bô, Xuân Phương</p>
-                <p className="text-600">Nam Từ Liên, Hà Nội</p>
-              </div>
-
-              <div className="col-12 md:col-6 lg:col flex flex-column align-items-center justify-content-center">
-                <img src="https://res.cloudinary.com/dbpw1enlu/image/upload/v1664333732/dentist-chair_oavr3q.png" width="80px"/>
-                <h3 className="text-4xl font-medium mt-3">Điện thoại đặt lịch</h3>
-                <p className="text-600 mt-5">0372559888</p>
-                <p className="text-600">Chúng tôi luôn sẵn sàng</p>
-              </div>
-
-              <div className="col-12 md:col-6 lg:col flex flex-column align-items-center justify-content-center">
-                <img src="https://res.cloudinary.com/dbpw1enlu/image/upload/v1664963466/mail_hospital_x4c7hu.png" width="80px"/>
-                <h3 className="text-4xl font-medium mt-3">Gửi email cho chúng tôi</h3>
-                <p className="text-600 mt-5">nghiatdph14539@fpt.edu.vn</p>
-                <p className="text-600">tuanna14620@fpt.edu.vn</p>
-              </div>
+          <div className="grid row-gap-3">
+            <div className="col-12 md:col-6 lg:col flex flex-column align-items-center justify-content-center">
+              <img src="https://res.cloudinary.com/dbpw1enlu/image/upload/v1664338250/phone_hospital_g3ew1o.png" width="80px" />
+              <h3 className="text-4xl font-medium mt-3">Điện thoại liên hệ</h3>
+              <p className="text-600 mt-5">0372559460</p>
+              <p className="text-600">Gọi cho chúng tôi bất cứ lúc nào 24/7</p>
             </div>
+
+            <div className="col-12 md:col-6 lg:col flex flex-column align-items-center justify-content-center">
+              <img src="https://res.cloudinary.com/dbpw1enlu/image/upload/v1664963443/hospital_location_kf4fkx.png" width="80px" />
+              <h3 className="text-4xl font-medium mt-3">Địa chỉ</h3>
+              <p className="text-600 mt-5">Số 5 Trịnh Văn Bô, Xuân Phương</p>
+              <p className="text-600">Nam Từ Liên, Hà Nội</p>
+            </div>
+
+            <div className="col-12 md:col-6 lg:col flex flex-column align-items-center justify-content-center">
+              <img src="https://res.cloudinary.com/dbpw1enlu/image/upload/v1664333732/dentist-chair_oavr3q.png" width="80px" />
+              <h3 className="text-4xl font-medium mt-3">Điện thoại đặt lịch</h3>
+              <p className="text-600 mt-5">0372559888</p>
+              <p className="text-600">Chúng tôi luôn sẵn sàng</p>
+            </div>
+
+            <div className="col-12 md:col-6 lg:col flex flex-column align-items-center justify-content-center">
+              <img src="https://res.cloudinary.com/dbpw1enlu/image/upload/v1664963466/mail_hospital_x4c7hu.png" width="80px" />
+              <h3 className="text-4xl font-medium mt-3">Gửi email cho chúng tôi</h3>
+              <p className="text-600 mt-5">nghiatdph14539@fpt.edu.vn</p>
+              <p className="text-600">tuanna14620@fpt.edu.vn</p>
+            </div>
+          </div>
         </div>
       </div>
     </>

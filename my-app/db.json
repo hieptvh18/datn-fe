@@ -405,46 +405,36 @@
       "label": "Răng sứ",
       "items":[
         {
-          "label":"Dán sứ",
-          "items":[
-            {
-              "label": "Dán sứ Veneer lisi",
-              "link": "/abc"
-            },
-            {
-              "label": "Dán sứ Veneer Emax",
-              "link": "/abc"
-            },
-            {
-              "label": "Dán sứ Ziconia",
-              "link": "/abc"
-            }
-          ]
+          "label": "Dán sứ Veneer lisi",
+          "link": "/abc"
         },
         {
-          "label": "Bọc sứ",
-          "items": [
-            {
-              "label":"Bọc sứ Orodent",
-              "link": "/abc"
-            },
-            {
-              "label":"Bọc sứ Lava 3M",
-              "link": "/abc"
-            },
-            {
-              "label":"Bọc sứ Nacerna",
-              "link": "/abc"
-            },
-            {
-              "label":"Bọc sứ Venus",
-              "link": "/abc"
-            },
-            {
-              "label":"Bọc sứ Katana",
-              "link": "/abc"
-            }
-          ]
+          "label": "Dán sứ Veneer Emax",
+          "link": "/abc"
+        },
+        {
+          "label": "Dán sứ Ziconia",
+          "link": "/abc"
+        },
+        {
+          "label":"Bọc sứ Orodent",
+          "link": "/abc"
+        },
+        {
+          "label":"Bọc sứ Lava 3M",
+          "link": "/abc"
+        },
+        {
+          "label":"Bọc sứ Nacerna",
+          "link": "/abc"
+        },
+        {
+          "label":"Bọc sứ Venus",
+          "link": "/abc"
+        },
+        {
+          "label":"Bọc sứ Katana",
+          "link": "/abc"
         }
       ]
     },

@@ -56,6 +56,26 @@ a {
 .w-default {
     width: 100%;
 }
+.p-menubar .p-submenu-list{
+    min-width: 250px !important;
+    line-height: 22px !important;
+}
+.p-menubar .p-menuitem.p-menuitem-active > .p-menuitem-link {
+    background: #cca6c0 !important;
+}
+.p-menubar .p-menuitem.p-menuitem-active > .p-menuitem-link .p-menuitem-text {
+    color: #ffffff !important;
+}
+.p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link .p-submenu-icon, .p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link:not(.p-disabled):hover .p-submenu-icon {
+    color: #ffffff !important;
+    font-size: 15px !important;
+}
+.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-submenu-icon {
+    color: #000000 !important;
+    font-size: 15px !important;
+    margin-left: 0.5rem;
+}
+
 
 // responsive 1025px (từ size này trở lên là danh cho desktop thông thường).
 @media (min-width: 1025px) {

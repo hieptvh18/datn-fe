@@ -1,7 +1,7 @@
 
 import { InputText } from "primereact/inputtext";
 import React, { useState } from "react";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import "./styles.scss";
 import { InputTextarea } from "primereact/inputtextarea";
 import { Controller, useForm } from "react-hook-form";

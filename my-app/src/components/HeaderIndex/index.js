@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import classNames from "classnames/bind";
 import styles from "./styles.module.scss";
 import { Menubar } from "primereact/menubar";
@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Logout } from "../../feature/AuthSlice";
 import { SplitButton } from 'primereact/splitbutton';
 import { Navigate, NavLink, useNavigate } from "react-router-dom"
+import { listMenuServices } from "../../feature/MenuServices";
 const cx = classNames.bind(styles);
 
 
@@ -16,6 +17,11 @@ const HeaderIndex = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const isUser = useSelector(data => data.user.value.user)
+  const menuServices = useSelector(data => data.menuServices.value)
+  useEffect(() =>{
+    dispatch(listMenuServices())
+  }, [])
+  console.log(menuServices);
   const infoAccount = [
     {
       label: 'Thông tin',
@@ -53,36 +59,7 @@ const HeaderIndex = () => {
     },
     {
       label: "Dịch vụ",
-      items: [
-        {
-          label: "Nhổ răng",
-          items:[
-            {
-              label: "Nhổ răng khôn"
-            },
-            {
-              label: "Nhổ răng sữa"
-            },
-            {
-              label: "Nhổ răng số 8"
-            }
-          ]
-        },
-        {
-          label: "Niềng răng",
-          items:[
-            {
-              label: "Niềng răng trong suốt"
-            }
-          ]
-        },
-        {
-          label: "Nhổ răng"
-        },
-        {
-          label: "Nhổ răng"
-        }
-      ]
+      items: menuServices
     }
   ];
 

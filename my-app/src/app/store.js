@@ -3,6 +3,7 @@ import AccountSlice from '../feature/AccountSlice';
 import AuthSlice from '../feature/AuthSlice';
 import BannerHomeSlice from '../feature/BannerHomeSlice';
 import FeedbackSlice from '../feature/FeedbackSlice';
+import MenuServices from '../feature/MenuServices';
 import ServiceSlice from '../feature/ServiceSlice';
 import TeamSlice from '../feature/TeamSlice';
 
@@ -13,6 +14,7 @@ export const store = configureStore({
     service: ServiceSlice,
     team: TeamSlice,
     feedback: FeedbackSlice,
-    bannerHome: BannerHomeSlice
+    bannerHome: BannerHomeSlice,
+    menuServices: MenuServices
   },
 });

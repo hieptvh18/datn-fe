@@ -22,10 +22,21 @@ import { Dialog } from "primereact/dialog";
 import FeedBack from "../../components/FeedBack";
 import SpecialiezdTeam from "../../components/SpecialiezdTeam";
 import { getBannerHome } from "../../feature/BannerHomeSlice";
+import { listMenuServices } from "../../feature/MenuServices";
 
 const HomePage = () => {
   const dispatch = useDispatch();
   const bannerHome = useSelector(data => data.bannerHome.value)
+  const menuServices = useSelector(data => data.menuServices.value)
+  useEffect(() =>{
+    dispatch(listMenuServices)
+  }, [])
+  const services = menuServices.map(item =>{
+    return {
+      "name": item.label,
+      "code": item.label
+    }
+  })
   const { control, handleSubmit, formState: { errors }, reset } = useForm();
   const [showMessage, setShowMessage] = useState(false);
   const [formData, setFormData] = useState({});
@@ -269,11 +280,12 @@ const HomePage = () => {
                             name="content"
                             control={control}
                             render={({ field, fieldState }) => (
-                              <InputTextarea
+                              <Dropdown
                                 id={field.name}
                                 style={{ height: "50px", fontSize: "17px" }}
                                 {...field}
-
+                                options={services}
+                                optionLabel="name"
                                 className={classNames({
                                   "p-invalid": fieldState.invalid,
                                 })}
@@ -286,7 +298,7 @@ const HomePage = () => {
                               "p-error": errors.content,
                             })}
                           >
-                            Nội dung
+                            Dịch vụ
                           </label>
                         </span>
                       </div>

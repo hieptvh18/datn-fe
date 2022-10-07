@@ -8,6 +8,13 @@ export const listTeam = createAsyncThunk(
         return data
     }
 )
+export const listAllTeam = createAsyncThunk(
+    'team/listAllTeam',
+    async () => {
+        const { data } = await getTeam();
+        return data;
+    }
+)
 export const listTeamOne = createAsyncThunk(
     'team/listTeamOne',
     async (id) => {
@@ -26,6 +33,9 @@ const TeamSlice = createSlice({
             state.value = action.payload
         })
         builder.addCase(listTeamOne.fulfilled, (state, action) => {
+            state.value = action.payload
+        })
+        builder.addCase(listAllTeam.fulfilled, (state, action) => {
             state.value = action.payload
         })
     }

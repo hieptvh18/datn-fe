@@ -8,6 +8,7 @@ import AccountInfo from './pages/AccountInfo';
 import HomePage from './pages/HomePage';
 import NewsPage from './pages/News';
 import NewsDetail from './pages/NewsDetail';
+import Team from './pages/Team';
 <script src="https://unpkg.com/primereact/primereact.all.min.js"></script>
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path='news/detail' element={<NewsDetail />} />
           <Route path='about' element={<AboutPage />} />
           <Route path='infoAccount' element={<AccountInfo />} />
+          <Route path='teams' element={<Team />} />
           <Route path='*' element={<Page404 />} />
         </Route>
 

@@ -9,11 +9,11 @@ const FooterIndex = () => {
     return (
         <>
             <div className='bg-img pt-8'
-                style={{background: "url(https://res.cloudinary.com/dbpw1enlu/image/upload/v1663491749/background_dpo5ge.jpg)"}}
+                style={{ background: "url(https://res.cloudinary.com/dbpw1enlu/image/upload/v1663491749/background_dpo5ge.jpg)" }}
             >
                 <div className='w-default px-5 mx-auto'>
-                    <div className="grid   ">
-                        <div className="col-12  md:col-6 lg:col">
+                    <div className="grid">
+                        <div className="col-12 md:col-6 lg:col">
                             <div className=" h-full">
                                 <div className="h-full flex flex-column">
                                     <div className="title">DentiCare</div>

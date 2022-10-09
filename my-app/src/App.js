@@ -6,6 +6,7 @@ import Page404 from './pages/404';
 import AboutPage from './pages/About';
 import AccountInfo from './pages/AccountInfo';
 import CustomerGuide from './pages/CustomerGuide';
+import EquipmentPage from './pages/Equipment';
 import HomePage from './pages/HomePage';
 import NewsPage from './pages/News';
 import NewsDetail from './pages/NewsDetail';
@@ -24,6 +25,7 @@ function App() {
           <Route path='infoAccount' element={<AccountInfo />} />
           <Route path='doi-ngu-nhan-vien' element={<Team />} />
           <Route path='huong-dan-khac-hang' element={<CustomerGuide />} />
+          <Route path='trang-thiet-bi' element={<EquipmentPage />} />
           <Route path='*' element={<Page404 />} />
         </Route>
 

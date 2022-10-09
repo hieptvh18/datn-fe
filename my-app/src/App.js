@@ -25,7 +25,7 @@ function App() {
           <Route path='about' element={<AboutPage />} />
           <Route path='infoAccount' element={<AccountInfo />} />
           <Route path='doi-ngu-nhan-vien' element={<Team />} />
-          <Route path='huong-dan-khac-hang' element={<CustomerGuide />} />
+          <Route path='huong-dan-khach-hang' element={<CustomerGuide />} />
           <Route path='trang-thiet-bi' element={<EquipmentPage />} />
           <Route path='tat-ca-dich-vu' element={<ServicePage />} />
           <Route path='*' element={<Page404 />} />

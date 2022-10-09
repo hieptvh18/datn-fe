@@ -50,10 +50,10 @@ const Team = () => {
         <>
             <div className='w-100% mx-auto'>
                 <div className='banner-teams text-center'>
-                    <div className='font-semi pt-7 pb-3' style={{ color: 'var(--primary)', fontSize: '28px' }}>
+                    <div className='font-semi pt-7 pb-3' style={{ color: 'var(--primary)', fontSize: '38px', fontFamily: 'var(--fontArsenal)' }}>
                         Đội ngũ bác sĩ hàng đầu
                     </div>
-                    <span className='font-light '>“Chúng tôi đặt mình vào vị trí của người bệnh để lắng nghe, thấu hiểu và sẻ chia.”</span>
+                    <span className='font-light' style={{ fontFamily: 'var(--fontRoboto)' }}>“Chúng tôi đặt mình vào vị trí của người bệnh để lắng nghe, thấu hiểu và sẻ chia.”</span>
                     <img className='block mx-auto' width='60%' src='https://jieh.vn/upload/images/doctor/31.png' />
                 </div>
                 <div className='text-center w-default mx-auto'>
@@ -81,7 +81,7 @@ const Team = () => {
                             </div>
                         </div>
                         <div className='col-12 md:col-6 lg:col'>
-                            <div style={{ color: 'var(--primary)' }} className='text-6xl'>Giáo sư, Bác sỹ <br /> Hattori Tadashi</div>
+                            <div style={{ color: 'var(--primary)', fontFamily: 'var(--fontArsenal)' }} className='text-6xl'>Giáo sư, Bác sỹ <br /> Hattori Tadashi</div>
                             <div className='my-5'>VIỆN TRƯỞNG DANH DỰ</div>
                             <div className=''>
                                 <div className='flex-column'>
@@ -116,7 +116,7 @@ const Team = () => {
                             <img style={{ borderBottom: '3px solid var(--primary)', verticalAlign: 'middle' }} width='80%' src='https://jieh.vn/upload/images/doctor/TS_BS%20vu%20anh%20tuan.png' />
                         </div>
                         <div className='col-12 md:col-6 lg:col'>
-                            <div style={{ color: 'var(--primary)' }} className='text-6xl'>Tiến sỹ, Bác sỹ <br />Vũ Anh Tuấn</div>
+                            <div style={{ color: 'var(--primary)', fontFamily: 'var(--fontArsenal)' }} className='text-6xl'>Tiến sỹ, Bác sỹ <br />Vũ Anh Tuấn</div>
                             <div className='my-5'>GIÁM ĐỐC CHUYÊN MÔN</div>
                             <div className=''>
                                 <div className='flex-column'>

@@ -386,6 +386,8 @@
   "menuServices": [
     {
       "label": "Niềng Răng",
+      "image": "https://vinmec-prod.s3.amazonaws.com/images/20190806_045211_746039_pasted_image_0_25.max-1800x1800.png",
+      "content": "Niềng răng mắc cài kim loại là một trong những phương pháp chỉnh nha truyền thống vẫn luôn được duy trì áp dụng trong nha khoa. Phương pháp này có thể xử lý được các vấn đề về răng miệng như răng mọc lệch, răng hô, răng móm...",
       "items": [
         {
           "label": "Niềng răng mắc cài kim loại",
@@ -419,6 +421,8 @@
     },
     {
       "label": "Răng sứ",
+      "content": "Bọc răng sứ (tên tiếng anh là Porcelain Crowns), là phương pháp trong nha khoa thẩm mỹ nhằm phục hình răng, mang lại vẻ đẹp cho men răng, điều chỉnh lại vị trí răng mọc và giúp răng đều đặn hơn. Đây là phương pháp có tính thẩm mỹ cao, độ bền cao và không gây kích ứng cho cơ thể.",
+      "image":"https://nhakhoatandinh.com/wp-content/uploads/2020/02/co-nen-boc-rang-su.jpg",
       "items": [
         {
           "label": "Dán sứ Veneer lisi",
@@ -454,8 +458,10 @@
         }
       ]
     },
-    {
+    { 
       "label": "Trồng Răng",
+      "content": "Trồng răng Implant tiêu xương là phương pháp phẫu thuật đặt một chân răng giả làm bằng titanium vào xương hàm để thay thế chân răng thật đã mất, nâng đỡ mão răng sứ hay cầu răng.",
+      "image" : "https://nhakhoatandinh.com/wp-content/uploads/2020/02/trong-rang-implant-la-gi.jpg",
       "items": [
         {
           "label": "Trồng Răng Implant Straumann",
@@ -485,6 +491,8 @@
     },
     {
       "label": "Bệnh lý",
+      "content": "Các gói khám và điều trị khác tại Nha khoa Đức Nghĩa được thiết kế phù hợp với nhu cầu, tình trạng bệnh ở răng của người bệnh.",
+      "image": "https://bookingcare.vn/files/image/2018/04/16/013249bac-si-kham-rang-3.jpg",
       "items": [
         {
           "label": "Quy trình khám răng",

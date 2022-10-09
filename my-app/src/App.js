@@ -10,6 +10,7 @@ import EquipmentPage from './pages/Equipment';
 import HomePage from './pages/HomePage';
 import NewsPage from './pages/News';
 import NewsDetail from './pages/NewsDetail';
+import ServicePage from './pages/ServicePage';
 import Team from './pages/Team';
 <script src="https://unpkg.com/primereact/primereact.all.min.js"></script>
 
@@ -26,6 +27,7 @@ function App() {
           <Route path='doi-ngu-nhan-vien' element={<Team />} />
           <Route path='huong-dan-khac-hang' element={<CustomerGuide />} />
           <Route path='trang-thiet-bi' element={<EquipmentPage />} />
+          <Route path='tat-ca-dich-vu' element={<ServicePage />} />
           <Route path='*' element={<Page404 />} />
         </Route>
 

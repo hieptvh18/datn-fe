@@ -17,7 +17,7 @@ const List4Top = () => {
                     <h2 className='c-primary1 md:text-7xl lg:text-8xl -mt-3'>Dịch vụ của chúng tôi</h2>
                 </div>
                 <div className='text-center'>
-                    <button className='bg-primary2 text-white md:px-6 md:py-5 px-4 py-3 border-round-lg'>Tất cả dịch vụ</button>
+                    <button className='bg-primary2 text-white md:px-6 md:py-5 px-4 py-3 border-round-lg'><a className='text-white' href='/tat-ca-dich-vu'>Tất cả dịch vụ</a></button>
                 </div>
             </div>
             <div className='flex flex-column md:flex-row md:column-gap-4 row-gap-6 mt-5 md:px-0 px-7'>

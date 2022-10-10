@@ -1,9 +1,9 @@
 import React from 'react'
 import './styles.scss'
 import { Accordion, AccordionTab } from 'primereact/accordion';
+import WidgetCustomer from '../../components/Widget/Customer';
 const CustomerGuide = () => {
     return (
-
         <>
             <div style={{ margin: '50px 0' }} className='mx-auto'>
                 <div className='mx-auto px-5 w-default'>
@@ -158,32 +158,7 @@ const CustomerGuide = () => {
                                 </AccordionTab>
                             </Accordion>
                         </div>
-                        <div className='col-12 md:col-3 lg:col-3'>
-                            <div className='relative'>
-                                <div className='widgetCustomer relative '>
-                                </div>
-                                <div className='info'>
-                                    <div className='uppercase text-white text-4xl'>Câu hỏi thường gặp</div>
-                                    <a className='text-white underline font-light' href='#'>Xem chi tiết</a>
-                                </div>
-                            </div>
-                            <div className='relative'>
-                                <div className='widget1Customer relative '>
-                                </div>
-                                <div className='info'>
-                                    <div className='uppercase text-white text-4xl'>Đội ngũ bác sĩ</div>
-                                    <a className='text-white underline font-light' href='#'>Xem chi tiết</a>
-                                </div>
-                            </div>
-                            <div className='relative'>
-                                <div className='widget2Customer relative '>
-                                </div>
-                                <div className='info'>
-                                    <div className='uppercase text-white text-4xl'>Hệ thống trang thiết bị</div>
-                                    <a className='text-white underline font-light' href='#'>Xem chi tiết</a>
-                                </div>
-                            </div>
-                        </div>
+                        <WidgetCustomer />
                     </div>
                 </div>
             </div>

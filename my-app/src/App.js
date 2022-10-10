@@ -1,6 +1,5 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Test from './components/Test';
 import WebsiteLayout from './layouts/WebsiteLayout';
 import Page404 from './pages/404';
 import AboutPage from './pages/About';
@@ -10,6 +9,7 @@ import EquipmentPage from './pages/Equipment';
 import HomePage from './pages/HomePage';
 import NewsPage from './pages/News';
 import NewsDetail from './pages/NewsDetail';
+import QAPage from './pages/QAPage';
 import ServicePage from './pages/ServicePage';
 import Team from './pages/Team';
 <script src="https://unpkg.com/primereact/primereact.all.min.js"></script>
@@ -29,6 +29,7 @@ function App() {
           <Route path='trang-thiet-bi' element={<EquipmentPage />} />
           <Route path='tat-ca-dich-vu' element={<ServicePage />} />
           <Route path='dat-lich-kham' element={<ServicePage />} />
+          <Route path='cau-hoi-thuong-gap' element={<QAPage />} />
           <Route path='*' element={<Page404 />} />
         </Route>
 

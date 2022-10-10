@@ -80,10 +80,27 @@ const HeaderIndex = () => {
       }
     },
     {
-      label: "Hướng dẫn khách hàng",
-      command: (event) => {
-        navigate('/huong-dan-khach-hang')
-      }
+      label: "Khách hàng",
+      items: [
+        {
+          label: 'Hướng dẫn khách hàng',
+          command: (event) => {
+            navigate('/huong-dan-khach-hang')
+          },
+        },
+        {
+          label: 'Câu hỏi thường gặp',
+          command: (event) => {
+            navigate('/cau-hoi-thuong-gap')
+          },
+        },
+        {
+          label: 'Đánh giá',
+          command: (event) => {
+            navigate('/danh-gia')
+          },
+        },
+      ]
     }
   ];
 

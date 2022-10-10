@@ -5,6 +5,7 @@ import HeaderIndex from "../../components/HeaderIndex";
 import classNames from "classnames/bind";
 import styles from "./styles.module.scss";
 import ModalBooking from "../../components/ModalBooking/Modal";
+import ScrollToTop from "react-scroll-to-top";
 
 const cx = classNames.bind(styles)
 const WebsiteLayout = () => {
@@ -20,8 +21,8 @@ const WebsiteLayout = () => {
       <footer>
         <FooterIndex />
       </footer>
-
       <ModalBooking />
+      <ScrollToTop smooth />
     </div>
   );
 };

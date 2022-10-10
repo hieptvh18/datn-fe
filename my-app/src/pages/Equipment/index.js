@@ -21,11 +21,11 @@ const EquipmentPage = () => {
             </div>
             <div className='content-equipment'>
                 {equipment?.map((data, index) => {
-                    return <div className='grid gap-8 mb-8' key={index}>
-                        <div className='col-12 md:col-5 lg:col-5'>
+                    return <div style={{ gap: '100px', marginBottom: '70px' }} className='grid' key={index}>
+                        <div style={data.id % 2 == 0 ? { order: '2' } : { order: '1' }} className='col-12 md:col-5 lg:col-5'>
                             <img width='100%' src={data.image} />
                         </div>
-                        <div className='col-12 md:col-6 lg:col-6'>
+                        <div style={data.id % 2 == 0 ? { order: '1' } : { order: '2' }} className='col-12 md:col-5 lg:col-5'>
                             <div style={{ fontFamily: 'var(--fontArsenal)' }} className='pb-5 text-6xl'>{index + 1}. {data.name}</div>
                             <div style={{ fontFamily: 'var(--fontRoboto)' }} className=''>{data.title}</div>
                         </div>

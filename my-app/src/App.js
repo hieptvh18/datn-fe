@@ -28,6 +28,7 @@ function App() {
           <Route path='huong-dan-khach-hang' element={<CustomerGuide />} />
           <Route path='trang-thiet-bi' element={<EquipmentPage />} />
           <Route path='tat-ca-dich-vu' element={<ServicePage />} />
+          <Route path='dat-lich-kham' element={<ServicePage />} />
           <Route path='*' element={<Page404 />} />
         </Route>
 

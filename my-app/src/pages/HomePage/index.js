@@ -60,7 +60,6 @@ const HomePage = () => {
   }, [])
 
   const onSubmit = (data) => {
-    console.log(data);
     const service = data.service.name;
     dispatch(addAccount({ ...data, service: service }));
     setFormData(data);
@@ -88,8 +87,8 @@ const HomePage = () => {
       <div className="relative">
         <div>
           <Slider {...settings}>
-            {bannerHome?.map(item =>
-              <BannerHome title={item.title} subTitle={item.subTitle} bgImg={item.bgImg} titleBtn={item.titleBtn} linkPost={item.linkPost} item={item.item} />
+            {bannerHome?.map((item, index) =>
+              <BannerHome key={index} title={item.title} subTitle={item.subTitle} bgImg={item.bgImg} titleBtn={item.titleBtn} linkPost={item.linkPost} item={item.item} />
             )}
           </Slider>
         </div>
@@ -203,11 +202,8 @@ const HomePage = () => {
                     <div className="colorPrimary1 text-7xl font-bold pb-4">
                       Đức Nghĩa
                     </div>
-                    <div className="font-medium text-2xl">
-                      Have an emergency? Do book with us with this simple form
-                      below and superior deliverables whereas web-enabled
-                      applications. Continually reintermediate integrated
-                      processes through technically sound intellectual capital.
+                    <div style={{ fontFamily: 'var(--fontRoboto)' }} className="font-medium text-2xl">
+                      Có một trường hợp khẩn cấp? Hãy đặt trước với chúng tôi bằng biểu mẫu đơn giản dưới đây và các dịch vụ phân phối vượt trội trong khi các ứng dụng hỗ trợ web. Liên tục tái hiện các quy trình tích hợp thông qua vốn tri thức kỹ thuật tốt
                     </div>
                   </div>
                   <hr className="hr my-6 w-full" />

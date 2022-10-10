@@ -6,7 +6,6 @@ import { Button } from 'primereact/button';
 import "./styles.scss";
 const Team = () => {
     const teams = useSelector(team => team.team.value);
-    console.log(teams);
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(listAllTeam())

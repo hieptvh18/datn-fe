@@ -39,8 +39,6 @@ const HeaderIndex = () => {
     )
 
   })
-  console.log(menu);
-  // console.log(menuServices);
   const infoAccount = [
     {
       label: 'Thông tin',
@@ -70,7 +68,7 @@ const HeaderIndex = () => {
         {
           label: 'Trang thiết bị',
           command: (event) => {
-            navigate('/huong-dan-khach-hang')
+            navigate('/trang-thiet-bi')
           },
         },
       ]

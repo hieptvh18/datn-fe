@@ -12,8 +12,8 @@ const SpecialiezdTeam = () => {
     return (
         <div className="mx-auto w-default px-5">
             <div className="flex flex-column md:flex-row row-gap-6 md:column-gap-5 -mt-8 px-7 md:px-0">
-                {team?.map((item) => {
-                    return <div className="surface-200 w-full list-4top-item">
+                {team?.map((item, index) => {
+                    return <div className="surface-200 w-full list-4top-item" key={index}>
                         <div className="w-full">
                             <div className="w-full flex flex-column">
                                 <div className="w-full relative box-img">

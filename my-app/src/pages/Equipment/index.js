@@ -21,7 +21,7 @@ const EquipmentPage = () => {
             </div>
             <div className='content-equipment'>
                 {equipment?.map((data, index) => {
-                    return <div className='grid gap-8 mb-8'>
+                    return <div className='grid gap-8 mb-8' key={index}>
                         <div className='col-12 md:col-5 lg:col-5'>
                             <img width='100%' src={data.image} />
                         </div>

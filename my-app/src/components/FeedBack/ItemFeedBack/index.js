@@ -4,7 +4,7 @@ import iconQuote from '../../../assets/image/left-quote.png'
 
 const ItemFeedBack = (props) => {
     return (
-        <div>
+        <div key={props.key}>
             <div className='cs-block-feefBack'>
                 <img width='30px' src={iconQuote} />
                 <p className='mt-5 z-4 pb-5 text-2xl'>{props.content}</p>

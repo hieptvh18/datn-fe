@@ -22,7 +22,7 @@ const FeedBack = () => {
         responsive: [
             {
                 breakpoint: 1024,
-                settings:{
+                settings: {
                     slidesToShow: 2,
                     slidesToScroll: 2,
                     infinite: true
@@ -30,7 +30,7 @@ const FeedBack = () => {
             },
             {
                 breakpoint: 765,
-                settings:{
+                settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     infinite: true,
@@ -49,8 +49,8 @@ const FeedBack = () => {
                 <div className='px-5 mt-8 pb-8 fb-slick'>
                     <h2 className='text-6xl md:text-7xl font-normal c-primary1 py-8 text-center'>Khách hàng nói gì về ĐỨC NGHĨA </h2>
                     <Slider {...settings}>
-                        {feedback?.map((item) => {
-                            return <ItemFeedBack {...item} />
+                        {feedback?.map((item, index) => {
+                            return <ItemFeedBack key={index} {...item} />
                         })}
                     </Slider>
                 </div>

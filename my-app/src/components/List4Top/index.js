@@ -21,8 +21,8 @@ const List4Top = () => {
                 </div>
             </div>
             <div className='flex flex-column md:flex-row md:column-gap-4 row-gap-6 mt-5 md:px-0 px-7'>
-                {service?.map((item) => {
-                    return <div className='w-full list-4top-item'>
+                {service?.map((item, index) => {
+                    return <div className='w-full list-4top-item' key={index}>
                         <div className='w-full flex'>
                             <img className='w-full' src={item.image} width={200} />
                         </div>

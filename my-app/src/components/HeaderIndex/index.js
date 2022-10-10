@@ -54,10 +54,13 @@ const HeaderIndex = () => {
   const items = [
     {
       label: "Về chúng tôi",
-      command: (event) => {
-        navigate('/about')
-      },
       items: [
+        {
+          label: 'Về chúng tôi',
+          command: (event) => {
+            navigate('/ve-chung-toi')
+          },
+        },
         {
           label: 'Đội ngũ nhân viên',
           command: (event) => {
@@ -75,13 +78,7 @@ const HeaderIndex = () => {
     {
       label: "Bài viết",
       command: (event) => {
-        navigate('/news')
-      }
-    },
-    {
-      label: "Bệnh án",
-      command: (event) => {
-        navigate('/infoaccount')
+        navigate('/tin-tuc')
       }
     },
     {

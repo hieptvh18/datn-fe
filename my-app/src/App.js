@@ -20,10 +20,10 @@ function App() {
       <Routes>
         <Route path='/' element={<WebsiteLayout />}>
           <Route index element={<HomePage />} />
-          <Route path='news' element={<NewsPage />} />
+          <Route path='tin-tuc' element={<NewsPage />} />
           <Route path='news/detail' element={<NewsDetail />} />
-          <Route path='about' element={<AboutPage />} />
-          <Route path='infoAccount' element={<AccountInfo />} />
+          <Route path='ve-chung-toi' element={<AboutPage />} />
+          <Route path='ho-so-benh-nhan' element={<AccountInfo />} />
           <Route path='doi-ngu-nhan-vien' element={<Team />} />
           <Route path='huong-dan-khach-hang' element={<CustomerGuide />} />
           <Route path='trang-thiet-bi' element={<EquipmentPage />} />

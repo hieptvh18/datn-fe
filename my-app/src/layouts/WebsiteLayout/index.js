@@ -1,0 +1,30 @@
+import React, { useState } from "react";
+import { Outlet } from "react-router-dom";
+import FooterIndex from "../../components/FooterIndex";
+import HeaderIndex from "../../components/HeaderIndex";
+import classNames from "classnames/bind";
+import styles from "./styles.module.scss";
+import ModalBooking from "../../components/ModalBooking/Modal";
+import ScrollToTop from "react-scroll-to-top";
+
+const cx = classNames.bind(styles)
+const WebsiteLayout = () => {
+
+  return (
+    <div>
+      <header>
+        <HeaderIndex />
+      </header>
+      <main>
+        <Outlet />
+      </main>
+      <footer>
+        <FooterIndex />
+      </footer>
+      <ModalBooking />
+      <ScrollToTop smooth />
+    </div>
+  );
+};
+
+export default WebsiteLayout;

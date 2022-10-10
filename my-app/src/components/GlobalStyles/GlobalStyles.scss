@@ -1,13 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@200;300;400;500;600&family=Roboto:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap');
 @import 'normalize.css';
-
+               
 :root {
     --primary: #BC74A5;
     --primary1: #0E54AE;
     --color-black: #000000;
     --color-white: #fff;
     // config
-    --default-layout-width: 1150px;
+    --default-layout-width: 1260px;
     --default-layout-header-height: 60px;
+    --fontArsenal: 'Arsenal', sans-serif !important;
+    --fontRoboto: 'Roboto', sans-serif !important;
 }
 * {
     box-sizing: border-box;
@@ -20,7 +25,7 @@ html {
 }
 
 body {
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Heebo', sans-serif !important;
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
@@ -34,4 +39,51 @@ input {
 a {
     text-decoration: none;
     color: var(--color-black);
+}
+
+
+.wrapper-menu{
+    background-color: #fff !important;
+    border: none !important;
+    padding: 10px 0px !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    color: black !important;
+    letter-spacing: 1px;
+    padding: 0px !important;
+}
+.wrapper-menu .p-menuitem-link {
+    padding: 1.75rem 2.25rem !important;
+    border-radius: 0px !important;
+}
+
+.w-default {
+    width: 100%;
+}
+.p-menubar .p-submenu-list{
+    min-width: 250px !important;
+    line-height: 22px !important;
+}
+.p-menubar .p-menuitem.p-menuitem-active > .p-menuitem-link {
+    background: #cca6c0 !important;
+}
+.p-menubar .p-menuitem.p-menuitem-active > .p-menuitem-link .p-menuitem-text {
+    color: #ffffff !important;
+}
+.p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link .p-submenu-icon, .p-menubar .p-menubar-root-list > .p-menuitem.p-menuitem-active > .p-menuitem-link:not(.p-disabled):hover .p-submenu-icon {
+    color: #ffffff !important;
+    font-size: 15px !important;
+}
+.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-submenu-icon {
+    color: #000000 !important;
+    font-size: 15px !important;
+    margin-left: 0.5rem;
+}
+
+
+// responsive 1025px (từ size này trở lên là danh cho desktop thông thường).
+@media (min-width: 1025px) {
+    .w-default {
+        max-width: var(--default-layout-width);
+    }
 }

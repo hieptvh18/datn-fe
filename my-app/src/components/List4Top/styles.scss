@@ -1,0 +1,13 @@
+.h-300px{
+    min-height: 300px;
+}
+@media (min-width: 768px) and (max-width: 1024px){
+    .list-4top-item:last-child{
+        display: none;
+    }
+}
+@media (max-width: 765px){
+    .h-300px{
+        min-height: 100px;
+    }
+}

@@ -1,0 +1,67 @@
+.cs-block-feefBack{
+    min-height: 200px;
+    max-height: 200px;
+    color: #949494;
+    border: 1.5px solid var(--primary);
+    padding: 20px;
+    margin-left: 1px;
+    box-shadow: 0px 5px 11px rgb(0 0 0 / 10%);
+    margin-bottom: 30px;
+    position: relative;
+    background-color: #fff;
+}
+.cs-block-feefBack::after{
+    content: "";
+    height: 24px;
+    width: 24px;
+    background-color: #fff;
+    border: 1.5px solid var(--primary);
+    position: absolute;
+    top: 170.5px;
+    left: 38px;
+    transform: translate(-50%,50%) rotate(45deg);
+    z-index: -1;
+}
+.cs-block-feefBack::before{
+    content: "";
+    height: 24.5px;
+    width: 24.5px;
+    background-color: #fff;
+    position: absolute;
+    top: 172.5px;
+    left: 38px;
+    transform: translate(-50%,50%) rotate(45deg);
+}
+.fb-slick .slick-track{
+    display: flex;
+    column-gap: 30px;
+}
+.fb-slick .slick-dots{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px;
+    list-style: none;
+    margin-top: 50px;
+}
+.ft-slick__dots--custom{
+    width: 13px;
+    height: 13px;
+    border: 1px solid var(--primary);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+.fb-slick .slick-dots .slick-active .ft-slick__dots--custom{
+    background-color: var(--primary);
+}
+.cs-avatar-feedback{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.cs-avatar-feedback img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

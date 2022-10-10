@@ -1,0 +1,34 @@
+.borderWidget{
+    padding: 20px;
+    padding-bottom: 50px;
+    border: 8px solid rgb(199, 199, 199);
+}
+.recentPost{
+    padding: 30px 0;
+    font-size: 24px;
+    color: var(--primary);
+    font-weight: 600;
+}
+.p-dropdown .p-dropdown-label.p-placeholder{
+    font-size: 16px;
+}
+.p-dropdown .p-dropdown-label{
+    font-size: 16px;
+}
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item{
+    font-size: 16px;
+}
+.tags-icon{
+    color: var(--primary);
+    padding-right: 10px;
+}
+.textTitle{
+    font-size: 38px;
+    font-weight: 500;
+}
+.textTitle:hover{
+    color: var(--primary);
+}
+.p-button .p-button-icon-right{
+    font-size: 16px;
+}

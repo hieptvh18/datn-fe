@@ -1,0 +1,84 @@
+.wrapper-header {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.wrapper-header1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #a7a6a6;
+}
+
+.wrapper-main-logo img {
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper-main-logo {
+    width: 170px;
+}
+
+.wrapper-timeline {
+    display: flex;
+    column-gap: 20px;
+}
+
+.wrapper-timer-wroking {
+    display: flex;
+    // align-items: center;
+    column-gap: 5px;
+}
+
+.timer-text1 {
+    font-size: 14px;
+}
+
+.timer-text2 {
+    font-size: 11px;
+}
+
+.close {
+    cursor: pointer;
+    position: absolute;
+    display: block;
+    padding: 5px 5px;
+    line-height: 20px;
+    right: 0px;
+    top: 0px;
+    font-size: 24px;
+    background: #ffffff;
+}
+.popup{
+    background-color: transparent;
+}
+.w-default {
+    width: 100%;
+}
+
+// responsive 1025px (từ size này trở lên là danh cho desktop thông thường).
+@media (min-width: 1025px) {
+    .w-default {
+        max-width: var(--default-layout-width);
+    }
+}
+// max-width: 1024px (máy tính bảng loại to, hiển thị chiều ngang)
+@media (max-width: 1024px) {}
+
+/*---------------- CSS for only tablet -------------------*/
+@media (min-width: 768px) and (max-width: 1024px) {}
+
+/*---------------- Custom CSS for only mobile -------------------*/
+@media (max-width: 767px){
+    .wrapper-timeline{
+        display: none;
+    }
+    .wrapper-header1{
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px){}

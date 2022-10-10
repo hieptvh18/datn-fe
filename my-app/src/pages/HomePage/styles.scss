@@ -1,0 +1,171 @@
+.contact {
+    color: var(--primary);
+}
+
+.colorPrimary {
+    color: var(--primary);
+}
+
+.colorPrimary1 {
+    color: var(--primary1);
+}
+
+.sectionContact {
+    width: var(--default-layout-width);
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+.denticare {
+    color: var(--primary1);
+}
+
+.subcontact {
+    padding: 0 50px;
+}
+
+.hr {
+    width: 70px;
+    border: none;
+    height: 2px;
+    background-color: var(--primary);
+}
+
+.workingHours {
+    width: 450px;
+    height: 500px;
+    background-color: var(--primary1);
+}
+
+.button {
+    background-color: white;
+    color: var(--primary);
+}
+
+.buttonBig {
+    width: 300px;
+    height: 70px;
+    font-size: 20px;
+    font-style: normal;
+    background-color: white;
+    color: var(--primary);
+}
+
+.Specialized {
+    top: 170px;
+    left: 120px;
+}
+
+.infoDoctor {
+    position: relative;
+    margin-top: -150px;
+    padding-bottom: 150px;
+    width: var(--default-layout-width);
+}
+
+.bg-img {
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+.bookingContent {
+    position: relative;
+    width: 1200px;
+    max-width: calc(100% - 60px);
+}
+
+.-translate-x-50 {
+    transform: translateX(-50%);
+}
+
+.bg-primary2 {
+    background-color: var(--primary1);
+}
+
+.bg-primary1 {
+    background-color: var(--primary);
+}
+
+.-cs-bottom-25 {
+    bottom: -420px;
+}
+
+.-cs-bottom-70px {
+    bottom: -35%;
+}
+
+.cs-text-booking-banner {
+    font-size: 20px;
+}
+
+.cs-w-booking {
+    margin-left: -8.33%;
+    max-width: calc(100%/12*6 + 8.333333%);
+}
+
+.h-800px {
+    height: 900px !important;
+}
+.cs-mt-990px{
+    margin-top: 990px;
+}
+
+
+.cs-box-dow{
+    box-shadow: #1e1e1e 0px 39px 45px -50px;
+}
+.cs-mt-280px{
+    margin-top: 280px;
+}
+.bg-img.w-full.cs-mt-280px.h-900px{
+    height: 900px;
+}
+.mapboxgl-ctrl-bottom-right{
+    display: none !important;
+}
+
+
+// max-width: 1024px (máy tính bảng loại to, hiển thị chiều ngang)
+@media (max-width: 1024px) {
+
+}
+
+/*---------------- CSS for only tablet -------------------*/
+@media (min-width: 768px) and (max-width: 1024px) {}
+
+/*---------------- Custom CSS for only mobile -------------------*/
+@media (max-width: 767px){
+    .wrapper-timeline{
+        display: none;
+    }
+    .wrapper-header1{
+        justify-content: center;
+        align-items: center;
+    }
+    .cs-w-booking{
+        margin-left: 0px;
+        max-width: 100%;
+    }
+
+}
+
+@media (max-width: 765px){
+    .h-800px{
+        height: 100% !important;
+    }
+    .res-mobile.h-800px{
+        padding-top: 990px;
+        padding-bottom: 50px;
+    }
+    .Specialized{
+        left: 0;
+        top: 100px;
+    }
+    .cs-mt-280px{
+        margin-top: 0px;
+    }
+    .bg-img.w-full.cs-mt-280px.h-900px{
+        height: 600px;
+    }
+}

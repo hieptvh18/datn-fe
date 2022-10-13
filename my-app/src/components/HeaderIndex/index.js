@@ -51,6 +51,10 @@ const HeaderIndex = () => {
   ]
   const items = [
     {
+      label: "Dịch vụ",
+      items: [...menu]
+    },
+    {
       label: "Về chúng tôi",
       items: [
         {
@@ -103,7 +107,7 @@ const HeaderIndex = () => {
       ]
     }
   ];
-
+  console.log(items);
   const start = isUser == null ? <Popup trigger={<Button label="Đăng nhập" className="p-button-link text-2xl" />} modal
     nested>
     {close => (
@@ -150,7 +154,7 @@ const HeaderIndex = () => {
         </div>
       </div>
       <div className=''>
-        <Menubar className="wrapper-menu" model={[...menu, ...items]} />
+        <Menubar className="wrapper-menu" model={items} />
 
       </div>
     </div>

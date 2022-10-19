@@ -6,6 +6,7 @@ import EquipmentsSlice from '../feature/EquipmentsSlice';
 import FeedbackSlice from '../feature/FeedbackSlice';
 import MenuServices from '../feature/MenuServices';
 import NewsSlice from '../feature/NewsSlice';
+import PopUpFeedBackSlice from '../feature/Pop-up-feedBackSlice';
 import ServiceSlice from '../feature/ServiceSlice';
 import TeamSlice from '../feature/TeamSlice';
 
@@ -19,6 +20,7 @@ export const store = configureStore({
     bannerHome: BannerHomeSlice,
     menuServices: MenuServices,
     equipment: EquipmentsSlice,
-    news: NewsSlice
+    news: NewsSlice,
+    PopupFeedBack: PopUpFeedBackSlice
   },
 });

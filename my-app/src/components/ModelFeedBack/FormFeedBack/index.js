@@ -4,10 +4,13 @@ import classNames from "classnames";
 import { Controller, useForm } from 'react-hook-form'
 
 const FormFeedBack = ({close}) => {
-    const { control, handleSubmit, formState: { errors }, reset } = useForm()
+    const { register, handleSubmit, formState:{errors}, reset } = useForm()
     const getFormErrorMessage = (name) => {
         return errors[name] && <small className="p-error">{errors[name].message}</small>
       };
+    const onSubmit = (data) =>{
+        console.log(data);
+    }
   return (
     <div className='w-full'>
         <div className='text-center relative cs-bg-primary2 py-4'>
@@ -21,24 +24,26 @@ const FormFeedBack = ({close}) => {
                 </div>
                 <div className='px-5'>
                     <p className='text-2xl text-center mt-3'>Nha khoa Đức Nghĩa luôn luôn lắng nghe luôn luôn thấu hiểu khách hàng</p>
-                    <div>
+                    <form onSubmit={handleSubmit(onSubmit)}>
                         <div className='flex flex-column mt-3'>
                             <label className='text-2xl'>Họ tên: <i className='text-red-500'>*</i></label>
-                            <input className='cs-input-feedback' name='name'/>
+                            <input {...register('name', {required: true, maxLength: 50})} type='name' name='name' className='cs-input-feedback'/>
+                            <p style={{color: 'red'}}>{errors.name?.type === 'required' && "Bạn không được để trống trường này !"}</p>
+                            <p style={{color: 'red'}}>{errors.name?.type === 'maxLength' && "Bạn không được nhập quá 50 ký tự"}</p>
                         </div>
                         <div className='flex flex-column mt-3'>
                             <label className='text-2xl'>E-mail:</label>
-                            <input className='cs-input-feedback' name='name'/>
+                            <input {...register('email')} type="email" name='email' className='cs-input-feedback'/>
                         </div>
                         <div className='flex flex-column mt-3'>
                             <label className='text-2xl'>Nội dung:</label>
-                            <textarea className='cs-input-feedback' rows="5" cols="40" style={{resize: "none"}}></textarea>
+                            <textarea {...register('content')} name='content' rows="5" cols="40" style={{resize: "none"}} className='cs-input-feedback'></textarea>
                         </div>
                         <div className='flex justify-content-center align-items-center'>
-                            <button className='border-round-xl pointer px-6 py-3 my-6 text-2xl bg-primary2 text-white'>Phản hồi</button>
+                            <button className='border-round-xl pointer px-6 py-3 my-6 text-2xl bg-primary2 text-white' type='submit'>Phản hồi</button>
                         </div>
                         
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>

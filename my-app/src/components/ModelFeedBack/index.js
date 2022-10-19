@@ -5,7 +5,6 @@ import classNames from 'classnames';
 import './styles.scss'
 
 const ModelFeedBack = () => {
-    const btn = ''
   return (
     <div>
         <Popup modal trigger={open => <div className={`fixed bg-primary2 cs-box-dow pointer px-4 py-2 border-round-xl align-items-center justify-content-between ${open ? " hidden" : "flex"}`} style={{left: "20px", bottom: "50px", zIndex: "9999999999"}}>

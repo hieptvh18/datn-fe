@@ -22,7 +22,7 @@ function App() {
         <Route path='/' element={<WebsiteLayout />}>
           <Route index element={<HomePage />} />
           <Route path='tin-tuc' element={<NewsPage />} />
-          <Route path='news/detail' element={<NewsDetail />} />
+          <Route path='news/detail/:id' element={<NewsDetail />} />
           <Route path='ve-chung-toi' element={<AboutPage />} />
           <Route path='ho-so-benh-nhan' element={<AccountInfo />} />
           <Route path='doi-ngu-nhan-vien' element={<Team />} />

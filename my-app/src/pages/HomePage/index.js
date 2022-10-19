@@ -27,16 +27,18 @@ import { listMenuServices } from "../../feature/MenuServices";
 const HomePage = () => {
   const dispatch = useDispatch();
   const bannerHome = useSelector(data => data.bannerHome.value)
-  const menuServices = useSelector(data => data.menuServices.value)
+  const menuServices = useSelector(data => data.service.value)
+  const services = menuServices.data?.map(item => {
+    return {
+      "name": item.service_name,
+      "code": item.id
+    }
+  });
   useEffect(() => {
+    dispatch(getBannerHome())
     dispatch(listMenuServices)
   }, [])
-  const services = menuServices.map(item => {
-    return {
-      "name": item.label,
-      "code": item.label
-    }
-  })
+
   const { control, handleSubmit, formState: { errors }, reset } = useForm();
   const [showMessage, setShowMessage] = useState(false);
   const [formData, setFormData] = useState({});
@@ -55,12 +57,8 @@ const HomePage = () => {
     return d
   })
 
-  useEffect(() => {
-    dispatch(getBannerHome())
-  }, [])
-
   const onSubmit = (data) => {
-    const service = data.service.name;
+    const service = data.service_id.id;
     dispatch(addAccount({ ...data, service: service }));
     setFormData(data);
     setShowMessage(true);
@@ -212,7 +210,7 @@ const HomePage = () => {
                       <div className="field col-12 md:col-6">
                         <span className="p-float-label">
                           <Controller
-                            name="fullName"
+                            name="fullname"
                             control={control}
                             rules={{ required: "Họ và tên bắt buộc nhập!" }}
                             render={({ field, fieldState }) => (
@@ -275,7 +273,7 @@ const HomePage = () => {
                       <div className="field col-12 md:col-6">
                         <span className="p-float-label">
                           <Controller
-                            name="service"
+                            name="service_id"
                             control={control}
                             render={({ field, fieldState }) => (
                               <Dropdown

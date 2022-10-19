@@ -4,6 +4,7 @@ import { addAccounts } from "../api/account";
 export const addAccount = createAsyncThunk(
     'account/addAccount',
     async (account) => {
+        console.log(account, "sdcsdc");
         const { data } = await addAccounts(account)
         return data
     }

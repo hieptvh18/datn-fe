@@ -1,7 +1,7 @@
 import instance from "./instance";
 
 export const getService = () => {
-    const url = `services`
+    const url = `/services/list`
     return instance.get(url)
 }
 
@@ -11,6 +11,6 @@ export const getServiceById = (id) => {
 }
 
 export const getListTop4 = () => {
-    const url = `services?_sort=createdAt&_order=asc&_limit=4`
+    const url = `/services/list`
     return instance.get(url)
 }

@@ -1,15 +1,14 @@
-import { InputText } from 'primereact/inputtext'
 import React from 'react'
-import classNames from "classnames";
+import { useDispatch } from 'react-redux'
 import { Controller, useForm } from 'react-hook-form'
+import { addPopupFeedBack } from '../../../feature/Pop-up-feedBackSlice'
 
 const FormFeedBack = ({close}) => {
     const { register, handleSubmit, formState:{errors}, reset } = useForm()
-    const getFormErrorMessage = (name) => {
-        return errors[name] && <small className="p-error">{errors[name].message}</small>
-      };
+    const dispatch = useDispatch()
     const onSubmit = (data) =>{
-        console.log(data);
+        dispatch(addPopupFeedBack(data))
+        reset()
     }
   return (
     <div className='w-full'>
@@ -28,7 +27,7 @@ const FormFeedBack = ({close}) => {
                         <div className='flex flex-column mt-3'>
                             <label className='text-2xl'>Họ tên: <i className='text-red-500'>*</i></label>
                             <input {...register('name', {required: true, maxLength: 50})} type='name' name='name' className='cs-input-feedback'/>
-                            <p style={{color: 'red'}}>{errors.name?.type === 'required' && "Bạn không được để trống trường này !"}</p>
+                            <p style={{color: 'red'}}>{errors.name?.type === 'required' && "Vui lòng nhập tên quý khách !"}</p>
                             <p style={{color: 'red'}}>{errors.name?.type === 'maxLength' && "Bạn không được nhập quá 50 ký tự"}</p>
                         </div>
                         <div className='flex flex-column mt-3'>

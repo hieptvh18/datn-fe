@@ -11,6 +11,6 @@ export const getServiceById = (id) => {
 }
 
 export const getListTop4 = () => {
-    const url = `/services/list`
+    const url = `/services/listTop4`
     return instance.get(url)
 }

@@ -40,7 +40,7 @@ const NewsPage = () => {
                                                 <span className='text-xl text-500'>{item.created_at}</span>
                                             </div>
                                             <div>
-                                                <img width='100%' src={item.image_news.map((e) => { return e.image })} />
+                                                <img width='100%' src={item.image_news.map((e) => { return `http://localhost:8000/${e.image}` })} />
                                                 <div className='flex align-items-center gap-7 '>
                                                     <div className='my-2'>
                                                         <i className="pi pi-tags text-4xl tags-icon"></i>
@@ -90,7 +90,6 @@ const NewsPage = () => {
                                     <hr className='my-8 bg-grey-500' />
                                 </>
                             })}
-
                         </div>
                         <WidgetNew />
                     </div>

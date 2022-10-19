@@ -7,9 +7,8 @@ const List4Top = () => {
     const service = useSelector(service => service.service.value);
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(listService())
+        dispatch(listTop4())
     }, []);
-    console.log(service, "s");
     return (
         <div className='w-default px-5 mx-auto'>
             <div className='flex justify-content-between align-content-center'>

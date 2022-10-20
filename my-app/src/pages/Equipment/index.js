@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { listEquipment } from '../../feature/EquipmentsSlice'
 import "./styles.scss"
 const EquipmentPage = () => {
-    const equipment = useSelector(data => data.equipment.value)
+    const equipment = useSelector(data => data.equipment.value.data);
+    console.log(equipment);
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(listEquipment())
@@ -23,11 +24,11 @@ const EquipmentPage = () => {
                 {equipment?.map((data, index) => {
                     return <div style={{ gap: '100px', marginBottom: '70px' }} className='grid' key={index}>
                         <div style={data.id % 2 == 0 ? { order: '2' } : { order: '1' }} className='col-12 md:col-5 lg:col-5'>
-                            <img width='100%' src={data.image} />
+                            <img width='100%' src={`http://localhost:8000/${data.image}`} />
                         </div>
                         <div style={data.id % 2 == 0 ? { order: '1' } : { order: '2' }} className='col-12 md:col-5 lg:col-5'>
                             <div style={{ fontFamily: 'var(--fontArsenal)' }} className='pb-5 text-6xl'>{index + 1}. {data.name}</div>
-                            <div style={{ fontFamily: 'var(--fontRoboto)' }} className=''>{data.title}</div>
+                            <div style={{ fontFamily: 'var(--fontRoboto)' }} className=''>{data.short_desc}</div>
                         </div>
                     </div>
                 })}

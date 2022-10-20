@@ -24,11 +24,11 @@ const List4Top = () => {
                 {service.data?.map((item, index) => {
                     return <div className='w-full list-4top-item' key={index}>
                         <div className='w-full flex'>
-                            <img className='w-full' src={item.image} width={200} />
+                            <img className='w-full' src={`http://localhost:8000/${item.image}`} width={200} />
                         </div>
                         <div className='h-300px cs-box-dow bg-primary1 px-6 pt-8 pb-6 text-white'>
-                            <p className='md:text-4xl lg:text-5xl text-5xl mb-4 font-normal'>{item.service_name}</p>
-                            <span className='md:text-1xl text-2xl'>{item.title}</span>
+                            <p className='md:text-4xl lg:text-5xl text-5xl mb-4 font-normal'>{item.specialist_name}</p>
+                            <span className='md:text-1xl text-2xl'>{item.description}</span>
                         </div>
                     </div>
                 })}

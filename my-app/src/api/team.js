@@ -1,4 +1,4 @@
-import instance from "./instance";
+import instance from "./instanceJson";
 
 export const getTeam = () => {
     const url = `teams`

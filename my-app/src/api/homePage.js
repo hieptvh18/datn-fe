@@ -1,6 +1,6 @@
-import instance from "./instance";
+import instanceJson from "./instanceJson";
 
-export const getBannerHomePage = () =>{
+export const getBannerHomePage = () => {
     const url = "/bannerHome"
-    return instance.get(url)
+    return instanceJson.get(url)
 }

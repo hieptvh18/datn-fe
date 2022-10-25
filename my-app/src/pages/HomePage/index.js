@@ -23,6 +23,7 @@ import FeedBack from "../../components/FeedBack";
 import SpecialiezdTeam from "../../components/SpecialiezdTeam";
 import { getBannerHome } from "../../feature/BannerHomeSlice";
 import { listMenuServices } from "../../feature/MenuServices";
+import { listService } from "../../feature/ServiceSlice";
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -36,7 +37,7 @@ const HomePage = () => {
   });
   useEffect(() => {
     dispatch(getBannerHome())
-    dispatch(listMenuServices)
+    dispatch(listService())
   }, [])
 
   const { control, handleSubmit, formState: { errors }, reset } = useForm();
@@ -172,7 +173,7 @@ const HomePage = () => {
           <p style={{ lineHeight: 1.5, fontSize: "14px" }}>
             Tài khoản của bạn được tạo dưới số điện thoại{" "}
             <b>{formData.phone}</b> <br />
-            Tên là <b>{formData.fullName}</b>!
+            Tên là <b>{formData.fullname}</b>
           </p>
         </div>
       </Dialog>
@@ -307,7 +308,7 @@ const HomePage = () => {
                             control={control}
                             render={({ field, fieldState }) => (
                               <Calendar
-                                style={{ height: "50px", fontSize: "17px" }}
+                                style={{ height: "50px" }}
                                 id={field.name}
                                 {...field}
                                 className={classNames({

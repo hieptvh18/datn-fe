@@ -1,7 +1,7 @@
-import instance from "./instanceJson";
+import instance from "./instance";
 
 export const getTeam = () => {
-    const url = `teams`
+    const url = `/doctor/list`
     return instance.get(url)
 }
 

@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import './styles.scss'
-import { listService, listTop4 } from '../../feature/ServiceSlice';
+import { listTop4 } from '../../feature/SpecialistSlice';
 
 const List4Top = () => {
-    const service = useSelector(service => service.service.value);
+    const specialist = useSelector(data => data.specialist.value);
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(listTop4())
@@ -21,14 +21,14 @@ const List4Top = () => {
                 </div>
             </div>
             <div className='flex flex-column md:flex-row md:column-gap-4 row-gap-6 mt-5 md:px-0 px-7'>
-                {service.data?.map((item, index) => {
+                {specialist.data?.map((item, index) => {
                     return <div className='w-full list-4top-item' key={index}>
                         <div className='w-full flex'>
                             <img className='w-full' src={`http://localhost:8000/${item.image}`} width={200} />
                         </div>
                         <div className='h-300px cs-box-dow bg-primary1 px-6 pt-8 pb-6 text-white'>
                             <p className='md:text-4xl lg:text-5xl text-5xl mb-4 font-normal'>{item.specialist_name}</p>
-                            <span className='md:text-1xl text-2xl'>{item.description}</span>
+                            <span className='md:text-1xl text-2xl'>{item.function}</span>
                         </div>
                     </div>
                 })}

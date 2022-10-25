@@ -15,13 +15,6 @@ export const listServiceOne = createAsyncThunk(
         return data
     }
 )
-export const listTop4 = createAsyncThunk(
-    'service/listTop4',
-    async () => {
-        const { data } = await getListTop4()
-        return data
-    }
-)
 
 const ServiceSlice = createSlice({
     name: 'service',
@@ -33,9 +26,6 @@ const ServiceSlice = createSlice({
             state.value = action.payload
         })
         builder.addCase(listServiceOne.fulfilled, (state, action) => {
-            state.value = action.payload
-        })
-        builder.addCase(listTop4.fulfilled, (state, action) => {
             state.value = action.payload
         })
     }

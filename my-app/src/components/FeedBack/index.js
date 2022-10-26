@@ -6,11 +6,12 @@ import ItemFeedBack from './ItemFeedBack'
 
 const FeedBack = () => {
 
-    const feedback = useSelector(data => data.feedback.value);
+    const feedback = useSelector(data => data.feedback.value.data);
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(listFeedback())
     }, []);
+    console.log(feedback);
     const settings = {
         dots: true,
         slidesToShow: 3,

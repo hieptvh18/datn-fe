@@ -11,11 +11,11 @@ const ItemFeedBack = (props) => {
             </div>
             <div className='flex align-items-center column-gap-4'>
                 <div className='cs-avatar-feedback'>
-                    <img className='' src={props.image_account} />
+                    <img className='' src={props.customer_avatar} />
                 </div>
                 <div>
-                    <h4 className='c-primary text-3xl font-bold'>{props.name_account}</h4>
-                    <p className='font-italic font-light text-400 mt-1'>{props.role_account}</p>
+                    <h4 className='c-primary text-3xl font-bold'>{props.customer_name}</h4>
+                    <p className='font-italic font-light text-400 mt-1'>{props.customer_email}</p>
                 </div>
             </div>
         </div>

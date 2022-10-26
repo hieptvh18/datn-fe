@@ -12,7 +12,6 @@ const NewsPage = () => {
     useEffect(() => {
         dispatch(listNews())
     }, []);
-    console.log(news);
     return (
         <>
             {/* Banner */}

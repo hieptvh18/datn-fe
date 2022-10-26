@@ -1,7 +1,7 @@
 import instance from "./instance";
 
 export const signIn = (user) => {
-    const url = `/signin`
+    const url = `/login`
     return instance.post(url, user)
 }
 export const getUserById = (id) => {

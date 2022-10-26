@@ -37,10 +37,10 @@ const LoginAccount = () => {
                         <div className="p-inputgroup p">
                             <span className="p-float-label border-bottom-1 border-300  p-input-icon-right">
                                 <i className="pi pi-phone text-2xl" />
-                                <Controller name="email" control={control} rules={{ required: 'Số điện thoại bắt buộc nhập' }} render={({ field, fieldState }) => (
+                                <Controller name="phone" control={control} rules={{ required: 'Số điện thoại bắt buộc nhập' }} render={({ field, fieldState }) => (
                                     <InputText id={field.name} {...field} className='cs-ip-login pb-2 text-2xl' type="text" />
                                 )} />
-                                <label htmlFor="email" className={classNames({ 'p-error': errors.email })}>Số điện thoại</label>
+                                <label htmlFor="phone" className={classNames({ 'p-error': errors.phone })}>Số điện thoại</label>
                             </span>
                         </div>
                     </div>

@@ -1,6 +1,4 @@
 
-import react from 'react'
-import { Button } from 'primereact/button'
 import { Chip } from 'primereact/chip';
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
@@ -15,7 +13,6 @@ const AccountInfo = () => {
     useEffect(() => {
         dispatch(listUserById(phone, patientId))
     }, []);
-    console.log(infoAccounts);
     return (
         <div className="surface-0 w-default m-auto my-8" style={{ fontFamily: 'var(--fontRoboto)' }}>
             <div className="font-bold text-7xl text-blue-700 mb-3">Hồ sơ bệnh án</div>

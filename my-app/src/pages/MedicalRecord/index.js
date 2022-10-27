@@ -1,7 +1,17 @@
 import { Column, DataTable } from 'primereact'
 import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { listUserById } from '../../feature/AuthSlice';
 import './styles.scss'
 const MedicalRecord = () => {
+    const infoAccounts = useSelector(data => data.user.value?.data);
+    const user = JSON.parse(localStorage.getItem('user'))
+    const patientId = user.data['id'];
+    const phone = user.data['phone'];
+    const dispatch = useDispatch()
+    useEffect(() => {
+        dispatch(listUserById(phone, patientId))
+    }, []);
     const data = [
         { "id": "1000", "stt": "1", "symptom": "Viêm nha chu", "treatment-procedure": "Phẫu thuật ghép mô mềm", "doctor": "Nguyễn Công An", "price": 1650000, "total": 1650000, },
         { "id": "1001", "stt": "2", "symptom": "Viêm tủy răng", "treatment-procedure": "Hàn kín hệ thống ống tủy bằng Gutta percha nguội có sử dụng trâm xoay máy", "doctor": "Hàn Mặc Tử", "price": 1090000, "total": 1090000, },
@@ -37,9 +47,9 @@ const MedicalRecord = () => {
                         <div>Hà Nội, ngày 10 tháng 11 năm 2022</div>
                     </div>
                     <h1 className='text-center py-8'>Hồ sơ khám bệnh</h1>
-                    <div><strong>Họ và tên: </strong>Vũ Hồng Thắng - <strong>Năm sinh:</strong>1989 </div>
-                    <div><strong>Địa chỉ: </strong>Ngõ 12 - Cầu Diễn - Bắc Từ Liêm - Hà Nội</div>
-                    <div><strong>Điện thoại: </strong>0349418411 - <strong>Email:</strong></div>
+                    <div><strong>Họ và tên: </strong>{infoAccounts.customer_name} - <strong>Năm sinh:</strong>{infoAccounts.birthday} </div>
+                    <div><strong>Địa chỉ: </strong>{infoAccounts.address}</div>
+                    <div><strong>Điện thoại: </strong>{infoAccounts.phone} - <strong>Email:</strong>{infoAccounts.email}</div>
                     <DataTable className='my-7 text-2xl' value={products} responsiveLayout="stack" breakpoint="960px">
                         <Column field="stt" header="STT" />
                         <Column field="symptom" header="Triệu chứng/Chuẩn đoán" />

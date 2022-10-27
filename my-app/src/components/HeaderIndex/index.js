@@ -16,7 +16,7 @@ const cx = classNames.bind(styles);
 const HeaderIndex = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const isUser = useSelector(data => data.user.value.user)
+  const isUser = useSelector(data => data.user.value)
   const menuServices = useSelector(data => data.menuServices.value)
   useEffect(() => {
     dispatch(listMenuServices())
@@ -42,11 +42,15 @@ const HeaderIndex = () => {
   const infoAccount = [
     {
       label: 'Thông tin',
-      url: '/account/info'
+      command: (event) => {
+        navigate('/')
+      },
     },
     {
       label: 'Bệnh án',
-      url: '/account/info'
+      command: (event) => {
+        navigate('/ho-so-benh-nhan')
+      },
     }
   ]
   const items = [
@@ -138,7 +142,7 @@ const HeaderIndex = () => {
       </div>
       <div className='flex justify-content-between'>
         <Menubar className="wrapper-menu" model={items} />
-        {isUser == null ? <Popup trigger={<Button label="Đăng nhập" className="p-button-link text-2xl" />} modal
+        {isUser.length === 0 ? <Popup trigger={<Button label="Đăng nhập" className="p-button-link text-2xl" />} modal
           nested>
           {close => (
             <div className="modal" >

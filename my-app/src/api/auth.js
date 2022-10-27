@@ -4,7 +4,7 @@ export const signIn = (user) => {
     const url = `/login`
     return instance.post(url, user)
 }
-export const getUserById = (id) => {
-    const url = `/users/${id}`
-    return instance.get(url, id)
+export const getUserById = (phone, patientId) => {
+    const url = `/patient/detail/${phone}/${patientId}`
+    return instance.get(url)
 }

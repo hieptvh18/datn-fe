@@ -10,7 +10,7 @@ const MedicalRecord = () => {
     const phone = user.data['phone'];
     const dispatch = useDispatch()
     useEffect(() => {
-        dispatch(listUserById(phone, patientId))
+        dispatch(listUserById([phone, patientId]))
     }, []);
     const data = [
         { "id": "1000", "stt": "1", "symptom": "Viêm nha chu", "treatment-procedure": "Phẫu thuật ghép mô mềm", "doctor": "Nguyễn Công An", "price": 1650000, "total": 1650000, },

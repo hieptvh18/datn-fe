@@ -11,7 +11,7 @@ const AccountInfo = () => {
     const phone = user.data['phone'];
     const dispatch = useDispatch()
     useEffect(() => {
-        dispatch(listUserById(phone, patientId))
+        dispatch(listUserById([phone, patientId]))
     }, []);
     return (
         <div className="surface-0 w-default m-auto my-8" style={{ fontFamily: 'var(--fontRoboto)' }}>
@@ -62,7 +62,7 @@ const AccountInfo = () => {
                 </li>
                 <li className="flex align-items-center py-3 px-2 border-top-1 border-300 flex-wrap">
                     <div className="text-500 w-6 md:w-2 font-medium">Đã sử dụng dịch vụ</div>
-                    <div className="text-900 w-full md:w-8 md:flex-order-0 flex-order-1">{infoAccounts.service_patients?.map((e) => e.service_name)} </div>
+                    <div className="text-900 w-full md:w-8 md:flex-order-0 flex-order-1">{infoAccounts.service_patients?.map((e) => <div>{e.service_name}</div>)} </div>
                     <div className="w-6 md:w-2 flex justify-content-end">
 
                     </div>

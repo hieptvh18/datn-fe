@@ -24,8 +24,8 @@ export const Logout = createAsyncThunk(
 )
 export const listUserById = createAsyncThunk(
     "user/listUserById",
-    async (phone, patientId) => {
-        const { data } = await getUserById(phone, 2)
+    async (datas) => {
+        const { data } = await getUserById(datas[0], datas[1])
         return data
     }
 )

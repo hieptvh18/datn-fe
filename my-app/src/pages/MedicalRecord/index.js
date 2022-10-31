@@ -24,7 +24,7 @@ const MedicalRecord = () => {
 
 
     return (
-        <div className='' style={{ fontFamily: 'var(--fontFamily)' }}>
+        <div className='' style={{ fontFamily: 'var(--fontRoboto)' }}>
             <header style={{ backgroundColor: 'var(--primary)' }} className='p-7'>
                 <div className='grid'>
                     <div>
@@ -40,24 +40,49 @@ const MedicalRecord = () => {
                 </div>
 
             </header>
-            <main style={{ backgroundColor: 'var(--primary1)' }} className='py-7'>
+            <main style={{ backgroundColor: 'var(--primary1)' }} className='py-7 px-8'>
                 <div className='text-white' style={{ width: '98%', margin: '0 auto' }}>
                     <div className='mainHeader flex justify-content-between align-center '>
                         <div>ID:DN00112112</div>
                         <div>Hà Nội, ngày 10 tháng 11 năm 2022</div>
                     </div>
                     <h1 className='text-center py-8'>Hồ sơ khám bệnh</h1>
-                    <div><strong>Họ và tên: </strong>{infoAccounts.customer_name} - <strong>Năm sinh:</strong>{infoAccounts.birthday} </div>
-                    <div><strong>Địa chỉ: </strong>{infoAccounts.address}</div>
-                    <div><strong>Điện thoại: </strong>{infoAccounts.phone} - <strong>Email:</strong>{infoAccounts.email}</div>
-                    <DataTable className='my-7 text-2xl' value={products} responsiveLayout="stack" breakpoint="960px">
-                        <Column field="stt" header="STT" />
-                        <Column field="symptom" header="Triệu chứng/Chuẩn đoán" />
-                        <Column field="treatment-procedure" header="Thủ thuật điều trị" />
-                        <Column field="doctor" header="Bác sĩ" />
-                        <Column field="price" header="Đơn giá" />
-                        <Column field="total" header="Thành tiền" />
-                    </DataTable>
+                    <div className='grid '>
+                        <div className='col-6'>
+                            <div><strong>Họ và tên: </strong>{infoAccounts.customer_name} </div>
+                            <div><strong>Năm sinh:</strong>{infoAccounts.birthday} </div>
+                            <div><strong>Giới tính:</strong></div>
+                            <div><strong>Địa chỉ: </strong>{infoAccounts.address}</div>
+                            <div><strong>Điện thoại: </strong>{infoAccounts.phone}</div>
+                            <div><strong>Email:</strong>{infoAccounts.email}</div>
+                        </div>
+                        <div className='col-6'>
+                            <div><strong>ID: </strong></div>
+                            <div><strong>Bác sĩ:</strong></div>
+                            <div><strong>Điện thoại bác sĩ:</strong></div>
+                            <div><strong>Phòng khám:</strong></div>
+                            <div><strong>Ngày khám: </strong></div>
+                            <div><strong>Yêu cầu khám: </strong></div>
+
+                        </div>
+                    </div>
+                    <div className='my-7'>
+                        <h3 className='pb-2'>Bảng dịch vụ:</h3>
+                        <DataTable className=' text-2xl' value={products} responsiveLayout="stack" breakpoint="960px">
+                            <Column field="stt" header="STT" />
+                            <Column field="symptom" header="Dịch vụ sử dụng" />
+                            <Column field="price" header="Đơn giá" />
+                        </DataTable>
+                    </div>
+                    <div className='my-7'>
+                        <h3 className='pb-2'>Đơn thuốc:</h3>
+                        <DataTable className='text-2xl' value={products} responsiveLayout="stack" breakpoint="960px">
+                            <Column field="stt" header="STT" />
+                            <Column field="symptom" header="Tên thuốc" />
+                            <Column field="price" header="Cách dùng" />
+                            <Column field="total" header="Đơn giá" />
+                        </DataTable>
+                    </div>
                     <div className='grid'>
                         <div className='col-12 md:col-8 ld:col-8'>
                             <div className='mb-5'>

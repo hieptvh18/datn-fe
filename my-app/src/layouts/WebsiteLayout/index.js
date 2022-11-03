@@ -7,6 +7,7 @@ import styles from "./styles.module.scss";
 import ModalBooking from "../../components/ModalBooking/Modal";
 import ScrollToTop from "react-scroll-to-top";
 import ModelFeedBack from "../../components/ModelFeedBack";
+import ContactMessage from "../../components/ContactMessage";
 
 const cx = classNames.bind(styles)
 const WebsiteLayout = () => {
@@ -25,6 +26,7 @@ const WebsiteLayout = () => {
       <ModalBooking />
       <ScrollToTop smooth />
       <ModelFeedBack />
+      <ContactMessage/>
     </div>
   );
 };

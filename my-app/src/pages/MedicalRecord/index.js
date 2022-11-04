@@ -1,26 +1,34 @@
 import { Column, DataTable } from 'primereact'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import { listUserById } from '../../feature/AuthSlice';
+import { getPatientRecords } from '../../feature/PatientRecords';
 import './styles.scss'
 const MedicalRecord = () => {
-    const infoAccounts = useSelector(data => data.user.value?.data);
-    const user = JSON.parse(localStorage.getItem('user'))
-    const patientId = user.data['id'];
-    const phone = user.data['phone'];
+    const patientRecords = useSelector(data => data.PatientRecords.value?.data)
+    const datas = useParams()
     const dispatch = useDispatch()
-    useEffect(() => {
-        dispatch(listUserById([phone, patientId]))
-    }, []);
-    const data = [
-        { "id": "1000", "stt": "1", "symptom": "Viêm nha chu", "treatment-procedure": "Phẫu thuật ghép mô mềm", "doctor": "Nguyễn Công An", "price": 1650000, "total": 1650000, },
-        { "id": "1001", "stt": "2", "symptom": "Viêm tủy răng", "treatment-procedure": "Hàn kín hệ thống ống tủy bằng Gutta percha nguội có sử dụng trâm xoay máy", "doctor": "Hàn Mặc Tử", "price": 1090000, "total": 1090000, },
-        { "id": "1002", "stt": "3", "symptom": "Răng ê buốt", "treatment-procedure": " Gel capsaicin giảm ê buốt răng", "doctor": "Hà Thị Thúy", "price": 300000, "total": 300000, },
-    ];
-    const [products, setProducts] = useState([]);
-    useEffect(() => {
-        setProducts(data);
-    }, []);
+    useEffect(() =>{
+        dispatch(getPatientRecords(datas))
+    }, [])
+    console.log(patientRecords);
+    const date = patientRecords?.date.split("-");
+    const totalPrice = () =>{
+        let price = 0
+        let total = []
+        const priceProduct = patientRecords?.patient_products?.map(item => {
+            return total.push(Number(item.price))
+        });
+        const pricePatients = patientRecords?.service_patients?.map(item => {
+            return total.push(Number(item.price))
+        });
+        total.forEach(item =>{
+            price += item
+        })
+
+        return price
+    }
 
 
     return (
@@ -43,44 +51,38 @@ const MedicalRecord = () => {
             <main style={{ backgroundColor: 'var(--primary1)' }} className='py-7 px-8'>
                 <div className='text-white' style={{ width: '98%', margin: '0 auto' }}>
                     <div className='mainHeader flex justify-content-between align-center '>
-                        <div>ID:DN00112112</div>
-                        <div>Hà Nội, ngày 10 tháng 11 năm 2022</div>
+                        <div>ID:{patientRecords?.id}</div>
+                        <div>Hà Nội, ngày {date?.length ? date[2] : ""} tháng {date?.length ? date[1] : ""} năm {date?.length ? date[0] : ""}</div>
                     </div>
                     <h1 className='text-center py-8'>Hồ sơ khám bệnh</h1>
                     <div className='grid '>
-                        <div className='col-6'>
-                            <div><strong>Họ và tên: </strong>{infoAccounts.customer_name} </div>
-                            <div><strong>Năm sinh:</strong>{infoAccounts.birthday} </div>
-                            <div><strong>Giới tính:</strong></div>
-                            <div><strong>Địa chỉ: </strong>{infoAccounts.address}</div>
-                            <div><strong>Điện thoại: </strong>{infoAccounts.phone}</div>
-                            <div><strong>Email:</strong>{infoAccounts.email}</div>
-                        </div>
-                        <div className='col-6'>
-                            <div><strong>ID: </strong></div>
-                            <div><strong>Bác sĩ:</strong></div>
-                            <div><strong>Điện thoại bác sĩ:</strong></div>
-                            <div><strong>Phòng khám:</strong></div>
-                            <div><strong>Ngày khám: </strong></div>
-                            <div><strong>Yêu cầu khám: </strong></div>
-
+                        <div className='col-12'>
+                            <div className='mt-2'><strong>Họ và tên: </strong> {patientRecords?.customer_name}</div>
+                            <div className='mt-2'><strong>Năm sinh:</strong> {patientRecords?.birthday}</div>
+                            <div className='mt-2'><strong>Địa chỉ: </strong>{patientRecords?.address}</div>
+                            <div className='mt-2'><strong>Điện thoại: </strong>{patientRecords?.phone}</div>
+                            <div className='mt-2 flex column-gap-3'><strong>Bác sĩ khám: </strong>
+                                {patientRecords?.patient_doctors?.map(item => 
+                                    <span className='bg-primary1 px-1 border-round-lg'>{item.fullname}</span>
+                                )}
+                            </div>
+                            
                         </div>
                     </div>
                     <div className='my-7'>
-                        <h3 className='pb-2'>Bảng dịch vụ:</h3>
-                        <DataTable className=' text-2xl' value={products} responsiveLayout="stack" breakpoint="960px">
-                            <Column field="stt" header="STT" />
-                            <Column field="symptom" header="Dịch vụ sử dụng" />
-                            <Column field="price" header="Đơn giá" />
+                        <h3 className='pb-2'>Đơn thuốc:</h3>
+                        <DataTable className=' text-2xl' value={patientRecords?.patient_products} responsiveLayout="stack" breakpoint="960px">
+                            <Column header="STT" body={(_, { rowIndex }) => rowIndex + 1} />
+                            <Column field="name" header="Tên thuốc" />
+                            <Column header="Bảng giá" body={(_, { i }) => Number(_.price).toLocaleString('it-IT', { style: 'currency', currency: 'VND' })} />
                         </DataTable>
                     </div>
                     <div className='my-7'>
                         <h3 className='pb-2'>Đơn thuốc:</h3>
-                        <DataTable className='text-2xl' value={products} responsiveLayout="stack" breakpoint="960px">
-                            <Column field="stt" header="STT" />
-                            <Column field="symptom" header="Tên thuốc" />
-                            <Column field="price" header="Cách dùng" />
-                            <Column field="total" header="Đơn giá" />
+                        <DataTable className=' text-2xl' value={patientRecords?.service_patients} responsiveLayout="stack" breakpoint="960px">
+                            <Column header="STT" body={(_, { rowIndex }) => rowIndex + 1} />
+                            <Column field="service_name" header="Dịch vụ sử dụng" />
+                            <Column header="Bảng giá" body={(_, { i }) => Number(_.price).toLocaleString('it-IT', { style: 'currency', currency: 'VND' })} />
                         </DataTable>
                     </div>
                     <div className='grid'>
@@ -92,14 +94,14 @@ const MedicalRecord = () => {
                             </div>
                             <div className='mb-5'>
                                 <h3>Lời dặn:</h3>
-                                <span>Kiêng ăn đồ dễ gây nhiễm màu như chè, cà phê, thuốc lá, rượu vàng,... và hạn chế ăn đồ quá cứng, quá nóng, quá lạnh sau khi tẩy răng trắng ít nhất 2 tuần</span>
+                                <span>{patientRecords?.description}</span>
                             </div>
 
                         </div>
                         <div className='col-12 md:col-4 ld:col-4 ld:text-right md:text-right'>
-                            <div><strong>Tổng chi phí: </strong>{Number(4000000).toLocaleString('it-IT', { style: 'currency', currency: 'VND' })}</div>
+                            <div><strong>Tổng chi phí: </strong>{totalPrice().toLocaleString('it-IT', { style: 'currency', currency: 'VND' })}</div>
                             <div><strong>Khuyễn mãi: </strong> 10%</div>
-                            <div><strong>Đã thanh toán: </strong> {Number(3600000).toLocaleString('it-IT', { style: 'currency', currency: 'VND' })}</div>
+                            <div><strong>Đã thanh toán: </strong> {totalPrice().toLocaleString('it-IT', { style: 'currency', currency: 'VND' })}</div>
 
                         </div>
                     </div>

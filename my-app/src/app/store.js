@@ -6,6 +6,7 @@ import EquipmentsSlice from '../feature/EquipmentsSlice';
 import FeedbackSlice from '../feature/FeedbackSlice';
 import MenuServices from '../feature/MenuServices';
 import NewsSlice from '../feature/NewsSlice';
+import PatientRecords from '../feature/PatientRecords';
 import ServiceSlice from '../feature/ServiceSlice';
 import SpecialistSlice from '../feature/SpecialistSlice';
 import TeamSlice from '../feature/TeamSlice';
@@ -22,5 +23,6 @@ export const store = configureStore({
     equipment: EquipmentsSlice,
     news: NewsSlice,
     specialist: SpecialistSlice,
+    PatientRecords: PatientRecords
   },
 });

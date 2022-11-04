@@ -34,7 +34,7 @@ function App() {
 
           <Route path='*' element={<Page404 />} />
         </Route>
-        <Route path='ho-so-benh-an' element={<MedicalRecord />} />
+        <Route path='ho-so-benh-an/:token/:id' element={<MedicalRecord />} />
 
       </Routes>
     </div>

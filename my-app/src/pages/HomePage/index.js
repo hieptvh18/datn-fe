@@ -60,10 +60,11 @@ const HomePage = () => {
 
   const onSubmit = (data) => {
     const service = data.service_id.id;
-    dispatch(addAccount({ ...data, service: service }));
-    setFormData(data);
-    setShowMessage(true);
-    reset();
+    // dispatch(addAccount({ ...data, service: service }));
+    // setFormData(data);
+    // setShowMessage(true);
+    // reset();
+    console.log({ ...data, service: service });
   };
 
   const getFormErrorMessage = (name) => {

@@ -1,6 +1,6 @@
 
 import { InputText } from "primereact/inputtext";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import "./styles.scss";
 import { InputTextarea } from "primereact/inputtextarea";
@@ -9,15 +9,34 @@ import classNames from "classnames";
 import { addAdvisories } from '../../feature/AdvisorySlice';
 import { Dialog } from "primereact/dialog";
 import { Button } from "primereact/button";
+import { listService } from "../../feature/ServiceSlice";
+import { Dropdown } from "primereact/dropdown";
+import { Calendar } from "primereact/calendar";
 
 const BookingBanner = () => {
   const { control, handleSubmit, formState: { errors }, reset } = useForm()
   const [showMessage, setShowMessage] = useState(false);
+  const menuServices = useSelector(data => data.service.value)
   const dispatch = useDispatch()
+  const services = menuServices.data?.map(item => {
+    return {
+      "name": item.service_name,
+      "code": item.id
+    }
+  });
+  const dates = [...Array(30)].map((_, i) => {
+    const d = new Date()
+    d.setDate(d.getDate() - i)
+    return d
+  })
+  useEffect(() =>{
+    dispatch(listService())
+  }, [])
   const onSubmit = data => {
-    dispatch(addAdvisories(data))
-    setShowMessage(true)
-    reset()
+    // dispatch(addAdvisories(data))
+    // setShowMessage(true)
+    // reset()
+    console.log(data);
   }
   const getFormErrorMessage = (name) => {
     return errors[name] && <small className="p-error">{errors[name].message}</small>
@@ -104,13 +123,46 @@ const BookingBanner = () => {
                 {getFormErrorMessage('advisory_phone')}
               </div>
               <div className="p-float-label">
-                <Controller name="advisory_content" control={control}
-                  render={({ field, fieldState }) => (
-
-                    <InputTextarea id={field.name} {...field} className="w-full py-3" rows={5} autoResize />
-
-                  )} />
-                <label className="text-1xl" htmlFor="advisory_content">Vấn đề bạn gặp phải</label>
+                <Controller
+                    name="service_id"
+                    control={control}
+                    render={({ field, fieldState }) => (
+                      <Dropdown
+                        id={field.name}
+                        value={field.value}
+                        style={{ height: "50px", fontSize: "17px" }}
+                        {...field}
+                        options={services}
+                        optionLabel="name"
+                        onChange={(e) => field.onChange(e.value)}
+                        className={classNames({
+                          "p-invalid": fieldState.invalid, 
+                        }, 'w-full border-300 cs-text-booking-banner')}
+                      />
+                    )}
+                  />
+                <label className="text-1xl" htmlFor="advisory_content">Dịch vụ</label>
+              </div>
+              <div className="p-float-label">
+                <Controller
+                    name="date"
+                    control={control}
+                    render={({ field, fieldState }) => (
+                      <Calendar
+                        style={{ height: "50px" }}
+                        id={field.name}
+                        {...field}
+                        className={classNames({
+                          "p-invalid": fieldState.invalid,
+                        }, 'w-full border-300 cs-text-booking-banner')}
+                        disabledDates={dates}
+                        onChange={(e) => field.onChange(e.value)}
+                        dateFormat="dd/mm/yy"
+                        showIcon
+                      />
+                    )}
+                  />
+                <label className="text-1xl" htmlFor="advisory_content">Ngày đặt</label>
               </div>
               <button type="submit" className="text-white py-4 text-2xl border-round-lg bg-primary1 pointer-events-auto">Gửi cho chúng tôi</button>
             </form>

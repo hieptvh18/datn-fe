@@ -2,12 +2,13 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import FooterPage from '../../components/FooterPage';
 import { listMenuServices } from '../../feature/MenuServices'
+import { listService } from '../../feature/ServiceSlice';
 import './styles.scss'
 const ServicePage = () => {
-    const service = useSelector(data => data.menuServices.value)
+    const service = useSelector(data => data.service.value.data)
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(listMenuServices())
+        dispatch(listService())
     }, []);
     return (
         <div className='w-100% mx-auto'>
@@ -22,18 +23,19 @@ const ServicePage = () => {
             </div>
             <div className='content-equipment'>
                 {service?.map((data, index) => {
+                    console.log(data);
                     return <div className='grid gap-8 mb-8' key={index}>
                         <div className='col-12 md:col-5 lg:col-5'>
                             <img width='100%' src={data.image} />
                         </div>
                         <div className='col-12 md:col-6 lg:col-6'>
-                            <div style={{ fontFamily: 'var(--fontArsenal)', color: 'var(--primary)' }} className='pb-5 text-6xl'>{index + 1}. {data.label}</div>
-                            <div style={{ fontFamily: 'var(--fontRoboto)' }} className='pb-5'>{data.content}</div>
-                            <div>{data.items.map((data, index) => {
+                            <div style={{ fontFamily: 'var(--fontArsenal)', color: 'var(--primary)' }} className='pb-5 text-6xl'>{index + 1}. {data.service_name}</div>
+                            <div style={{ fontFamily: 'var(--fontRoboto)' }} className='pb-5'>{data.funtion}</div>
+                            {/* <div>{data.items.map((data, index) => {
                                 return <ul style={{ listStyle: 'none' }}>
                                     <a href='#'><li className='service-items'>{data.label}</li></a>
                                 </ul>
-                            })}</div>
+                            })}</div> */}
                             <div style={{ width: '100px' }}><a href='#' className='service-watch-detail'>Xem chi tiết</a> </div>
                         </div>
                     </div>

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { listAllTeam } from '../../feature/TeamSlice';
 import { Carousel } from 'primereact/carousel';
@@ -6,10 +6,14 @@ import { Button } from 'primereact/button';
 import "./styles.scss";
 const Team = () => {
     const teams = useSelector(team => team.team.value);
-    const dispatch = useDispatch()
+    const [teamData, setTeamData] = useState([]);
+    const [change, setChange] = useState(false)
+    const dispatch = useDispatch();
     useEffect(() => {
+        setChange(true)
         dispatch(listAllTeam())
-    }, []);
+        setTeamData(teams.data);
+    }, [teamData]);
     const responsiveOptions = [
         {
             breakpoint: '1024px',
@@ -32,12 +36,12 @@ const Team = () => {
             <div className="product-item">
                 <div className="product-item-content text-center">
                     <div className="mb-3">
-                        <img width='60%' src={team.image} onError={(e) => e.target.src = 'https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png'} className="product-image" />
+                        <img width='60%' src={team?.image} onError={(e) => e.target.src = 'https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png'} className="product-image" />
                     </div>
                     <div>
-                        <h4 className="mb-1 text-white text-4xl pt-2 pb-4">{team.name}</h4>
+                        <h4 className="mb-1 text-white text-4xl pt-2 pb-4">{team?.fullname}</h4>
                         <div className='px-8 text-left text-white text-xl'>
-                            {team.position}
+                            {team.admin_level.name}
                         </div>
                     </div>
 
@@ -148,7 +152,7 @@ const Team = () => {
                 </div>
                 <div style={{ backgroundColor: 'var(--primary1)' }} className='w-full mt-8 py-8 '>
                     <div className='text-center w-default mx-auto'>
-                        <Carousel value={teams} numVisible={3} numScroll={1} responsiveOptions={responsiveOptions} className="custom-carousel px-4" circular
+                        <Carousel value={teamData} numVisible={3} numScroll={1} responsiveOptions={responsiveOptions} className="custom-carousel px-4" circular
                             autoplayInterval={3000} itemTemplate={teamTemplate} />
                     </div>
                 </div>

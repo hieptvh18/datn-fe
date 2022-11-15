@@ -68,7 +68,6 @@ const HomePage = () => {
       setShowMessage(true);
     } catch (error) {
       toast.current.show({ severity: 'error', summary: 'Lỗi!', detail: `${error.response.data.message}`, life: 3000 });
-      console.log(error.response.data.message);
     }
 
     reset();

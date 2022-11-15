@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux'
 import { addAccount } from '../../../feature/AccountSlice'
@@ -7,20 +7,27 @@ import "./styles.scss"
 import { Button } from 'primereact/button';
 import { Calendar } from 'primereact/calendar';
 import { listService } from '../../../feature/ServiceSlice';
+import { addAccounts } from '../../../api/account';
+import { Toast } from 'primereact/toast';
 
 const ModalBooking = () => {
+    const toast = useRef(null);
     const dispatch = useDispatch()
     const [statusBooking, setStatusBooking] = useState(false)
     const [formData, setFormData] = useState({});
     const [showMessage, setShowMessage] = useState(false);
     const menuServices = useSelector(data => data.service.value?.data)
     const { control, register, handleSubmit, formState: { errors }, reset } = useForm()
-    const onSubmit = data => {
+    const onSubmit = async (data) => {
         const t = new Date(data.date.getTime()).toLocaleDateString()
-        // dispatch(addAccount({...data, date: t}))
-        // setFormData(data)
-        // setShowMessage(true);
-        // reset()
+        try {
+            await addAccounts({ ...data, date: t })
+            setFormData(data);
+            setShowMessage(true);
+        } catch (error) {
+            toast.current.show({ severity: 'error', summary: 'Lỗi!', detail: `${error.response.data.message}`, life: 3000 });
+        }
+        reset()
     }
     useEffect(() => {
         dispatch(listService())
@@ -35,13 +42,14 @@ const ModalBooking = () => {
     const dialogFooter = <div className="flex justify-content-center"><Button style={{ color: 'var(--primary1)', fontSize: '18px' }} label="OK" className="p-button-text" autoFocus onClick={() => setShowMessage(false)} /></div>;
     return (
         <>
+            <Toast ref={toast} />
             <Dialog visible={showMessage} onHide={() => setShowMessage(false)} position="top" footer={dialogFooter} showHeader={false} breakpoints={{ '960px': '80vw' }} style={{ width: '30vw' }}>
                 <div className="flex justify-content-center flex-column pt-6 px-3">
                     <i className="pi pi-check-circle" style={{ fontSize: '5rem', color: 'var(--primary)' }}></i>
                     <h1 style={{ paddingTop: '5px', color: 'var(--primary1)' }}>Đặt lịch khám thành công!</h1>
                     <p style={{ lineHeight: 1.5, fontSize: '14px' }}>
                         Tài khoản của bạn được tạo dưới số điện thoại <b>{formData.phone}</b> <br />
-                        Tên là <b>{formData.fullName}</b>!
+                        Tên là <b>{formData.fullname}</b>!
                     </p>
                 </div>
             </Dialog>
@@ -61,7 +69,7 @@ const ModalBooking = () => {
                     <div>KHÁM</div>
                 </div>
                 <div style={{ width: "250px" }} className='flex flex-column'>
-                    <input name="fullname" {...register('fullName', { required: true })} className='w-full h-full px-4 text-2xl border-bottom-1 border-top-1 border-400' placeholder='Họ tên *' />
+                    <input name="fullname" {...register('fullname', { required: true })} className='w-full h-full px-4 text-2xl border-bottom-1 border-top-1 border-400' placeholder='Họ tên *' />
                     <input name="phone" {...register('phone', { required: true })} className='w-full h-full px-4 text-2xl border-bottom-1 border-400' placeholder='Số điện thoại *' />
                     <select {...register('service', { required: true })} className='w-full h-full px-4 text-2xl border-bottom-1 border-400 text-500'>
                         <option value="" selected>Dịch vụ</option>

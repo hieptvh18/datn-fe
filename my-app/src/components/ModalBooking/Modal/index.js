@@ -69,9 +69,9 @@ const ModalBooking = () => {
                     <div>KHÁM</div>
                 </div>
                 <div style={{ width: "250px" }} className='flex flex-column'>
-                    <input name="fullname" {...register('fullname', { required: true })} className='w-full h-full px-4 text-2xl border-bottom-1 border-top-1 border-400' placeholder='Họ tên *' />
-                    <input name="phone" {...register('phone', { required: true })} className='w-full h-full px-4 text-2xl border-bottom-1 border-400' placeholder='Số điện thoại *' />
-                    <select {...register('service', { required: true })} className='w-full h-full px-4 text-2xl border-bottom-1 border-400 text-500'>
+                    <input name="fullname" {...register('fullname', { required: true })} className={errors.fullname ? 'w-full h-full px-4 text-2xl border-bottom-1 border-top-1 border-red-500' : 'w-full h-full px-4 text-2xl border-bottom-1 border-top-1 border-400'} placeholder='Họ tên *' />
+                    <input name="phone" {...register('phone', { required: true, pattern: /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/i })} className={errors.phone ? 'w-full h-full px-4 text-2xl border-bottom-1 border-top-1 border-red-500' : 'w-full h-full px-4 text-2xl border-bottom-1 border-top-1 border-400'} placeholder='Số điện thoại *' />
+                    <select {...register('service', { required: true })} className={errors.service ? 'w-full h-full px-4 text-2xl border-bottom-1 border-red-500 text-500' : 'w-full h-full px-4 text-2xl border-bottom-1 border-400 text-500'}>
                         <option value="" selected>Dịch vụ</option>
                         {menuServices?.map(item =>
                             <option value={item.service_name}>{item.service_name}</option>
@@ -79,7 +79,7 @@ const ModalBooking = () => {
                     </select>
                     <Calendar
                         placeholder='Ngày khám'
-                        className='cs-calendar-booking'
+                        className={errors.date ? 'p-invalid cs-calendar-booking' : 'cs-calendar-booking'}
                         disabledDates={dates}
                         {...register('date', { required: true })}
                     />

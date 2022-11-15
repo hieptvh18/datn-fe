@@ -220,13 +220,12 @@ const HomePage = () => {
                           <Controller
                             name="fullname"
                             control={control}
-                            rules={{ required: "Họ và tên bắt buộc nhập!" }}
+                            rules={{ required: "Họ và tên bắt buộc nhập!", }}
                             render={({ field, fieldState }) => (
                               <InputText
-                                style={{ height: "50px", fontSize: "17px" }}
+                                style={{ height: "50px", fontSize: "14px" }}
                                 id={field.name}
                                 {...field}
-
                                 className={classNames({
                                   "p-invalid": fieldState.invalid,
                                 })}
@@ -234,15 +233,15 @@ const HomePage = () => {
                             )}
                           />
                           <label
-                            htmlFor="fullName"
+                            htmlFor="fullname"
                             className={classNames({
-                              "p-error": errors.fullName,
+                              "p-error": errors.fullname,
                             })}
                           >
                             Họ và tên
                           </label>
                         </span>
-                        {getFormErrorMessage("fullName")}
+                        {getFormErrorMessage("fullname")}
                       </div>
                       <div className="field col-12 md:col-6">
                         <span className="p-float-label">
@@ -259,7 +258,7 @@ const HomePage = () => {
                             }}
                             render={({ field, fieldState }) => (
                               <InputText
-                                style={{ height: "50px", fontSize: "17px" }}
+                                style={{ height: "50px", fontSize: "14px" }}
                                 id={field.name}
                                 {...field}
 
@@ -283,11 +282,12 @@ const HomePage = () => {
                           <Controller
                             name="service_id"
                             control={control}
+                            rules={{ required: "Dịch vụ bắt buộc chọn!" }}
                             render={({ field, fieldState }) => (
                               <Dropdown
                                 id={field.name}
                                 value={field.value}
-                                style={{ height: "50px", fontSize: "17px" }}
+                                style={{ height: "50px", fontSize: "14px" }}
                                 {...field}
                                 options={services}
                                 optionLabel="name"
@@ -307,12 +307,14 @@ const HomePage = () => {
                             Dịch vụ
                           </label>
                         </span>
+                        {getFormErrorMessage("service_id")}
                       </div>
                       <div className="field col-12 md:col-6">
                         <span className="p-float-label">
                           <Controller
                             name="date"
                             control={control}
+                            rules={{ required: "Ngày khám bắt buộc chọn!" }}
                             render={({ field, fieldState }) => (
                               <Calendar
                                 style={{ height: "50px" }}
@@ -335,6 +337,7 @@ const HomePage = () => {
                             Ngày khám
                           </label>
                         </span>
+                        {getFormErrorMessage("date")}
                       </div>
                       <div className="field col-12 md:col-6 m-auto">
                         <Button

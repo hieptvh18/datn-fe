@@ -33,9 +33,9 @@ const BookingBanner = () => {
     dispatch(listService())
   }, [])
   const onSubmit = data => {
-    // dispatch(addAdvisories(data))
-    // setShowMessage(true)
-    // reset()
+    dispatch(addAdvisories(data))
+    setShowMessage(true)
+    reset()
   }
   const getFormErrorMessage = (name) => {
     return errors[name] && <small className="p-error">{errors[name].message}</small>

@@ -9,12 +9,11 @@ const MedicalRecord = () => {
     const patientRecords = useSelector(data => data.PatientRecords.value?.data)
     const datas = useParams()
     const dispatch = useDispatch()
-    useEffect(() =>{
+    useEffect(() => {
         dispatch(getPatientRecords(datas))
     }, [])
-    console.log(patientRecords);
     const date = patientRecords?.date.split("-");
-    const totalPrice = () =>{
+    const totalPrice = () => {
         let price = 0
         let total = []
         const priceProduct = patientRecords?.patient_products?.map(item => {
@@ -23,7 +22,7 @@ const MedicalRecord = () => {
         const pricePatients = patientRecords?.service_patients?.map(item => {
             return total.push(Number(item.price))
         });
-        total.forEach(item =>{
+        total.forEach(item => {
             price += item
         })
 
@@ -62,11 +61,11 @@ const MedicalRecord = () => {
                             <div className='mt-2'><strong>Địa chỉ: </strong>{patientRecords?.address}</div>
                             <div className='mt-2'><strong>Điện thoại: </strong>{patientRecords?.phone}</div>
                             <div className='mt-2 flex column-gap-3'><strong>Bác sĩ khám: </strong>
-                                {patientRecords?.patient_doctors?.map(item => 
+                                {patientRecords?.patient_doctors?.map(item =>
                                     <span className='bg-primary1 px-1 border-round-lg'>{item.fullname}</span>
                                 )}
                             </div>
-                            
+
                         </div>
                     </div>
                     <div className='my-7'>

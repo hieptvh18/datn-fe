@@ -21,15 +21,14 @@ const ModalBooking = () => {
         // setFormData(data)
         // setShowMessage(true);
         // reset()
-        console.log({...data, date: t});
     }
     useEffect(() => {
         dispatch(listService())
-      }, [])
+    }, [])
     const dates = [...Array(30)].map((_, i) => {
-    const d = new Date()
-    d.setDate(d.getDate() - i)
-    return d
+        const d = new Date()
+        d.setDate(d.getDate() - i)
+        return d
     })
     let today = new Date();
     let invalidDates = [today];

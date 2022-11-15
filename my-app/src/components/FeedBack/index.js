@@ -11,7 +11,6 @@ const FeedBack = () => {
     useEffect(() => {
         dispatch(listFeedback())
     }, []);
-    console.log(feedback);
     const settings = {
         dots: true,
         slidesToShow: 3,

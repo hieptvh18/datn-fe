@@ -4,7 +4,6 @@ import { listEquipment } from '../../feature/EquipmentsSlice'
 import "./styles.scss"
 const EquipmentPage = () => {
     const equipment = useSelector(data => data.equipment.value.data);
-    console.log(equipment);
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(listEquipment())

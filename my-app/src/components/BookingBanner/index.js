@@ -29,14 +29,13 @@ const BookingBanner = () => {
     d.setDate(d.getDate() - i)
     return d
   })
-  useEffect(() =>{
+  useEffect(() => {
     dispatch(listService())
   }, [])
   const onSubmit = data => {
     // dispatch(addAdvisories(data))
     // setShowMessage(true)
     // reset()
-    console.log(data);
   }
   const getFormErrorMessage = (name) => {
     return errors[name] && <small className="p-error">{errors[name].message}</small>
@@ -124,44 +123,44 @@ const BookingBanner = () => {
               </div>
               <div className="p-float-label">
                 <Controller
-                    name="service_id"
-                    control={control}
-                    render={({ field, fieldState }) => (
-                      <Dropdown
-                        id={field.name}
-                        value={field.value}
-                        style={{ height: "50px", fontSize: "17px" }}
-                        {...field}
-                        options={services}
-                        optionLabel="name"
-                        onChange={(e) => field.onChange(e.value)}
-                        className={classNames({
-                          "p-invalid": fieldState.invalid, 
-                        }, 'w-full border-300 cs-text-booking-banner')}
-                      />
-                    )}
-                  />
+                  name="service_id"
+                  control={control}
+                  render={({ field, fieldState }) => (
+                    <Dropdown
+                      id={field.name}
+                      value={field.value}
+                      style={{ height: "50px", fontSize: "17px" }}
+                      {...field}
+                      options={services}
+                      optionLabel="name"
+                      onChange={(e) => field.onChange(e.value)}
+                      className={classNames({
+                        "p-invalid": fieldState.invalid,
+                      }, 'w-full border-300 cs-text-booking-banner')}
+                    />
+                  )}
+                />
                 <label className="text-1xl" htmlFor="advisory_content">Dịch vụ</label>
               </div>
               <div className="p-float-label">
                 <Controller
-                    name="date"
-                    control={control}
-                    render={({ field, fieldState }) => (
-                      <Calendar
-                        style={{ height: "50px" }}
-                        id={field.name}
-                        {...field}
-                        className={classNames({
-                          "p-invalid": fieldState.invalid,
-                        }, 'w-full border-300 cs-text-booking-banner')}
-                        disabledDates={dates}
-                        onChange={(e) => field.onChange(e.value)}
-                        dateFormat="dd/mm/yy"
-                        showIcon
-                      />
-                    )}
-                  />
+                  name="date"
+                  control={control}
+                  render={({ field, fieldState }) => (
+                    <Calendar
+                      style={{ height: "50px" }}
+                      id={field.name}
+                      {...field}
+                      className={classNames({
+                        "p-invalid": fieldState.invalid,
+                      }, 'w-full border-300 cs-text-booking-banner')}
+                      disabledDates={dates}
+                      onChange={(e) => field.onChange(e.value)}
+                      dateFormat="dd/mm/yy"
+                      showIcon
+                    />
+                  )}
+                />
                 <label className="text-1xl" htmlFor="advisory_content">Ngày đặt</label>
               </div>
               <button type="submit" className="text-white py-4 text-2xl border-round-lg bg-primary1 pointer-events-auto">Gửi cho chúng tôi</button>

@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./styles.scss";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
-
+import { Toast } from 'primereact/toast';
 import { InputText } from "primereact/inputtext";
 import { Dropdown } from "primereact/dropdown";
 import { Button } from "primereact/button";
@@ -24,8 +24,10 @@ import SpecialiezdTeam from "../../components/SpecialiezdTeam";
 import { getBannerHome } from "../../feature/BannerHomeSlice";
 import { listMenuServices } from "../../feature/MenuServices";
 import { listService } from "../../feature/ServiceSlice";
+import { addAccounts } from "../../api/account";
 
 const HomePage = () => {
+  const toast = useRef(null);
   const dispatch = useDispatch();
   const bannerHome = useSelector(data => data.bannerHome.value)
   const menuServices = useSelector(data => data.service.value)
@@ -58,13 +60,18 @@ const HomePage = () => {
     return d
   })
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     const service = data.service_id.id;
-    // dispatch(addAccount({ ...data, service: service }));
-    // setFormData(data);
-    // setShowMessage(true);
-    // reset();
-    console.log({ ...data, service: service });
+    try {
+      await addAccounts({ ...data, service: service })
+      setFormData(data);
+      setShowMessage(true);
+    } catch (error) {
+      toast.current.show({ severity: 'error', summary: 'Lỗi!', detail: `${error.response.data.message}`, life: 3000 });
+      console.log(error.response.data.message);
+    }
+
+    reset();
   };
 
   const getFormErrorMessage = (name) => {
@@ -77,13 +84,13 @@ const HomePage = () => {
       <Button
         label="OK"
         className="p-button-text"
-
         onClick={() => setShowMessage(false)}
       />
     </div>
   );
   return (
     <>
+      <Toast ref={toast} />
       <div className="relative">
         <div>
           <Slider {...settings}>

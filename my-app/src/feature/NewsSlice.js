@@ -6,7 +6,6 @@ export const listNews = createAsyncThunk(
     "newsSlice/listNews",
     async () => {
         const { data } = await getNews();
-        console.log(data);
         return data
     }
 )

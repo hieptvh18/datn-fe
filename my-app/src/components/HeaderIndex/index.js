@@ -10,6 +10,7 @@ import { Logout } from "../../feature/AuthSlice";
 import { SplitButton } from 'primereact/splitbutton';
 import { Navigate, NavLink, useNavigate } from "react-router-dom"
 import { listMenuServices } from "../../feature/MenuServices";
+import logo from "../../assets/image/logo.png"
 const cx = classNames.bind(styles);
 
 
@@ -117,7 +118,7 @@ const HeaderIndex = () => {
       <div className={cx("wrapper-header1")}>
         <div className={cx("wrapper-main-logo")}>
           <NavLink to="/">
-            <img src="https://res.cloudinary.com/dbpw1enlu/image/upload/v1663124409/denticare-logo_umln3a.png" width="170px" />
+            <img src={logo} style={{ width: "150px" }} />
           </NavLink>
         </div>
         <div className={cx("wrapper-timeline")}>

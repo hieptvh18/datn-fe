@@ -61,9 +61,9 @@ const HomePage = () => {
   })
 
   const onSubmit = async (data) => {
-    const service = data.service_id.id;
+    const service = data.service_id;
     try {
-      await addAccounts({ ...data, service: service })
+      await addAccounts({ ...data, service_id: service })
       setFormData(data);
       setShowMessage(true);
     } catch (error) {
@@ -290,6 +290,7 @@ const HomePage = () => {
                                 style={{ height: "50px", fontSize: "14px" }}
                                 {...field}
                                 options={services}
+                                optionValue={"code"}
                                 optionLabel="name"
                                 onChange={(e) => field.onChange(e.value)}
                                 className={classNames({

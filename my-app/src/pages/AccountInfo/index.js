@@ -7,8 +7,8 @@ import { listUserById } from '../../feature/AuthSlice';
 const AccountInfo = () => {
     const infoAccounts = useSelector(data => data.user.value?.data);
     const user = JSON.parse(localStorage.getItem('user'))
-    const patientId = user.data['id'];
-    const phone = user.data['phone'];
+    const patientId = user?.data['id'];
+    const phone = user?.data['phone'];
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(listUserById([phone, patientId]))
@@ -20,49 +20,49 @@ const AccountInfo = () => {
             <ul className="list-none p-0 m-0">
                 <li className="flex align-items-center py-3 px-2 border-top-1 border-300 flex-wrap">
                     <div className="text-500 w-6 md:w-2 font-medium">Họ và tên</div>
-                    <div className="text-900 w-full md:w-8 md:flex-order-0 flex-order-1">{infoAccounts.customer_name}</div>
+                    <div className="text-900 w-full md:w-8 md:flex-order-0 flex-order-1">{infoAccounts?.customer_name}</div>
                     <div className="w-6 md:w-2 flex justify-content-end">
 
                     </div>
                 </li>
                 <li className="flex align-items-center py-3 px-2 border-top-1 border-300 flex-wrap">
                     <div className="text-500 w-6 md:w-2 font-medium">Ngày sinh</div>
-                    <div className="text-900 w-full md:w-8 md:flex-order-0 flex-order-1">{infoAccounts.birthday}</div>
+                    <div className="text-900 w-full md:w-8 md:flex-order-0 flex-order-1">{infoAccounts?.birthday}</div>
                     <div className="w-6 md:w-2 flex justify-content-end">
 
                     </div>
                 </li>
                 <li className="flex align-items-center py-3 px-2 border-top-1 border-300 flex-wrap">
                     <div className="text-500 w-6 md:w-2 font-medium">Giới tính</div>
-                    <div className="text-900 w-full md:w-8 md:flex-order-0 flex-order-1">{infoAccounts.gender}</div>
+                    <div className="text-900 w-full md:w-8 md:flex-order-0 flex-order-1">{infoAccounts?.gender}</div>
                     <div className="w-6 md:w-2 flex justify-content-end">
 
                     </div>
                 </li>
                 <li className="flex align-items-center py-3 px-2 border-top-1 border-300 flex-wrap">
                     <div className="text-500 w-6 md:w-2 font-medium">Số điện thoại</div>
-                    <div className="text-900 w-full md:w-8 md:flex-order-0 flex-order-1">{infoAccounts.phone}</div>
+                    <div className="text-900 w-full md:w-8 md:flex-order-0 flex-order-1">{infoAccounts?.phone}</div>
                     <div className="w-6 md:w-2 flex justify-content-end">
 
                     </div>
                 </li>
                 <li className="flex align-items-center py-3 px-2 border-top-1 border-300 flex-wrap">
                     <div className="text-500 w-6 md:w-2 font-medium">Số căn cước công dân</div>
-                    <div className="text-900 w-full md:w-8 md:flex-order-0 flex-order-1">{infoAccounts.cmnd}</div>
+                    <div className="text-900 w-full md:w-8 md:flex-order-0 flex-order-1">{infoAccounts?.cmnd}</div>
                     <div className="w-6 md:w-2 flex justify-content-end">
 
                     </div>
                 </li>
                 <li className="flex align-items-center py-3 px-2 border-top-1 border-300 flex-wrap">
                     <div className="text-500 w-6 md:w-2 font-medium">Địa chỉ</div>
-                    <div className="text-900 w-full md:w-8 md:flex-order-0 flex-order-1">{infoAccounts.address}</div>
+                    <div className="text-900 w-full md:w-8 md:flex-order-0 flex-order-1">{infoAccounts?.address}</div>
                     <div className="w-6 md:w-2 flex justify-content-end">
 
                     </div>
                 </li>
                 <li className="flex align-items-center py-3 px-2 border-top-1 border-300 flex-wrap">
                     <div className="text-500 w-6 md:w-2 font-medium">Đã sử dụng dịch vụ</div>
-                    <div className="text-900 w-full md:w-8 md:flex-order-0 flex-order-1">{infoAccounts.service_patients?.map((e) => <div>{e.service_name}</div>)} </div>
+                    <div className="text-900 w-full md:w-8 md:flex-order-0 flex-order-1">{infoAccounts?.service_patients?.map((e) => <div>{e.service_name}</div>)} </div>
                     <div className="w-6 md:w-2 flex justify-content-end">
 
                     </div>
@@ -70,7 +70,7 @@ const AccountInfo = () => {
                 <li className="flex align-items-center py-3 px-2 border-top-1 border-bottom-1 border-300 flex-wrap">
                     <div className="text-500 w-6 md:w-2 font-medium">Thuốc kê khai</div>
                     <div className='flex-column'>
-                        {infoAccounts.patient_products?.map((item, index) => {
+                        {infoAccounts?.patient_products?.map((item, index) => {
                             return <div key={index} className='flex align-items-center gap-8 mb-3'>
                                 <div className="text-900 w-full md:w-8 md:flex-order-0 flex-order-1 line-height-3">
                                     {item.name}

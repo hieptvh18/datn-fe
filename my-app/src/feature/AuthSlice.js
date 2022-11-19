@@ -4,15 +4,9 @@ import { toast } from "react-toastify";
 export const Login = createAsyncThunk(
     "user/signin",
     async (user) => {
-        try {
-            const { data } = await signIn(user)
-            localStorage.setItem('user', JSON.stringify(data))
-            return data
-
-        } catch (error) {
-            const notify = () => toast("Sai mật khẩu hoặc số điện thoại!")
-            notify()
-        }
+        const { data } = await signIn(user)
+        localStorage.setItem('user', JSON.stringify(data))
+        return data
     }
 )
 

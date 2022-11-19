@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import classNames from "classnames/bind";
 import styles from "./styles.module.scss";
 import { Menubar } from "primereact/menubar";
@@ -16,11 +16,12 @@ const cx = classNames.bind(styles);
 const HeaderIndex = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const isUser = useSelector(data => data.user.value)
+  const [change, setChange] = useState(false)
+  const isUser = JSON.parse(localStorage.getItem('user'))
   const menuServices = useSelector(data => data.menuServices.value)
   useEffect(() => {
     dispatch(listMenuServices())
-  }, [])
+  }, [change])
   const menu = menuServices.map(item => {
     return (
       {
@@ -142,7 +143,7 @@ const HeaderIndex = () => {
       </div>
       <div className='flex justify-content-between'>
         <Menubar className="wrapper-menu" model={items} />
-        {isUser.length === 0 ? <Popup trigger={<Button label="Đăng nhập" className="p-button-link text-2xl" />} modal
+        {!isUser ? <Popup trigger={<Button label="Đăng nhập" className="p-button-link text-2xl" />} modal
           nested>
           {close => (
             <div className="modal" >
@@ -154,8 +155,11 @@ const HeaderIndex = () => {
             </div>
           )}
         </Popup> : <div className="flex align-items-center">
-          <SplitButton label={isUser.username} model={infoAccount} className="p-button-text"></SplitButton>
-          <Button label="Đăng xuất" onClick={() => dispatch(Logout())} className="p-button-link text-2xl" />
+          <SplitButton label={isUser?.username} model={infoAccount} className="p-button-text"></SplitButton>
+          <Button label="Đăng xuất" onClick={() => {
+            setChange(true)
+            dispatch(Logout())
+          }} className="p-button-link text-2xl" />
         </div>}
       </div>
     </div>

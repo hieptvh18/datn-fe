@@ -132,7 +132,7 @@ const HeaderIndex = () => {
       <div className={cx("wrapper-header1")}>
         <div className={cx("wrapper-main-logo")}>
           <NavLink to="/">
-            <img src={logo} style={{ width: "150px" }} />
+            <img src='https://res.cloudinary.com/dbpw1enlu/image/upload/v1669093073/deign_logo_d%E1%BB%B1_%C3%A1n_t%E1%BB%91t_nghi%E1%BB%87p_1_2_mc52bf.png' />
           </NavLink>
         </div>
         <div className={cx("wrapper-timeline")}>

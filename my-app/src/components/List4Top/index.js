@@ -9,7 +9,6 @@ const List4Top = () => {
     useEffect(() => {
         dispatch(listTop4())
     }, []);
-    console.log(specialist);
     return (
         <div className='w-default px-5 mx-auto'>
             <div className='flex justify-content-between align-content-center'>

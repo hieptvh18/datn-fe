@@ -6,7 +6,7 @@ export const listMenuServices = createAsyncThunk(
     'menuServices/listMenuServices',
     async () => {
         const { data } = await getMenuServices()
-        return data
+        return data.data
     }
 )
 

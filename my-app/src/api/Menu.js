@@ -1,6 +1,6 @@
 import instance from "./instance";
 
 export const getMenuServices = () => {
-    const url = `menuServices`
+    const url = `/services/list`
     return instance.get(url)
 }

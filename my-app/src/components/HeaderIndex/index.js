@@ -24,23 +24,37 @@ const HeaderIndex = () => {
     dispatch(listMenuServices())
   }, [change])
   const menu = menuServices.map(item => {
-    return (
-      {
-        label: item.label,
-        items: item.items.map(i => {
-          return (
-            {
-              label: i.label,
-              command: (event) => {
-                navigate(`${i.link}`)
+    if(item.parent_id === 0){
+      return (
+        {
+          label: item.service_name,
+          items:
+            menuServices.map(i => {
+              if(i.parent_id === item.id){
+                return {
+                  label: i.service_name,
+                  command: (event) => {
+                    navigate('/new/abc')
+                  },
+                }
               }
-            }
-          )
-        })
-      }
-    )
-
+              return false
+            })
+        }
+      )
+    }
+    return false
+  });
+  const menu1 = menu.map(i => {
+    if (i){
+      return ({
+        label: i.label,
+        items: i.items.filter(e => e !== false)
+      })
+    }
+    return false
   })
+  const menu2 = menu1.filter(i => i !== false)
   const infoAccount = [
     {
       label: 'Thông tin',
@@ -58,7 +72,7 @@ const HeaderIndex = () => {
   const items = [
     {
       label: "Dịch vụ",
-      items: [...menu]
+      items: [...menu2]
     },
     {
       label: "Về chúng tôi",

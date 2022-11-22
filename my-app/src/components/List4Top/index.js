@@ -9,6 +9,7 @@ const List4Top = () => {
     useEffect(() => {
         dispatch(listTop4())
     }, []);
+    console.log(specialist);
     return (
         <div className='w-default px-5 mx-auto'>
             <div className='flex justify-content-between align-content-center'>
@@ -22,6 +23,7 @@ const List4Top = () => {
             </div>
             <div className='flex flex-column md:flex-row md:column-gap-4 row-gap-6 mt-5 md:px-0 px-7'>
                 {specialist.data?.map((item, index) => {
+                    if(index < 4){
                     return <div className='w-full list-4top-item' key={index}>
                         <div className='w-full flex'>
                             <img className='w-full' src={`http://localhost:8000/${item.image}`} width={200} />
@@ -31,6 +33,7 @@ const List4Top = () => {
                             <span className='md:text-1xl text-2xl'>{item.function}</span>
                         </div>
                     </div>
+                    }
                 })}
 
             </div>

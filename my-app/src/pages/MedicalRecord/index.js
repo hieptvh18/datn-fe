@@ -1,7 +1,7 @@
 import { Column, DataTable } from 'primereact'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { Navigate, useParams } from 'react-router-dom';
 import { listUserById } from '../../feature/AuthSlice';
 import { getPatientRecords } from '../../feature/PatientRecords';
 import './styles.scss'

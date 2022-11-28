@@ -13,6 +13,7 @@ const MedicalRecord = () => {
         dispatch(getPatientRecords(datas))
     }, [])
     const date = patientRecords?.date.split("-");
+    console.log(patientRecords);
     const totalPrice = () => {
         let price = 0
         let total = []
@@ -50,7 +51,7 @@ const MedicalRecord = () => {
             <main style={{ backgroundColor: 'var(--primary1)' }} className='py-7 px-8'>
                 <div className='text-white' style={{ width: '98%', margin: '0 auto' }}>
                     <div className='mainHeader flex justify-content-between align-center '>
-                        <div>ID:{patientRecords?.id}</div>
+                        <div></div>
                         <div>Hà Nội, ngày {date?.length ? date[2] : ""} tháng {date?.length ? date[1] : ""} năm {date?.length ? date[0] : ""}</div>
                     </div>
                     <h1 className='text-center py-8'>Hồ sơ khám bệnh</h1>

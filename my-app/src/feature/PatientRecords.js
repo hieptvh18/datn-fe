@@ -18,6 +18,9 @@ const PatientRecordsSlice = createSlice({
         buider.addCase(getPatientRecords.fulfilled, (state, actions) =>{
             state.value = actions.payload
         })
+        buider.addCase(getPatientRecords.rejected, (state, actions) =>{
+            console.log("cc");
+        })
     }
 })
 

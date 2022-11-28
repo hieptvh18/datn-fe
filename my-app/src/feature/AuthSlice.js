@@ -16,13 +16,6 @@ export const Logout = createAsyncThunk(
         localStorage.removeItem('user')
     }
 )
-export const listUserById = createAsyncThunk(
-    "user/listUserById",
-    async (datas) => {
-        const { data } = await getUserById(datas[0], datas[1])
-        return data
-    }
-)
 
 const user = JSON.parse(localStorage.getItem('user'))
 const AuthSlice = createSlice({
@@ -37,9 +30,6 @@ const AuthSlice = createSlice({
         })
         builder.addCase(Logout.fulfilled, (state, action) => {
             state.value = []
-        })
-        builder.addCase(listUserById.fulfilled, (state, action) => {
-            state.value = action.payload
         })
     }
 

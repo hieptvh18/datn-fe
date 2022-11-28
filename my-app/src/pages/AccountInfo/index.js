@@ -13,6 +13,7 @@ const AccountInfo = () => {
     useEffect(() => {
         dispatch(listUserById([phone, patientId]))
     }, []);
+    console.log(infoAccounts);
     return (
         <div className="surface-0 w-default m-auto my-8 px-6" style={{ fontFamily: 'var(--fontRoboto)' }}>
             <div className="font-bold text-7xl text-blue-700 mb-3">Hồ sơ bệnh án</div>

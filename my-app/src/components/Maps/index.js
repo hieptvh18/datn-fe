@@ -15,14 +15,16 @@ const Map = () => {
     }
   },[])
   const options = {
-    center: {lat: 36.890257, lng: 30.707417},
+    center: {lat: 21.035987, lng: 105.815784},
     zoom: 12
   };
 
   return (
     googleMapsReady && (
       <div className="card">
-          <GMap options={options} style={{width: '100%', minHeight: '320px'}} />
+          <GMap options={options} style={{width: '100%', minHeight: '320px'}} >
+
+          </GMap>
       </div>
     )
   )

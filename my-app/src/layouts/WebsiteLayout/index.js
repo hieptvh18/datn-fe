@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import FooterIndex from "../../components/FooterIndex";
 import HeaderIndex from "../../components/HeaderIndex";
@@ -8,10 +8,16 @@ import ModalBooking from "../../components/ModalBooking/Modal";
 import ScrollToTop from "react-scroll-to-top";
 import ModelFeedBack from "../../components/ModelFeedBack";
 import ContactMessage from "../../components/ContactMessage";
+import { useDispatch, useSelector } from "react-redux";
+import { websettings } from "../../feature/WebsettingSlice";
 
-const cx = classNames.bind(styles)
 const WebsiteLayout = () => {
 
+  const websetting = useSelector((data) => data.Websetting.value)
+  const dispatch = useDispatch()
+  useEffect(() =>{
+    dispatch(websettings())
+  },[])
   return (
     <div>
       <header>

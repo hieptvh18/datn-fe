@@ -10,6 +10,7 @@ import PatientRecords from '../feature/PatientRecords';
 import ServiceSlice from '../feature/ServiceSlice';
 import SpecialistSlice from '../feature/SpecialistSlice';
 import TeamSlice from '../feature/TeamSlice';
+import WebsettingSlice from '../feature/WebsettingSlice';
 
 export const store = configureStore({
   reducer: {
@@ -23,6 +24,7 @@ export const store = configureStore({
     equipment: EquipmentsSlice,
     news: NewsSlice,
     specialist: SpecialistSlice,
-    PatientRecords: PatientRecords
+    PatientRecords: PatientRecords,
+    Websetting: WebsettingSlice
   },
 });

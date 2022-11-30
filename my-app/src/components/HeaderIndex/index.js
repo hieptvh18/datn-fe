@@ -18,10 +18,9 @@ const HeaderIndex = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [change, setChange] = useState(false)
-  const isUser = JSON.parse(localStorage.getItem('user'))
+  const isUser = useSelector(data => data.user.value)
   const menuServices = useSelector(data => data.menuServices.value)
   const websetting = useSelector((data) => data.Websetting.value?.data)
-  console.log(websetting);
   useEffect(() => {
     dispatch(listMenuServices())
   }, [change])
@@ -57,20 +56,6 @@ const HeaderIndex = () => {
     return false
   })
   const menu2 = menu1.filter(i => i !== false)
-  const infoAccount = [
-    {
-      label: 'Thông tin',
-      command: (event) => {
-        navigate('/')
-      },
-    },
-    {
-      label: 'Bệnh án',
-      command: (event) => {
-        navigate('/ho-so-benh-nhan')
-      },
-    }
-  ]
   const items = [
     {
       label: "Dịch vụ",
@@ -127,14 +112,37 @@ const HeaderIndex = () => {
           },
         },
       ]
-    }
+    },
+    isUser ? {
+      label: "Hồ sơ",
+      command: (event) => {
+        navigate('/ho-so-benh-nhan')
+      }
+    } : {}
   ];
+  const login = !isUser ? <Popup closeOnEscape={change} trigger={<Button label="Đăng nhập" className="p-button-link text-2xl" />} modal
+  nested>
+  {close => (
+    <div className="modal" >
+      <button className={cx("close")} onClick={close}>
+        <i className="pi pi-times" style={{ 'fontSize': '20px', }}></i>
+      </button>
+      <LoginAccount />
+      <br />
+    </div>
+  )}
+</Popup> : <div className="flex align-items-center">
+  <Button label="Đăng xuất" onClick={() => {
+    setChange(true)
+    dispatch(Logout())
+  }} className="p-button-link text-2xl" />
+</div>
   return (
     <div className={cx("wrapper-header", 'w-default')}>
       <div className={cx("wrapper-header1")}>
         <div className={cx("wrapper-main-logo")}>
           <NavLink to="/">
-            {/* <img src={'http://localhost:8000/' + websetting[0].logo} /> */}
+            <img src={'http://localhost:8000/' + websetting?.logo} />
           </NavLink>
         </div>
         <div className={cx("wrapper-timeline")}>
@@ -143,8 +151,8 @@ const HeaderIndex = () => {
               <img src="https://res.cloudinary.com/dbpw1enlu/image/upload/v1664338250/phone_hospital_g3ew1o.png" width="40px" />
             </div>
             <div className={cx("timer-wrapper-text")}>
-              <p className={cx("timer-text1")}>415-205-5550</p>
-              <p className={cx("timer-text2")}>24/7 Emergency Phone</p>
+              <p className={cx("timer-text1")}>{websetting?.phones}</p>
+              <p className={cx("timer-text2")}>Chúng tôi luôn sẵn sàng</p>
             </div>
           </div>
           <div className={cx("wrapper-timer-wroking")}>
@@ -152,32 +160,15 @@ const HeaderIndex = () => {
               <img src="https://res.cloudinary.com/dbpw1enlu/image/upload/v1664338205/clock_y7w724.png" width="40px" />
             </div>
             <div className={cx("timer-wrapper-text")}>
-              <p className={cx("timer-text1")}>Monday - Friday</p>
-              <p className={cx("timer-text2")}>9:00 AM - 9:00 PM</p>
+              <p className={cx("timer-text1")}>Thứ 2 - Thứ 7</p>
+              <p className={cx("timer-text2")}>{websetting?.open_time} - {websetting?.close_time}</p>
             </div>
           </div>
         </div>
       </div>
-      <div className='flex justify-content-between'>
-        <Menubar className="wrapper-menu" model={items} />
-        {!isUser ? <Popup trigger={<Button label="Đăng nhập" className="p-button-link text-2xl" />} modal
-          nested>
-          {close => (
-            <div className="modal" >
-              <button className={cx("close")} onClick={close}>
-                <i className="pi pi-times" style={{ 'fontSize': '20px', }}></i>
-              </button>
-              <LoginAccount />
-              <br />
-            </div>
-          )}
-        </Popup> : <div className="flex align-items-center">
-          <SplitButton label={isUser?.username} model={infoAccount} className="p-button-text"></SplitButton>
-          <Button label="Đăng xuất" onClick={() => {
-            setChange(true)
-            dispatch(Logout())
-          }} className="p-button-link text-2xl" />
-        </div>}
+      <div className=''>
+        <Menubar className="wrapper-menu" model={items} end={login} />
+        
       </div>
     </div>
   );

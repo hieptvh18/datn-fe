@@ -7,32 +7,18 @@ import { classNames } from 'primereact/utils';
 import './styles.scss';
 import { Controller, useForm } from 'react-hook-form';
 import { Login } from '../../feature/AuthSlice';
-import { useDispatch } from 'react-redux';
-import { Toast } from 'primereact/toast';
+import { useDispatch, useSelector } from 'react-redux';
+import { ToastContainer } from 'react-toastify';
 import { signIn } from '../../api/auth';
 
 const LoginAccount = () => {
     const toast = useRef(null);
     const [showMessage, setShowMessage] = useState(false);
-
+    const user = useSelector(data => data.user.value)
     const { control, formState: { errors }, handleSubmit, reset } = useForm();
     const dispatch = useDispatch()
     const onSubmit = (data) => {
-        try {
-            signIn(data).then((res) => {
-                if (res.data.success) {
-                    dispatch(Login(data))
-                    localStorage.setItem('user', JSON.stringify(res.data.data))
-                    toast.current.show({ severity: 'success', summary: '', detail: `Đăng nhập thành công`, life: 3000 });
-                } else {
-                    toast.current.show({ severity: 'error', summary: 'Vui lòng thử lại!', detail: `${res.data.message}`, life: 3000 });
-                }
-            });
-
-        } catch (error) {
-
-        }
-        reset();
+        dispatch(Login(data))
     };
 
     const getFormErrorMessage = (name) => {
@@ -43,7 +29,7 @@ const LoginAccount = () => {
 
     return (
         <>
-            <Toast ref={toast} />
+            <ToastContainer autoClose={1200}/>
             <div>
                 <div className='px-5 py-6'>
                     <h2 className='text-center c-primary text-6xl'>ĐĂNG NHẬP</h2>

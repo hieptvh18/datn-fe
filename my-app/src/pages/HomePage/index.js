@@ -31,6 +31,7 @@ const HomePage = () => {
   const dispatch = useDispatch();
   const bannerHome = useSelector(data => data.bannerHome.value)
   const menuServices = useSelector(data => data.service.value)
+  const websetting = useSelector((data) => data.Websetting.value?.data)
   const services = menuServices.data?.map(item => {
     return {
       "name": item.service_name,
@@ -386,29 +387,28 @@ const HomePage = () => {
             <div className="col-12 md:col-6 lg:col flex flex-column align-items-center justify-content-center">
               <img src="https://res.cloudinary.com/dbpw1enlu/image/upload/v1664338250/phone_hospital_g3ew1o.png" width="80px" />
               <h3 style={{ fontFamily: 'var(--fontRoboto)' }} className="text-4xl font-medium  mt-3">Điện thoại liên hệ</h3>
-              <p className="text-600 mt-5">0372559460</p>
+              <a href={'tel:' + websetting?.phones} className="text-600 mt-5">{websetting?.phones}</a>
               <p className="text-600">Gọi cho chúng tôi bất cứ lúc nào 24/7</p>
             </div>
 
             <div className="col-12 md:col-6 lg:col flex flex-column align-items-center justify-content-center">
               <img src="https://res.cloudinary.com/dbpw1enlu/image/upload/v1664963443/hospital_location_kf4fkx.png" width="80px" />
               <h3 style={{ fontFamily: 'var(--fontRoboto)' }} className="text-4xl font-medium mt-3">Địa chỉ</h3>
-              <p className="text-600 mt-5">Số 5 Trịnh Văn Bô, Xuân Phương</p>
-              <p className="text-600">Nam Từ Liên, Hà Nội</p>
+              <p className="text-600 mt-5">{websetting?.address}</p>
+              <p className="text-600"> Hà Nội</p>
             </div>
 
             <div className="col-12 md:col-6 lg:col flex flex-column align-items-center justify-content-center">
               <img src="https://res.cloudinary.com/dbpw1enlu/image/upload/v1664333732/dentist-chair_oavr3q.png" width="80px" />
               <h3 style={{ fontFamily: 'var(--fontRoboto)' }} className="text-4xl font-medium mt-3">Điện thoại đặt lịch</h3>
-              <p className="text-600 mt-5">0372559888</p>
+              <a href={'tel:' + websetting?.phones} className="text-600 mt-5">{websetting?.phones}</a>
               <p className="text-600">Chúng tôi luôn sẵn sàng</p>
             </div>
 
             <div className="col-12 md:col-6 lg:col flex flex-column align-items-center justify-content-center">
               <img src="https://res.cloudinary.com/dbpw1enlu/image/upload/v1664963466/mail_hospital_x4c7hu.png" width="80px" />
               <h3 style={{ fontFamily: 'var(--fontRoboto)' }} className="text-4xl font-medium mt-3">Gửi email cho chúng tôi</h3>
-              <p className="text-600 mt-5">nghiatdph14539@fpt.edu.vn</p>
-              <p className="text-600">tuanna14620@fpt.edu.vn</p>
+              <a href={'mailto:' + websetting?.email} className="text-600 mt-5">{websetting?.email}</a>
             </div>
           </div>
         </div>

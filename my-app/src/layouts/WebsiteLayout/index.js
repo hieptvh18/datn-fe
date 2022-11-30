@@ -10,6 +10,8 @@ import ModelFeedBack from "../../components/ModelFeedBack";
 import ContactMessage from "../../components/ContactMessage";
 import { useDispatch, useSelector } from "react-redux";
 import { websettings } from "../../feature/WebsettingSlice";
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
 
 const WebsiteLayout = () => {
 
@@ -33,6 +35,7 @@ const WebsiteLayout = () => {
       <ScrollToTop smooth />
       <ModelFeedBack />
       <ContactMessage/>
+      <ToastContainer autoClose={1200}/>
     </div>
   );
 };

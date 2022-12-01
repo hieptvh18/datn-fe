@@ -9,7 +9,6 @@ const SpecialiezdTeam = () => {
     useEffect(() => {
         dispatch(listAllTeam())
     }, []);
-    console.log(team);
     return (
         <div className="mx-auto w-default px-5">
             <div className="flex flex-column md:flex-row row-gap-6 md:column-gap-5 -mt-8 px-7 md:px-0">

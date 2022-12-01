@@ -75,7 +75,7 @@ const ModalBooking = () => {
                     <select {...register('service', { required: true })} className={errors.service ? 'w-full h-full px-4 text-2xl border-bottom-1 border-red-500 text-500' : 'w-full h-full px-4 text-2xl border-bottom-1 border-400 text-500'}>
                         <option value="" selected>Dịch vụ</option>
                         {menuServices?.map(item =>
-                            <option value={item.service_name}>{item.service_name}</option>
+                            <option value={item.id}>{item.service_name}</option>
                         )}
                     </select>
                     <Calendar

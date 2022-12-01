@@ -36,15 +36,16 @@ const BookingBanner = () => {
   useEffect(() => {
     dispatch(listService())
   }, [])
-  const onSubmit = async data => {
+  const onSubmit = async (data, e) => {
     try {
-      await addAccounts({...data, service: data.service.name})
+      await addAccounts({...data, service_id: data.service_id.code})
       setFormData(data);
       setShowMessage(true);
     } catch (error) {
         toast.current.show({ severity: 'error', summary: 'Lỗi!', detail: `${error.response.data.message}`, life: 3000 });
         console.log(error);
     }
+    e.target.reset()
     reset()
   }
   const getFormErrorMessage = (name) => {
@@ -86,7 +87,7 @@ const BookingBanner = () => {
                       <InputText id={field.name} {...field} className={classNames({ 'p-invalid': fieldState.invalid }, 'w-full py-3 border-300 text-2xl')} />
 
                     )} />
-                  <label className={classNames({ 'p-error': errors.fullname }, 'text-1xl')} htmlFor="fullname">Họ và tên *</label>
+                  <label className={classNames({ 'p-error': errors.fullname }, 'text-1xl')} >Họ và tên *</label>
                 </div>
                 {getFormErrorMessage('fullname')}
               </div>
@@ -107,14 +108,15 @@ const BookingBanner = () => {
 
 
                     )} />
-                  <label htmlFor="fullname" className={classNames({ 'p-error': errors.phone }, 'text-1xl')}>Số điện thoại *</label>
+                  <label className={classNames({ 'p-error': errors.phone }, 'text-1xl')}>Số điện thoại *</label>
                 </div>
                 {getFormErrorMessage('phone')}
               </div>
               <div className="p-float-label">
                 <Controller
-                  name="service"
+                  name="service_id"
                   control={control}
+                  rules={{ required: "Vui lòng chọn dịch vụ !" }}
                   render={({ field, fieldState }) => (
                     <Dropdown
                       id={field.name}
@@ -130,7 +132,8 @@ const BookingBanner = () => {
                     />
                   )}
                 />
-                <label className="text-1xl" htmlFor="advisory_content">Dịch vụ</label>
+                <label className={classNames({ 'p-error': errors.phone }, 'text-1xl')} htmlFor="advisory_content">Dịch vụ</label>
+                {getFormErrorMessage('service_id')}
               </div>
               <div className="p-float-label">
                 <Controller

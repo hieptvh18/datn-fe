@@ -9,7 +9,6 @@ const List4Top = () => {
     useEffect(() => {
         dispatch(listTop4())
     }, []);
-    console.log(specialist);
     return (
         <div className='w-default px-5 mx-auto'>
             <div className='flex justify-content-between align-content-center'>
@@ -26,7 +25,10 @@ const List4Top = () => {
                     if(index < 4){
                     return <div className='w-full list-4top-item' key={index}>
                         <div className='w-full flex'>
-                            <img className='w-full' src={'http://localhost:8000/' + item.image} width={200} />
+                            {specialist?.image ? 
+                                <img className='w-full' src={'http://localhost:8000/' + item.image} width={200} />
+                                : <img className='w-full' src='https://res.cloudinary.com/dbpw1enlu/image/upload/v1663499942/post_06-160x160_ni7izy.jpg' width={200}/>
+                            }
                         </div>
                         <div className='h-300px cs-box-dow bg-primary1 px-6 pt-8 pb-6 text-white'>
                             <p className='md:text-4xl lg:text-5xl text-5xl mb-4 font-normal'>{item.specialist_name}</p>

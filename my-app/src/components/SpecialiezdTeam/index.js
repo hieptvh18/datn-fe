@@ -18,10 +18,16 @@ const SpecialiezdTeam = () => {
                             <div className="w-full">
                                 <div className="w-full flex flex-column">
                                     <div className="w-full relative box-img">
+                                        {item?.avatar ? 
                                         <img
+                                            className='flex w-full'
+                                            src={'http://localhost:8000/' + item?.avatar}
+                                        />
+                                        :<img
                                             className='flex w-full'
                                             src='http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/people-01.jpg'
                                         />
+                                        }
                                         <NavLink to={'/doi-ngu-nhan-vien'}>
                                             <button className='bg-primary1 text-white font-normal px-4 py-3 text-2xl border-round-lg pointer absolute btn-read-more'>
                                                 Read More

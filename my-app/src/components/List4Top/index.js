@@ -25,8 +25,8 @@ const List4Top = () => {
                     if(index < 4){
                     return <div className='w-full list-4top-item' key={index}>
                         <div className='w-full flex'>
-                            {specialist?.image ? 
-                                <img className='w-full' src={'http://localhost:8000/' + item.image} width={200} />
+                            {item?.galleries ? 
+                                <img className='w-full' src={'http://localhost:8000/' + item.galleries[0].path} width={200} />
                                 : <img className='w-full' src='https://res.cloudinary.com/dbpw1enlu/image/upload/v1663499942/post_06-160x160_ni7izy.jpg' width={200}/>
                             }
                         </div>

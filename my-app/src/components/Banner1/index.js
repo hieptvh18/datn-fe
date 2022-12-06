@@ -13,8 +13,8 @@ const Banner1 = () => {
     >
       <div className="relative w-default mx-auto h-full">
         <div className="px-5 justify-content-between flex align-items-center h-full">
-          <div className="w-7">
-            <h2 className="c-primary1 text-8xl">Tầm nhìn, sứ mệnh</h2>
+          <div className="w-full md:w-7">
+            <h2 className="c-primary1 text-5xl lg:text-8xl md:text-7xl ">Tầm nhìn, sứ mệnh</h2>
             <p className="mt-4">
               Sứ mệnh của chúng tôi là giúp mọi người có một nụ cười tươi sáng
               và tự tìn nhất. Bằng những nỗ lực và lắng nghe khách hàng, chúng
@@ -34,26 +34,26 @@ const Banner1 = () => {
               </div>
             </div>
 
-            <div className="flex column-gap-7 mt-8">
-                <div className="flex flex-column row-gap-2 align-items-center">
+            <div className="grid mt-8 w-full row-gap-3">
+                <div className="col-6 md:col-3 text-center ">
                     <div>
                         <img src="https://res.cloudinary.com/dbpw1enlu/image/upload/v1663822959/tooth_phone_rit1w4.png" width="50px"/>
                     </div>
                     <p>Luôn sẵn sàng</p>
                 </div>
-                <div className="flex flex-column row-gap-2 align-items-center">
+                <div className="col-6 md:col-3 text-center ">
                     <div>
                         <img src="https://res.cloudinary.com/dbpw1enlu/image/upload/v1663822968/clinic_zwfbqm.png" width="50px"/>
                     </div>
                     <p>Thiết bị hiện đại</p>
                 </div>
-                <div className="flex flex-column row-gap-2 align-items-center">
+                <div className="col-6 md:col-3 text-center ">
                     <div>
                         <img src="https://res.cloudinary.com/dbpw1enlu/image/upload/v1663822978/dental-insurance_5_ukkfaq.png" width="50px"/>
                     </div>
                     <p>Tận tình chăm sóc</p>
                 </div>
-                <div className="flex flex-column row-gap-2 align-items-center">
+                <div className="col-6 md:col-3 text-center ">
                     <div>
                         <img src="https://res.cloudinary.com/dbpw1enlu/image/upload/v1663822996/dentist-tools_v0hqvp.png" width="50px"/>
                     </div>
@@ -62,7 +62,7 @@ const Banner1 = () => {
             </div>
           </div>
 
-          <div className="h-full">
+          <div className="h-full hidden md:block">
             <div className="h-full flex align-items-end">
               <img src="https://res.cloudinary.com/dbpw1enlu/image/upload/v1663821286/dental-1_qude5p.png" />
             </div>

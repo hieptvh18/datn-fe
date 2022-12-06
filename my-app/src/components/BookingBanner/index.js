@@ -37,8 +37,9 @@ const BookingBanner = () => {
     dispatch(listService())
   }, [])
   const onSubmit = async (data, e) => {
+    const t = new Date(data.date.getTime()).toLocaleDateString()
     try {
-      await addAccounts({...data, service_id: data.service_id.code})
+      await addAccounts({...data, service_id: data.service_id.code, date: t})
       setFormData(data);
       setShowMessage(true);
     } catch (error) {

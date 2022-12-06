@@ -28,3 +28,20 @@
   transform: scale(1.2);
   transition: all 0.5s ease-in;
 }
+.fb-slick1 .slick-dots{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 20px;
+  list-style: none;
+}
+.ft-slick__dots--custom{
+  width: 13px;
+  height: 13px;
+  border: 1px solid var(--primary);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+.fb-slick1 .slick-dots .slick-active .ft-slick__dots--custom{
+  background-color: var(--primary);
+}

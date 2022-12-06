@@ -20,7 +20,6 @@ const ModalBooking = () => {
     const { control, register, handleSubmit, formState: { errors }, reset } = useForm()
     const onSubmit = async (data) => {
         const t = new Date(data.date.getTime()).toLocaleDateString()
-        console.log(t);
         try {
             await addAccounts({ ...data, date: t })
             setFormData(data);

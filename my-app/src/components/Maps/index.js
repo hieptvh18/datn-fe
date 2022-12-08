@@ -1,33 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { GMap } from 'primereact/gmap';
-import { loadGoogleMaps, removeGoogleMaps } from './GoogleMaps';
 
-
-const Map = () => {
-  const [googleMapsReady, setGoogleMapsReady] = useState(false);
-  useEffect(() => {
-    loadGoogleMaps(() => {
-        setGoogleMapsReady(true);
-    });
-
-    return () => {
-        removeGoogleMaps();
-    }
-  },[])
-  const options = {
-    center: {lat: 21.035987, lng: 105.815784},
-    zoom: 12
-  };
+const GGMap = () => {
 
   return (
-    googleMapsReady && (
-      <div className="card">
-          <GMap options={options} style={{width: '100%', minHeight: '320px'}} >
-
-          </GMap>
-      </div>
-    )
+  <>
+    <iframe style={{width: "100%", height: "350px"}} class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Cao Đẳng FPT&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+  </>
   )
 }
 
-export default Map
+export default GGMap

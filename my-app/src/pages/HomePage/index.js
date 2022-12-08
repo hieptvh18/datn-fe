@@ -17,7 +17,6 @@ import { addAccount } from "../../feature/AccountSlice";
 import classNames from "classnames";
 import { InputTextarea } from "primereact/inputtextarea";
 // import moment from "moment/moment";
-import Map from "../../components/Maps";
 import { Dialog } from "primereact/dialog";
 import FeedBack from "../../components/FeedBack";
 import SpecialiezdTeam from "../../components/SpecialiezdTeam";
@@ -25,6 +24,7 @@ import { getBannerHome } from "../../feature/BannerHomeSlice";
 import { listMenuServices } from "../../feature/MenuServices";
 import { listService } from "../../feature/ServiceSlice";
 import { addAccounts } from "../../api/account";
+import GGMap from "../../components/Maps";
 
 const HomePage = () => {
   const toast = useRef(null);
@@ -375,7 +375,7 @@ const HomePage = () => {
 
         <div className="mb-8 w-full">
           <div style={{ height: "400px" }}>
-            <Map />
+            <GGMap />
           </div>
         </div>
 

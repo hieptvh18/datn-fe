@@ -33,15 +33,16 @@ const Team = () => {
     ];
     const teamTemplate = (team) => {
         return (<>
+            {console.log(team)}
             <div className="product-item">
                 <div className="product-item-content text-center">
                     <div className="mb-3">
-                        <img width='60%' src={team?.image} onError={(e) => e.target.src = 'https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png'} className="product-image" />
+                        <img width='15%' src={`http://nhakhoaducnghia.xyz/${team?.avatar}`} onError={(e) => e.target.src = 'https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png'} className="product-image" />
                     </div>
                     <div>
                         <h4 className="mb-1 text-white text-4xl pt-2 pb-4">{team?.fullname}</h4>
                         <div className='px-8 text-left text-white text-xl'>
-                            {team.admin_level.name}
+                            {team?.admin_level.name}
                         </div>
                     </div>
 

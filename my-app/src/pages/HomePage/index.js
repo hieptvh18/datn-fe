@@ -20,16 +20,16 @@ import { InputTextarea } from "primereact/inputtextarea";
 import { Dialog } from "primereact/dialog";
 import FeedBack from "../../components/FeedBack";
 import SpecialiezdTeam from "../../components/SpecialiezdTeam";
-import { getBannerHome } from "../../feature/BannerHomeSlice";
 import { listMenuServices } from "../../feature/MenuServices";
 import { listService } from "../../feature/ServiceSlice";
 import { addAccounts } from "../../api/account";
 import GGMap from "../../components/Maps";
+import dataBanner from "./dataBanner.json"
 
 const HomePage = () => {
   const toast = useRef(null);
   const dispatch = useDispatch();
-  const bannerHome = useSelector(data => data.bannerHome.value)
+  const bannerHome = dataBanner
   const menuServices = useSelector(data => data.service.value)
   const websetting = useSelector((data) => data.Websetting.value?.data)
   const services = menuServices.data?.map(item => {
@@ -39,7 +39,6 @@ const HomePage = () => {
     }
   });
   useEffect(() => {
-    dispatch(getBannerHome())
     dispatch(listService())
   }, [])
 

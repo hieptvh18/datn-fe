@@ -1,7 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import AccountSlice from '../feature/AccountSlice';
 import AuthSlice from '../feature/AuthSlice';
-import BannerHomeSlice from '../feature/BannerHomeSlice';
 import EquipmentsSlice from '../feature/EquipmentsSlice';
 import FeedbackSlice from '../feature/FeedbackSlice';
 import MenuServices from '../feature/MenuServices';
@@ -19,7 +18,6 @@ export const store = configureStore({
     service: ServiceSlice,
     team: TeamSlice,
     feedback: FeedbackSlice,
-    bannerHome: BannerHomeSlice,
     menuServices: MenuServices,
     equipment: EquipmentsSlice,
     news: NewsSlice,

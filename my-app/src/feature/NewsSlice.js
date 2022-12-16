@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
-import { getBannerHomePage } from "../api/homePage"
 import { getNews, getNewsById } from "../api/news"
 
 export const listNews = createAsyncThunk(

@@ -13,9 +13,7 @@ import BookingBanner from "../../components/BookingBanner";
 import List4Top from "../../components/List4Top";
 import { useDispatch, useSelector } from "react-redux";
 import { Controller, useForm } from "react-hook-form";
-import { addAccount } from "../../feature/AccountSlice";
-import classNames from "classnames";
-import { InputTextarea } from "primereact/inputtextarea";
+import { TabView, TabPanel } from 'primereact/tabview';
 // import moment from "moment/moment";
 import { Dialog } from "primereact/dialog";
 import FeedBack from "../../components/FeedBack";
@@ -184,6 +182,7 @@ const HomePage = () => {
           </p>
         </div>
       </Dialog>
+
       <div
         style={{
           background:
@@ -199,156 +198,58 @@ const HomePage = () => {
                   <img className="w-full h-full grid" src="http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/doctor.png" />
                 </div>
               </div>
-              <div className=" flex align-items-center">
-                <div className="px-5">
-                  <div>
+              <div className=" md:flex md:align-items-center">
+                <div className="md:px-5">
+                  <div className="">
                     <div className="colorPrimary text-5xl pt-3">
                       Đặt Lịch Khám Của Bạn Với
                     </div>
                     <div className="colorPrimary1 text-7xl font-bold pb-4">
                       Đức Nghĩa
                     </div>
-                    <div style={{ fontFamily: 'var(--fontRoboto)' }} className="font-medium text-2xl">
+                    <div style={{ fontFamily: 'var(--fontRoboto)' }} className="font-medium text-xl md:text-2xl">
                       Có một trường hợp khẩn cấp? Hãy đặt trước với chúng tôi bằng biểu mẫu đơn giản dưới đây và các dịch vụ phân phối vượt trội trong khi các ứng dụng hỗ trợ web. Liên tục tái hiện các quy trình tích hợp thông qua vốn tri thức kỹ thuật tốt
                     </div>
                   </div>
                   <hr className="hr my-6 w-full" />
-                  <form onSubmit={handleSubmit(onSubmit)}>
-                    <div className="p-fluid grid">
-                      <div className="field col-12 md:col-6">
-                        <span className="p-float-label">
-                          <Controller
-                            name="fullname"
-                            control={control}
-                            rules={{ required: "Họ và tên bắt buộc nhập!", }}
-                            render={({ field, fieldState }) => (
-                              <InputText
-                                style={{ height: "50px", fontSize: "14px" }}
-                                id={field.name}
-                                {...field}
-                                className={classNames({
-                                  "p-invalid": fieldState.invalid,
-                                })}
-                              />
-                            )}
-                          />
-                          <label
-                            htmlFor="fullname"
-                            className={classNames({
-                              "p-error": errors.fullname,
-                            })}
-                          >
-                            Họ và tên
-                          </label>
-                        </span>
-                        {getFormErrorMessage("fullname")}
-                      </div>
-                      <div className="field col-12 md:col-6">
-                        <span className="p-float-label">
-                          <Controller
-                            name="phone"
-                            control={control}
-                            rules={{
-                              required: "Số điện thoại bắt buộc nhập!",
-                              pattern: {
-                                value:
-                                  /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/i,
-                                message: "Nhập đúng định dạnh số điện thoại",
-                              },
-                            }}
-                            render={({ field, fieldState }) => (
-                              <InputText
-                                style={{ height: "50px", fontSize: "14px" }}
-                                id={field.name}
-                                {...field}
 
-                                className={classNames({
-                                  "p-invalid": fieldState.invalid,
-                                })}
-                              />
-                            )}
-                          />
-                          <label
-                            htmlFor="phone"
-                            className={classNames({ "p-error": errors.phone })}
-                          >
-                            Số điện thoại
-                          </label>
-                        </span>
-                        {getFormErrorMessage("phone")}
-                      </div>
-                      <div className="field col-12 md:col-6">
-                        <span className="p-float-label">
-                          <Controller
-                            name="service_id"
-                            control={control}
-                            rules={{ required: "Dịch vụ bắt buộc chọn!" }}
-                            render={({ field, fieldState }) => (
-                              <Dropdown
-                                id={field.name}
-                                value={field.value}
-                                style={{ height: "50px", fontSize: "14px" }}
-                                {...field}
-                                options={services}
-                                optionValue={"code"}
-                                optionLabel="name"
-                                onChange={(e) => field.onChange(e.value)}
-                                className={classNames({
-                                  "p-invalid": fieldState.invalid,
-                                })}
-                              />
-                            )}
-                          />
-                          <label
-                            htmlFor="service"
-                            className={classNames({
-                              "p-error": errors.service,
-                            })}
-                          >
-                            Dịch vụ
-                          </label>
-                        </span>
-                        {getFormErrorMessage("service_id")}
-                      </div>
-                      <div className="field col-12 md:col-6">
-                        <span className="p-float-label">
-                          <Controller
-                            name="date"
-                            control={control}
-                            rules={{ required: "Ngày khám bắt buộc chọn!" }}
-                            render={({ field, fieldState }) => (
-                              <Calendar
-                                style={{ height: "50px" }}
-                                id={field.name}
-                                {...field}
-                                className={classNames({
-                                  "p-invalid": fieldState.invalid,
-                                })}
-                                disabledDates={dates}
-                                onChange={(e) => field.onChange(e.value)}
-                                dateFormat="dd/mm/yy"
-                                showIcon
-                              />
-                            )}
-                          />
-                          <label
-                            htmlFor="date"
-                            className={classNames({ "p-error": errors.date })}
-                          >
-                            Ngày khám
-                          </label>
-                        </span>
-                        {getFormErrorMessage("date")}
-                      </div>
-                      <div className="field col-12 md:col-6 m-auto">
-                        <Button
-                          type="submit"
-                          label="Đặt lịch ngày bây giờ"
-                          className="py-4 text-3xl"
-                        />
-                      </div>
-                    </div>
-                  </form>
+                  <TabView className="bg-opacity-0">
+                    <TabPanel header="Kinh nghiệm làm việc">
+                        <li className="text-xl mb-2 font-medium">Lãnh đạo không dây theo phong cách chuyên nghiệp hơn là những trải nghiệm trong tương lai.</li>
+                        <li className="text-xl mb-2 font-medium">Quy trình kiểm tra nhấp chuột và vữa hoạt động mạnh mẽ trong khi các sản phẩm được sản xuất thế hệ tiếp theo.</li>
+                        <li className="text-xl mb-2 font-medium">Nhiệt tình kết nối cơ sở hạ tầng có tác động cao trong dài hạn với dịch vụ khách hàng hiệu quả.</li>
+                        <li className="text-xl mb-2 font-medium">Tự động phát minh lại các cơ hội và giao diện phổ biến dựa trên thị trường.</li>
+                        <li className="text-xl mb-2 font-medium">Hăng hái tạo ra một loạt thị trường ngách mở rộng thông qua các sản phẩm mạnh mẽ.</li>
+                        <li className="text-xl mb-2 font-medium">Thực hiện một cách phù hợp các dịch vụ điện tử có tầm nhìn xa so với sự sẵn sàng chiến lược của web.</li>
+                        <li className="text-xl mb-2 font-medium">Bắt buộc nắm lấy kinh doanh điện tử được trao quyền sau vốn trí tuệ thân thiện với người dùng.</li>
+                        <li className="text-xl mb-2 font-medium">Hiện thực hóa các quy trình front-end một cách tương tác với sự hội tụ hiệu quả.</li>
+                        <li className="text-xl mb-2 font-medium">Phối hợp cung cấp các phương pháp trao quyền dựa trên hiệu suất trong khi chuyên môn phân tán.</li>
+                    </TabPanel>
+                    <TabPanel header="Kiểm tra y tế">
+                    <li className="text-xl mb-2 font-medium">Tích hợp một cách khách quan các lĩnh vực chủ đề chiến lược toàn doanh nghiệp với cơ sở hạ tầng được chức năng hóa.</li>
+                        <li className="text-xl mb-2 font-medium">Tương tác sản xuất các công nghệ cao cấp trong khi các vectơ chất lượng phụ thuộc lẫn nhau.</li>
+                        <li className="text-xl mb-2 font-medium">Tận dụng mạnh mẽ trải nghiệm của doanh nghiệp thông qua các thị trường 24/7.</li>
+                        <li className="text-xl mb-2 font-medium">Quy trình kiểm tra nhấp chuột và vữa hoạt động mạnh mẽ trong khi các sản phẩm được sản xuất thế hệ.</li>
+                        <li className="text-xl mb-2 font-medium">Nhiệt tình kết nối cơ sở hạ tầng có tác động cao trong dài hạn với dịch vụ khách hàng hiệu quả.</li>
+                        <li className="text-xl mb-2 font-medium">Tự động phát minh lại các cơ hội và giao diện phổ biến dựa trên thị trường.</li>
+                        <li className="text-xl mb-2 font-medium">Hăng hái tạo ra một loạt thị trường ngách mở rộng thông qua các sản phẩm mạnh mẽ.</li>
+                        <li className="text-xl mb-2 font-medium">Bắt buộc nắm lấy kinh doanh điện tử được trao quyền sau vốn trí tuệ thân thiện với người dùng.</li>
+                        <li className="text-xl mb-2 font-medium">Hiện thực hóa các quy trình front-end một cách tương tác với sự hội tụ hiệu quả.</li>
+                    </TabPanel>
+                    <TabPanel header="Giải thưởng và thành tích">
+                        <li className="text-xl mb-2 font-medium">Phối hợp cung cấp các phương pháp trao quyền dựa trên hiệu suất trong khi chuyên môn phân tán.</li>
+                        <li className="text-xl mb-2 font-medium">Thực hiện một cách phù hợp các dịch vụ điện tử có tầm nhìn xa so với sự sẵn sàng chiến lược của web.</li>
+                        <li className="text-xl mb-2 font-medium">Tích hợp một cách khách quan các lĩnh vực chủ đề chiến lược toàn doanh nghiệp với cơ sở hạ tầng được chức năng hóa.</li>
+                        <li className="text-xl mb-2 font-medium">Tương tác sản xuất các công nghệ cao cấp trong khi các vectơ chất lượng phụ thuộc lẫn nhau.</li>
+                        <li className="text-xl mb-2 font-medium">Tận dụng mạnh mẽ trải nghiệm của doanh nghiệp thông qua các thị trường 24/7.</li>
+                        <li className="text-xl mb-2 font-medium">žMa trận duy nhất mang lại giá trị hợp lý về mặt kinh tế thông qua công nghệ hợp tác.</li>
+                        <li className="text-xl mb-2 font-medium">Nhiệm vụ song song hiệu quả đã nghiên cứu đầy đủ dữ liệu và cải tiến quy trình doanh nghiệp.</li>
+                        <li className="text-xl mb-2 font-medium">Tận dụng mạnh mẽ trải nghiệm của doanh nghiệp thông qua các thị trường 24/7.</li>
+                        <li className="text-xl mb-2 font-medium">Hợp tác đẩy nhanh các sản phẩm được sản xuất có chất lượng thông qua các kết quả tập trung vào khách hàng.</li>
+                        
+                    </TabPanel>
+                  </TabView>
+
                 </div>
               </div>
             </div>

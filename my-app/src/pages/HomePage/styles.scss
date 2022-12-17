@@ -127,7 +127,39 @@
 .p-inputtext{
     font-size: 15px !important;
 }
-
+.bg-opacity-0 .p-tabview-nav{
+ background: var(--primary1) !important;
+ justify-content: space-around;
+}
+.bg-opacity-0 .p-unselectable-text a{
+    background-color: var(--primary1) !important;
+    width: 100%;
+    border-top-right-radius: 0px !important;
+    border-top-left-radius: 0px !important;
+    display: flex;
+    justify-content: center;
+    color: #fff !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+// .bg-opacity-0 .p-unselectable-text.p-tabview-selected.p-highlight{
+//     background-color: #fff !important;
+// }
+.bg-opacity-0 .p-unselectable-text.p-tabview-selected.p-highlight a{
+    background-color: #fff !important;
+    color: var(--primary1) !important;
+}
+.bg-opacity-0 .p-tabview-panels{
+    background-color: transparent !important;
+    color: black !important;
+}
+.bg-opacity-0 .p-unselectable-text {
+    width: 100%;
+    padding: 5px 4px;
+}
+.p-tabview .p-tabview-nav .p-tabview-ink-bar{
+    display: none !important;
+}
 
 // max-width: 1024px (máy tính bảng loại to, hiển thị chiều ngang)
 @media (max-width: 1024px) {
@@ -149,6 +181,9 @@
     .cs-w-booking{
         margin-left: 0px;
         max-width: 100%;
+    }
+    .bg-opacity-0 .p-unselectable-text {
+        padding: 0px 0px;
     }
 
 }

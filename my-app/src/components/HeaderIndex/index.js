@@ -35,7 +35,7 @@ const HeaderIndex = () => {
                 return {
                   label: i.service_name,
                   command: (event) => {
-                    navigate('/new/abc')
+                    navigate(`/news/${item.service_name}/${i.id}`)
                   },
                 }
               }
@@ -142,7 +142,7 @@ const HeaderIndex = () => {
       <div className={cx("wrapper-header1")}>
         <div className={cx("wrapper-main-logo")}>
           <NavLink to="/">
-            <img src={'http://localhost:8000/' + websetting?.logo} />
+            <img src={'http://nhakhoaducnghia.xyz/' + websetting?.logo} />
           </NavLink>
         </div>
         <div className={cx("wrapper-timeline")}>

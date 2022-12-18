@@ -12,6 +12,7 @@ import MedicalRecord from './pages/MedicalRecord';
 import NewsPage from './pages/News';
 import NewsDetail from './pages/NewsDetail';
 import QAPage from './pages/QAPage';
+import ServiceDetail from './pages/ServiceDetail';
 import ServicePage from './pages/ServicePage';
 import Team from './pages/Team';
 <script src="https://unpkg.com/primereact/primereact.all.min.js"></script>
@@ -24,6 +25,7 @@ function App() {
           <Route index element={<HomePage />} />
           <Route path='tin-tuc' element={<NewsPage />} />
           <Route path='news/detail/:id' element={<NewsDetail />} />
+          <Route path='news/:slug/:id' element={<ServiceDetail />} />
           <Route path='ve-chung-toi' element={<AboutPage />} />
           <Route path='ho-so-benh-nhan' element={<AccountInfo />} />
           <Route path='doi-ngu-nhan-vien' element={<Team />} />

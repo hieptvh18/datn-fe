@@ -13,20 +13,20 @@ const SpecialiezdTeam = () => {
         <div className="mx-auto w-default px-5">
             <div className="flex flex-column md:flex-row row-gap-6 md:column-gap-5 -mt-8 px-7 md:px-0">
                 {team.data?.map((item, index) => {
-                    if(index < 4){
+                    if (index < 4) {
                         return <div className="surface-200 w-full list-4top-item" key={index}>
                             <div className="w-full">
                                 <div className="w-full flex flex-column">
                                     <div className="w-full relative box-img">
-                                        {item?.avatar ? 
-                                        <img
-                                            className='flex w-full'
-                                            src={'http://localhost:8000/' + item?.avatar}
-                                        />
-                                        :<img
-                                            className='flex w-full'
-                                            src='http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/people-01.jpg'
-                                        />
+                                        {item?.avatar ?
+                                            <img
+                                                className='flex w-full'
+                                                src={'http://nhakhoaducnghia.xyz/' + item?.avatar}
+                                            />
+                                            : <img
+                                                className='flex w-full'
+                                                src='http://denticare.bold-themes.com/allen/wp-content/uploads/sites/16/2020/01/people-01.jpg'
+                                            />
                                         }
                                         <NavLink to={'/doi-ngu-nhan-vien'}>
                                             <button className='bg-primary1 text-white font-normal px-4 py-3 text-2xl border-round-lg pointer absolute btn-read-more'>

@@ -31,7 +31,6 @@ const Team = () => {
             numScroll: 1
         }
     ];
-    console.log(teams.data);
     const teamTemplate = (team) => {
         return (<>
             <div className="product-item">
@@ -78,25 +77,25 @@ const Team = () => {
                     </div>
                 </div>
                 <div className='w-default mx-auto detail-doctor'>
-                    {teams?.data?.map((item, index) =>{
-                        if(index < 3){
+                    {teams?.data?.map((item, index) => {
+                        if (index < 2) {
                             return (
                                 <div className='px-8 grid mt-8'>
-                        <div className='col-12 md:col-6 lg:col md:text-left mb-6 text-center'>
-                            <div className='image-doctor'>
-                                <img style={{ borderBottom: '3px solid var(--primary)', verticalAlign: 'middle' }} width='80%' src={item?.avatar ? 'http://nhakhoaducnghia.xyz/' + item.avatar :  'https://jieh.vn/upload/images/doctor/Bac%20sy%20Hattori%20Tadashi.png'} />
-                            </div>
-                        </div>
-                        <div className='col-12 md:col-6 lg:col'>
-                            <div style={{ color: 'var(--primary)', fontFamily: 'var(--fontArsenal)' }} className='text-6xl'>Giáo sư, Bác sỹ <br /> {item?.fullname}</div>
-                            <div className='my-5'>VIỆN TRƯỞNG DANH DỰ</div>
-                            <div className='' dangerouslySetInnerHTML={{ __html: item?.description }} />
-                        </div>
-                    </div>
+                                    <div className='col-12 md:col-6 lg:col md:text-left mb-6 text-center'>
+                                        <div className='image-doctor'>
+                                            <img style={{ borderBottom: '3px solid var(--primary)', verticalAlign: 'middle' }} width='80%' src={item?.avatar ? 'http://nhakhoaducnghia.xyz/' + item.avatar : 'https://jieh.vn/upload/images/doctor/Bac%20sy%20Hattori%20Tadashi.png'} />
+                                        </div>
+                                    </div>
+                                    <div className='col-12 md:col-6 lg:col'>
+                                        <div style={{ color: 'var(--primary)', fontFamily: 'var(--fontArsenal)' }} className='text-6xl'>Giáo sư, Bác sỹ <br /> {item?.fullname}</div>
+                                        <div className='my-5'>VIỆN TRƯỞNG DANH DỰ</div>
+                                        <div className='' dangerouslySetInnerHTML={{ __html: item?.description }} />
+                                    </div>
+                                </div>
                             )
                         }
                     })}
-                    
+
                 </div>
                 <div style={{ backgroundColor: 'var(--primary1)' }} className='w-full mt-8 py-8 '>
                     <div className='text-center w-default mx-auto'>

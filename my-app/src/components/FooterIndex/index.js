@@ -18,7 +18,7 @@ const FooterIndex = () => {
                         <div className="col-12 md:col-6 lg:col">
                             <div className=" h-full">
                                 <div className="h-full flex flex-column">
-                                    <div className="title">Nha Khoa</div>
+                                    <div className="title">Nha Khoa Đức Nghĩa</div>
                                     <hr className="hr" />
                                     <div className="text-500 text-xl pt-5">Một nhóm các nha sĩ làm việc để đảm bảo bạn nhận được điều trị tốt nhất.
                                     </div>
@@ -114,13 +114,13 @@ const FooterIndex = () => {
                                         <li className="flex align-items-center mb-3">
                                             <a href={websetting?.twitter_url} target={'_blank'}>
 
-                                            <i className="pi pi-twitter text-7xl icon"></i>
+                                                <i className="pi pi-twitter text-7xl icon"></i>
                                             </a>
 
                                         </li>
                                         <li className="flex align-items-center mb-3">
                                             <a href={websetting?.instagram_url} target={'_blank'}>
-                                            <i className="pi pi-telegram text-7xl icon"></i>
+                                                <i className="pi pi-telegram text-7xl icon"></i>
 
                                             </a>
 
@@ -134,7 +134,7 @@ const FooterIndex = () => {
             </div>
             <div className='bg-primary2 py-5'>
                 <div className='flex px-5 justify-content-center align-items-center w-default mx-auto'>
-                    <div className='text-white'>Bản quyền 2020 bởi <strong>Team 4 FPOLY.</strong> Đã đăng ký bản quyền.</div>
+                    <div className='text-white'>Bản quyền 2020 bởi <strong>Team 14 FPOLY.</strong> Đã đăng ký bản quyền.</div>
                 </div>
 
             </div>

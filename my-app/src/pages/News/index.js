@@ -12,15 +12,15 @@ const NewsPage = () => {
     const [news, setNews] = useState([])
     const dispatch = useDispatch();
     useEffect(() => {
-        const newss = async () =>{
-            const {data} = await getNews()
+        const newss = async () => {
+            const { data } = await getNews()
             setNews(data)
         }
         newss()
     }, []);
     const dm = news?.data?.map(items => {
         return <>
-            <div>
+            <div style={{ fontFamily: 'var(--fontRoboto)' }}>
                 <div className='grid w-full'>
                     <div className='text-center col-12 md:col-2 hidden md:block'>
                         <Avatar image={'http://nhakhoaducnghia.xyz/' + items?.image_news[0]?.image} className="mr-2 w-11rem h-11rem" size="xlarge" shape="circle" />

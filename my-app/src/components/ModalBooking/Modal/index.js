@@ -9,6 +9,7 @@ import { Calendar } from 'primereact/calendar';
 import { listService } from '../../../feature/ServiceSlice';
 import { addAccounts } from '../../../api/account';
 import { Toast } from 'primereact/toast';
+import moment from 'moment';
 
 const ModalBooking = () => {
     const toast = useRef(null);
@@ -19,7 +20,7 @@ const ModalBooking = () => {
     const menuServices = useSelector(data => data.service.value?.data)
     const { control, register, handleSubmit, formState: { errors }, reset } = useForm()
     const onSubmit = async (data) => {
-        const t = new Date(data.date.getTime()).toLocaleDateString()
+        const t = moment(data.date).format()
         try {
             await addAccounts({ ...data, date: t })
             setFormData(data);

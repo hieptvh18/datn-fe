@@ -41,7 +41,7 @@ const Team = () => {
                     <div>
                         <h4 className="mb-1 text-white text-4xl pt-2 pb-4">{team?.fullname}</h4>
                         <div className='px-8 text-left text-white text-xl'>
-                            {team?.admin_level?.name}
+                            <div className='' dangerouslySetInnerHTML={{ __html: team?.description?.slice(0, 400) }} />
                         </div>
                     </div>
 

@@ -14,6 +14,7 @@ import { Dropdown } from "primereact/dropdown";
 import { Calendar } from "primereact/calendar";
 import { addAccounts } from "../../api/account";
 import { Toast } from 'primereact/toast';
+import moment from "moment/moment";
 
 const BookingBanner = () => {
   const toast = useRef(null);
@@ -37,7 +38,8 @@ const BookingBanner = () => {
     dispatch(listService())
   }, [])
   const onSubmit = async (data, e) => {
-    const t = new Date(data.date.getTime()).toLocaleDateString()
+
+    const t = moment(data.date).format()
     try {
       await addAccounts({ ...data, service_id: data.service_id.code, date: t })
       setFormData(data);

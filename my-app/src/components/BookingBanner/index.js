@@ -14,7 +14,7 @@ import { Dropdown } from "primereact/dropdown";
 import { Calendar } from "primereact/calendar";
 import { addAccounts } from "../../api/account";
 import { Toast } from 'primereact/toast';
-import moment from "moment/moment";
+import moment from "moment";
 
 const BookingBanner = () => {
   const toast = useRef(null);

@@ -74,11 +74,13 @@ const MedicalRecord = () => {
                         <DataTable className=' text-2xl' value={patientRecords?.patient_products} responsiveLayout="stack" breakpoint="960px">
                             <Column header="STT" body={(_, { rowIndex }) => rowIndex + 1} />
                             <Column field="name" header="Tên thuốc" />
+                            <Column field="name" header="Hướng dẫn sử dụng" />
+                            <Column field="name" header="Mô tả" />
                             <Column header="Bảng giá" body={(_, { i }) => Number(_.price).toLocaleString('it-IT', { style: 'currency', currency: 'VND' })} />
                         </DataTable>
                     </div>
                     <div className='my-7'>
-                        <h3 className='pb-2'>Đơn thuốc:</h3>
+                        <h3 className='pb-2'>Dịch vụ sử dụng</h3>
                         <DataTable className=' text-2xl' value={patientRecords?.service_patients} responsiveLayout="stack" breakpoint="960px">
                             <Column header="STT" body={(_, { rowIndex }) => rowIndex + 1} />
                             <Column field="service_name" header="Dịch vụ sử dụng" />
@@ -93,7 +95,7 @@ const MedicalRecord = () => {
                                 <span>Nội dung: Hẹn lịch khám lại</span>
                             </div>
                             <div className='mb-5'>
-                                <h3>Lời dặn:</h3>
+                                <h3>Chuẩn đoán và lời dặn:</h3>
                                 <span>{patientRecords?.description}</span>
                             </div>
 

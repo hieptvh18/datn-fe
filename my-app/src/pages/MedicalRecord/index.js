@@ -35,10 +35,8 @@ const MedicalRecord = () => {
         <div className='' style={{ fontFamily: 'var(--fontRoboto)' }}>
             <header style={{ backgroundColor: 'var(--primary)' }} className='p-7'>
                 <div className='grid'>
-                    <div>
-                        <img src="https://res.cloudinary.com/dbpw1enlu/image/upload/v1663124409/denticare-logo_umln3a.png" width="170px" />
-                    </div>
-                    <div className='text-white' style={{ width: '80%', margin: '0 auto' }}>
+                    
+                    <div className='text-white text-center' style={{ width: '80%', margin: '0 auto' }}>
                         <div className='font-bold'>NHA KHOA ĐỨC NGHĨA</div>
                         <div>Địa chỉ: Số 5 Trịnh Văn Bô, Xuân Phương, Nam Từ Liêm, Hà Nội</div>
                         <div>Điện thoại: 0372559888</div>
@@ -51,7 +49,9 @@ const MedicalRecord = () => {
             <main style={{ backgroundColor: 'var(--primary1)' }} className='py-7 px-8'>
                 <div className='text-white' style={{ width: '98%', margin: '0 auto' }}>
                     <div className='mainHeader flex justify-content-between align-center '>
-                        <div></div>
+                    <div>
+                        {/* <img src="https://res.cloudinary.com/dbpw1enlu/image/upload/v1669093073/deign_logo_d%E1%BB%B1_%C3%A1n_t%E1%BB%91t_nghi%E1%BB%87p_1_2_mc52bf.png" width="170px" /> */}
+                    </div>
                         <div>Hà Nội, ngày {date?.length ? date[2] : ""} tháng {date?.length ? date[1] : ""} năm {date?.length ? date[0] : ""}</div>
                     </div>
                     <h1 className='text-center py-8'>Hồ sơ khám bệnh</h1>
@@ -102,7 +102,6 @@ const MedicalRecord = () => {
                         </div>
                         <div className='col-12 md:col-4 ld:col-4 ld:text-right md:text-right'>
                             <div><strong>Tổng chi phí: </strong>{totalPrice().toLocaleString('it-IT', { style: 'currency', currency: 'VND' })}</div>
-                            <div><strong>Khuyễn mãi: </strong> 10%</div>
                             <div><strong>Đã thanh toán: </strong> {totalPrice().toLocaleString('it-IT', { style: 'currency', currency: 'VND' })}</div>
 
                         </div>

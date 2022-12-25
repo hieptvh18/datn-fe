@@ -6,7 +6,6 @@ import AboutPage from './pages/About';
 import AccountInfo from './pages/AccountInfo';
 import CustomerGuide from './pages/CustomerGuide';
 import EquipmentPage from './pages/Equipment';
-import FeedbackPage from './pages/FeedbackPage';
 import HomePage from './pages/HomePage';
 import MedicalRecord from './pages/MedicalRecord';
 import NewsPage from './pages/News';
@@ -34,7 +33,6 @@ function App() {
           <Route path='tat-ca-dich-vu' element={<ServicePage />} />
           <Route path='dat-lich-kham' element={<ServicePage />} />
           <Route path='cau-hoi-thuong-gap' element={<QAPage />} />
-          <Route path='danh-gia' element={<FeedbackPage />} />
           <Route path='*' element={<Page404 />} />
         </Route>
         <Route path='ho-so-benh-an/:token/:id' element={<MedicalRecord />} />

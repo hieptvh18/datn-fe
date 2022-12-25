@@ -266,10 +266,7 @@ const HomePage = () => {
           <span className="contact font-bold text-7xl mr-2">Liên Hệ với</span>
           <span className="denticare font-bold text-7xl ">Nha Khoa Đức Nghĩa</span>
           <div className="text-800 text-2xl mt-3 mb-8">
-            Globally incubate standards compliant channels before scalable
-            benefits.
-            <br /> Quickly disseminate superior deliverables whereas web-enabled
-            applications.{" "}
+            
           </div>
         </div>
 

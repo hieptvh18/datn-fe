@@ -69,9 +69,10 @@ const ModalBooking = () => {
                     <div>LỊCH</div>
                     <div>KHÁM</div>
                 </div>
-                <div style={{ width: "250px" }} className='flex flex-column'>
+                <div style={{ width: "250px", height: "210px" }} className='flex flex-column'>
                     <input name="fullname" {...register('fullname', { required: true })} className={errors.fullname ? 'w-full h-full px-4 text-2xl border-bottom-1 border-top-1 border-red-500' : 'w-full h-full px-4 text-2xl border-bottom-1 border-top-1 border-400'} placeholder='Họ tên *' />
                     <input name="phone" {...register('phone', { required: true, pattern: /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/i })} className={errors.phone ? 'w-full h-full px-4 text-2xl border-bottom-1 border-top-1 border-red-500' : 'w-full h-full px-4 text-2xl border-bottom-1 border-top-1 border-400'} placeholder='Số điện thoại *' />
+                    <input name="email" {...register('email', { required: true, pattern: /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/ })} className={errors.email ? 'w-full h-full px-4 text-2xl border-bottom-1 border-top-1 border-red-500' : 'w-full h-full px-4 text-2xl border-bottom-1 border-top-1 border-400'} placeholder='Email *' />
                     <select {...register('service_id', { required: true })} className={errors.service ? 'w-full h-full px-4 text-2xl border-bottom-1 border-red-500 text-500' : 'w-full h-full px-4 text-2xl border-bottom-1 border-400 text-500'}>
                         <option value="" selected>Dịch vụ</option>
                         {menuServices?.map(item =>

@@ -104,13 +104,7 @@ const HeaderIndex = () => {
           command: (event) => {
             navigate('/cau-hoi-thuong-gap')
           },
-        },
-        {
-          label: 'Đánh giá',
-          command: (event) => {
-            navigate('/danh-gia')
-          },
-        },
+        }
       ]
     },
     isUser ? {

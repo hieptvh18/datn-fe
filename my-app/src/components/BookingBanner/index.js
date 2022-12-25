@@ -115,6 +115,26 @@ const BookingBanner = () => {
                 </div>
                 {getFormErrorMessage('phone')}
               </div>
+              <div>
+                <div className="p-float-label">
+                  <Controller name="email" control={control} rules={{
+                    required: "Bạn vui lòng nhập email!",
+                    pattern: {
+                      value:
+                      /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/,
+                      message: "Nhập đúng định dạnh email",
+                    },
+                  }}
+                    render={({ field, fieldState }) => (
+
+                      <InputText id={field.email} {...field} className={classNames({ 'p-invalid': fieldState.invalid }, 'w-full py-3 border-300 text-2xl')} />
+
+
+                    )} />
+                  <label className={classNames({ 'p-error': errors.phone }, 'text-1xl')}>Email *</label>
+                </div>
+                {getFormErrorMessage('email')}
+              </div>
               <div className="p-float-label">
                 <Controller
                   name="service_id"

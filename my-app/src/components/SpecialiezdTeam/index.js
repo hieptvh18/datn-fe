@@ -13,7 +13,7 @@ const SpecialiezdTeam = () => {
         <div className="mx-auto w-default px-5">
             <div className="flex flex-column md:flex-row row-gap-6 md:column-gap-5 -mt-8 px-7 md:px-0">
                 {team.data?.map((item, index) => {
-                    if (index > 4) {
+                    if (index > 1 && index < 6) {
                         return <div className="surface-200 w-full list-4top-item" key={index}>
                             <div className="">
                                 <div className="box-img">

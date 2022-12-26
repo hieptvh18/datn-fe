@@ -7,13 +7,25 @@ import { getPatientRecords } from '../../feature/PatientRecords';
 import './styles.scss'
 const MedicalRecord = () => {
     const patientRecords = useSelector(data => data.PatientRecords.value?.data)
+    const hdsd = useSelector(data => data.PatientRecords.value)
     const datas = useParams()
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(getPatientRecords(datas))
     }, [])
     const date = patientRecords?.date.split("-");
-    console.log(patientRecords);
+    // console.log({...hdsd.hdsd, ...patientRecords?.service_patients});
+    const t = hdsd?.hdsd?.map(i => i.hdsd)
+    const hdsddb = patientRecords?.patient_products?.map((item, index) =>{
+        return ({...item, hdsd: t[index]})
+    })
+    console.log(hdsd);
+    const tableProduts = hdsddb === undefined ? "" :  <DataTable className=' text-2xl' value={hdsddb} responsiveLayout="stack" breakpoint="960px">
+    <Column header="STT" body={(_, { rowIndex }) => rowIndex + 1} />
+    <Column field="name" header="Tên thuốc" />
+    <Column field="hdsd" header="Hướng dẫn sử dụng" />
+    <Column header="Bảng giá" body={(_, { i }) => Number(_.price).toLocaleString('it-IT', { style: 'currency', currency: 'VND' })} />
+    </DataTable>
     const totalPrice = () => {
         let price = 0
         let total = []
@@ -71,13 +83,14 @@ const MedicalRecord = () => {
                     </div>
                     <div className='my-7'>
                         <h3 className='pb-2'>Đơn thuốc:</h3>
-                        <DataTable className=' text-2xl' value={patientRecords?.patient_products} responsiveLayout="stack" breakpoint="960px">
+                        {/* <DataTable className=' text-2xl' value={patientRecords?.patient_products} responsiveLayout="stack" breakpoint="960px">
                             <Column header="STT" body={(_, { rowIndex }) => rowIndex + 1} />
                             <Column field="name" header="Tên thuốc" />
                             <Column field="name" header="Hướng dẫn sử dụng" />
                             <Column field="name" header="Mô tả" />
                             <Column header="Bảng giá" body={(_, { i }) => Number(_.price).toLocaleString('it-IT', { style: 'currency', currency: 'VND' })} />
-                        </DataTable>
+                        </DataTable> */}
+                        {tableProduts}
                     </div>
                     <div className='my-7'>
                         <h3 className='pb-2'>Dịch vụ sử dụng</h3>
@@ -89,11 +102,11 @@ const MedicalRecord = () => {
                     </div>
                     <div className='grid'>
                         <div className='col-12 md:col-8 ld:col-8'>
-                            <div className='mb-5'>
+                            {/* <div className='mb-5'>
                                 <h3>Lịch hẹn:</h3>
                                 <span>11:00, ngày 13/10/2022</span><br />
                                 <span>Nội dung: Hẹn lịch khám lại</span>
-                            </div>
+                            </div> */}
                             <div className='mb-5'>
                                 <h3>Chuẩn đoán và lời dặn:</h3>
                                 <span>{patientRecords?.description}</span>

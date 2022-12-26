@@ -12,24 +12,24 @@ const NewsPage = () => {
     const [news, setNews] = useState([])
     const dispatch = useDispatch();
     useEffect(() => {
-        const newss = async () =>{
-            const {data} = await getNews()
+        const newss = async () => {
+            const { data } = await getNews()
             setNews(data)
         }
         newss()
     }, []);
     const dm = news?.data?.map(items => {
         return <>
-            <div>
+            <div style={{ fontFamily: 'var(--fontRoboto)' }}>
                 <div className='grid w-full'>
                     <div className='text-center col-12 md:col-2 hidden md:block'>
-                        <Avatar image={'http://localhost:8000/' + items?.image_news[0]?.image} className="mr-2 w-11rem h-11rem" size="xlarge" shape="circle" />
+                        <Avatar image={'http://nhakhoaducnghia.xyz/' + items?.image_news[0]?.image} className="mr-2 w-11rem h-11rem" size="xlarge" shape="circle" />
                         <div className='font-bold'>by {items?.news_author['fullname']}
                         </div>
                         <span className='text-xl text-500'>{items?.created_at}</span>
                     </div>
                     <div className='col-12 md:col-10'>
-                        <img className='cs-img-news' width='100%' src={items?.image_news.map((e) => { return `http://localhost:8000/${e.image}` })} />
+                        <img className='cs-img-news' width='100%' src={items?.image_news.map((e) => { return `http://nhakhoaducnghia.xyz/${e.image}` })} />
                         <div className='flex align-items-center gap-3 md:gap-7 '>
                             <div className='my-2'>
                                 <i className="pi pi-tags text-4xl tags-icon"></i>

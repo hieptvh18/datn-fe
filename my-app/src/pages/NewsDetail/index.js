@@ -12,13 +12,13 @@ const NewsDetail = () => {
     const { id } = useParams()
     const dispatch = useDispatch()
     const newsDetail = useSelector(data => data.news.value)
-    useEffect(() =>{
+    useEffect(() => {
         dispatch(listNewsById(id))
     }, [])
     return (
         <>
             {/* Banner */}
-            <div className='w-full cs-img-newss'>
+            <div style={{ fontFamily: 'var(--fontRoboto)' }} className='w-full cs-img-newss '>
                 <div className='imageBanner'>
                     <div className='cell'>
                         <div className='cellNews w-default mx-auto'>
@@ -37,7 +37,7 @@ const NewsDetail = () => {
                                     <i className="pi pi-comment text-4xl tags-icon"></i>
                                 </div>
                             </div>
-                            <div className='pb-3 text-6xl md:text-8xl px-7'>{newsDetail?.data?.title}</div>
+                            <div className='pb-3 text-5xl md:text-7xl px-7'>{newsDetail?.data?.title}</div>
                             <hr className='hr py-1 w-2 mb-7 mx-7' />
                             <div className='flex align-items-center gap-6 px-7'>
                                 <div className='my-2 align-items'>

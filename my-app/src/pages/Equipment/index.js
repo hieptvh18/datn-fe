@@ -23,7 +23,7 @@ const EquipmentPage = () => {
                 {equipment?.map((data, index) => {
                     return <div style={{ gap: '100px', marginBottom: '70px' }} className='grid' key={index}>
                         <div style={data.id % 2 == 0 ? { order: '2' } : { order: '1' }} className='col-12 md:col-5 lg:col-5'>
-                            <img width='100%' src={`http://localhost:8000/${data.image}`} />
+                            <img width='100%' src={`http://nhakhoaducnghia.xyz/${data.image}`} />
                         </div>
                         <div style={data.id % 2 == 0 ? { order: '1' } : { order: '2' }} className='col-12 md:col-5 lg:col-5'>
                             <div style={{ fontFamily: 'var(--fontArsenal)' }} className='pb-5 text-6xl'>{index + 1}. {data.name}</div>

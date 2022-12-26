@@ -19,7 +19,7 @@
         }
       ],
       "titleBtn": "Giải pháp nha khoa",
-      "linkPost": "/news"
+      "linkPost": "/tin-tuc"
     },
     {
       "id": 2,
@@ -41,7 +41,7 @@
         }
       ],
       "titleBtn": "Quy trình của chúng tôi",
-      "linkPost": "/news"
+      "linkPost": "/tin-tuc"
     },
     {
       "id": 3,
@@ -63,6 +63,6 @@
         }
       ],
       "titleBtn": "Dịch vụ của chúng tôi",
-      "linkPost": "/news"
+      "linkPost": "/tin-tuc"
     }
 ]

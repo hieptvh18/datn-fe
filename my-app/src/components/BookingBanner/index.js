@@ -14,6 +14,7 @@ import { Dropdown } from "primereact/dropdown";
 import { Calendar } from "primereact/calendar";
 import { addAccounts } from "../../api/account";
 import { Toast } from 'primereact/toast';
+import moment from "moment";
 
 const BookingBanner = () => {
   const toast = useRef(null);
@@ -37,14 +38,15 @@ const BookingBanner = () => {
     dispatch(listService())
   }, [])
   const onSubmit = async (data, e) => {
-    const t = new Date(data.date.getTime()).toLocaleDateString()
+
+    const t = moment(data.date).format()
     try {
-      await addAccounts({...data, service_id: data.service_id.code, date: t})
+      await addAccounts({ ...data, service_id: data.service_id.code, date: t })
       setFormData(data);
       setShowMessage(true);
     } catch (error) {
-        toast.current.show({ severity: 'error', summary: 'Lỗi!', detail: `${error.response.data.message}`, life: 3000 });
-        console.log(error);
+      toast.current.show({ severity: 'error', summary: 'Lỗi!', detail: `${error.response.data.message}`, life: 3000 });
+      console.log(error);
     }
     e.target.reset()
     reset()
@@ -57,18 +59,18 @@ const BookingBanner = () => {
     <>
       <Toast ref={toast} />
       <Dialog visible={showMessage} onHide={() => setShowMessage(false)} position="top" footer={dialogFooter} showHeader={false} breakpoints={{ '960px': '80vw' }} style={{ width: '30vw' }}>
-          <div className="flex justify-content-center flex-column pt-6 px-3">
-              <i className="pi pi-check-circle" style={{ fontSize: '5rem', color: 'var(--primary)' }}></i>
-              <h1 style={{ paddingTop: '5px', color: 'var(--primary1)' }}>Đặt lịch khám thành công!</h1>
-              <p style={{ lineHeight: 1.5, fontSize: '14px' }}>
-                  Tài khoản của bạn được tạo dưới số điện thoại <b>{formData.phone}</b> <br />
-                  Tên là <b>{formData.fullname}</b>!
-              </p>
-          </div>
+        <div className="flex justify-content-center flex-column pt-6 px-3">
+          <i className="pi pi-check-circle" style={{ fontSize: '5rem', color: 'var(--primary)' }}></i>
+          <h1 style={{ paddingTop: '5px', color: 'var(--primary1)' }}>Đặt lịch khám thành công!</h1>
+          <p style={{ lineHeight: 1.5, fontSize: '14px' }}>
+            Tài khoản của bạn được tạo dưới số điện thoại <b>{formData.phone}</b> <br />
+            Tên là <b>{formData.fullname}</b>!
+          </p>
+        </div>
       </Dialog>
       <div className="wrapper-booking-banner">
         <h2 className="c-primary1 font-normal text-3xl md:text-4xl lg:text-6xl ">
-          ĐĂNG KÝ TƯ VẤN MIỄN PHÍ
+          ĐĂNG KÝ ĐẶT LỊCH
         </h2>
         <div className="border-top-1 border-300 mt-4">
           <div className="mt-6 flex flex-column md:flex-row align-item-center column-gap-4">
@@ -112,6 +114,26 @@ const BookingBanner = () => {
                   <label className={classNames({ 'p-error': errors.phone }, 'text-1xl')}>Số điện thoại *</label>
                 </div>
                 {getFormErrorMessage('phone')}
+              </div>
+              <div>
+                <div className="p-float-label">
+                  <Controller name="email" control={control} rules={{
+                    required: "Bạn vui lòng nhập email!",
+                    pattern: {
+                      value:
+                      /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/,
+                      message: "Nhập đúng định dạnh email",
+                    },
+                  }}
+                    render={({ field, fieldState }) => (
+
+                      <InputText id={field.email} {...field} className={classNames({ 'p-invalid': fieldState.invalid }, 'w-full py-3 border-300 text-2xl')} />
+
+
+                    )} />
+                  <label className={classNames({ 'p-error': errors.phone }, 'text-1xl')}>Email *</label>
+                </div>
+                {getFormErrorMessage('email')}
               </div>
               <div className="p-float-label">
                 <Controller

@@ -33,7 +33,6 @@ const Team = () => {
     ];
     const teamTemplate = (team) => {
         return (<>
-            {console.log(team)}
             <div className="product-item">
                 <div className="product-item-content text-center">
                     <div className="mb-3">
@@ -42,7 +41,7 @@ const Team = () => {
                     <div>
                         <h4 className="mb-1 text-white text-4xl pt-2 pb-4">{team?.fullname}</h4>
                         <div className='px-8 text-left text-white text-xl'>
-                            {team?.admin_level.name}
+                            <div className='' dangerouslySetInnerHTML={{ __html: team?.description?.slice(0, 400) }} />
                         </div>
                     </div>
 
@@ -78,78 +77,25 @@ const Team = () => {
                     </div>
                 </div>
                 <div className='w-default mx-auto detail-doctor'>
-                    <div className='px-8 grid'>
-                        <div className='col-12 md:col-6 lg:col md:text-left mb-6 text-center'>
-                            <div className='image-doctor'>
-                                <img style={{ borderBottom: '3px solid var(--primary)', verticalAlign: 'middle' }} width='80%' src='https://jieh.vn/upload/images/doctor/Bac%20sy%20Hattori%20Tadashi.png' />
-                            </div>
-                        </div>
-                        <div className='col-12 md:col-6 lg:col'>
-                            <div style={{ color: 'var(--primary)', fontFamily: 'var(--fontArsenal)' }} className='text-6xl'>Giáo sư, Bác sỹ <br /> Hattori Tadashi</div>
-                            <div className='my-5'>VIỆN TRƯỞNG DANH DỰ</div>
-                            <div className=''>
-                                <div className='flex-column'>
-                                    <p className='py-4 font-bold text-3xl uppercase'>Chuyên khoa</p>
-                                    <ul className='ml-6'>
-                                        <li>Phẫu thuật cắt dịch kính</li>
-                                        <li>Phẫu thuật đục thủy tinh thể</li>
-                                        <li>Chẩn đoán và điều trị các bệnh lý về đáy mắt</li>
-                                    </ul>
+                    {teams?.data?.map((item, index) => {
+                        if (index < 2) {
+                            return (
+                                <div className='px-8 grid mt-8'>
+                                    <div className='col-12 md:col-6 lg:col md:text-left mb-6 text-center'>
+                                        <div className='image-doctor'>
+                                            <img style={{ borderBottom: '3px solid var(--primary)', verticalAlign: 'middle' }} width='80%' src={item?.avatar ? 'http://nhakhoaducnghia.xyz/' + item.avatar : 'https://jieh.vn/upload/images/doctor/Bac%20sy%20Hattori%20Tadashi.png'} />
+                                        </div>
+                                    </div>
+                                    <div className='col-12 md:col-6 lg:col'>
+                                        <div style={{ color: 'var(--primary)', fontFamily: 'var(--fontArsenal)' }} className='text-6xl'>Giáo sư, Bác sỹ <br /> {item?.fullname}</div>
+                                        <div className='my-5'>VIỆN TRƯỞNG DANH DỰ</div>
+                                        <div className='' dangerouslySetInnerHTML={{ __html: item?.description }} />
+                                    </div>
                                 </div>
-                                <div className='flex-column'>
-                                    <p className='py-4 font-bold text-3xl uppercase'>GIẢI THƯỞNG</p>
-                                    <ul className='ml-6'>
-                                        <li>Huy chương hữu nghị do Chủ tịch nước Cộng hòa xã hội chủ nghĩa Việt Nam trao tặng.</li>
-                                        <li>Kỷ niệm chương "Vì sức khỏe nhân dân" do Bộ Y Tế Việt Nam trao tặng.</li>
-                                        <li>Giải thưởng "Người mang Nhật Bản đến với Thế giới" do Nội các Nhật Bản và Bộ Trưởng Bộ Ngoại Vụ Nhật Bản trao tặng.</li>
-                                    </ul>
-                                </div>
-                                <div className='flex-column'>
-                                    <p className='py-4 font-bold text-3xl uppercase'>KINH NGHIỆM</p>
-                                    <ul className='ml-6'>
-                                        <li>Giáo sư, Bác sỹ Hattori Tadashi là một trong những chuyên gia hàng đầu tại Nhật Bản trong lĩnh vực điều trị các bệnh về răng, hàm, mặt. Đồng thời, ông là bác sỹ phẫu thuật hàng đầu thế giới với phương pháp phẫu thuật Phaco</li>
-                                        <li>Giáo sư thỉnh giảng tại trường Đại học Osaka</li>
-                                        <li>Chuyên gia mời giảng tại Bệnh viện răng hàm mặt từ năm 2002 đến nay, đào tạo hơn 20 bác sỹ chuyên khoa răng hàm  với tay nghề cao tại các bệnh viện ở Việt Nam.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div style={{ marginTop: '100px' }} className='px-8 grid align-center'>
-                        <div className='col-12 md:col-6 lg:col md:text-left mb-6 text-center '>
-                            <img style={{ borderBottom: '3px solid var(--primary)', verticalAlign: 'middle' }} width='80%' src='https://jieh.vn/upload/images/doctor/TS_BS%20vu%20anh%20tuan.png' />
-                        </div>
-                        <div className='col-12 md:col-6 lg:col'>
-                            <div style={{ color: 'var(--primary)', fontFamily: 'var(--fontArsenal)' }} className='text-6xl'>Tiến sỹ, Bác sỹ <br />Vũ Anh Tuấn</div>
-                            <div className='my-5'>GIÁM ĐỐC CHUYÊN MÔN</div>
-                            <div className=''>
-                                <div className='flex-column'>
-                                    <p className='py-4 font-bold text-3xl uppercase'>Chuyên khoa</p>
-                                    <ul className='ml-6'>
-                                        <li>Phẫu thuật cắt dịch kính</li>
-                                        <li>Phẫu thuật đục thủy tinh thể</li>
-                                        <li>Chẩn đoán và điều trị các bệnh lý về đáy mắt</li>
-                                    </ul>
-                                </div>
-                                <div className='flex-column'>
-                                    <p className='py-4 font-bold text-3xl uppercase'>GIẢI THƯỞNG</p>
-                                    <ul className='ml-6'>
-                                        <li>Huy chương hữu nghị do Chủ tịch nước Cộng hòa xã hội chủ nghĩa Việt Nam trao tặng.</li>
-                                        <li>Kỷ niệm chương "Vì sức khỏe nhân dân" do Bộ Y Tế Việt Nam trao tặng.</li>
-                                        <li>Giải thưởng "Người mang Nhật Bản đến với Thế giới" do Nội các Nhật Bản và Bộ Trưởng Bộ Ngoại Vụ Nhật Bản trao tặng.</li>
-                                    </ul>
-                                </div>
-                                <div className='flex-column'>
-                                    <p className='py-4 font-bold text-3xl uppercase'>KINH NGHIỆM</p>
-                                    <ul className='ml-6'>
-                                        <li>Giáo sư, Bác sỹ Hattori Tadashi là một trong những chuyên gia hàng đầu tại Nhật Bản trong lĩnh vực điều trị các bệnh về răng, hàm, mặt. Đồng thời, ông là bác sỹ phẫu thuật hàng đầu thế giới với phương pháp phẫu thuật Phaco</li>
-                                        <li>Giáo sư thỉnh giảng tại trường Đại học Osaka</li>
-                                        <li>Chuyên gia mời giảng tại Bệnh viện răng hàm mặt từ năm 2002 đến nay, đào tạo hơn 20 bác sỹ chuyên khoa răng hàm  với tay nghề cao tại các bệnh viện ở Việt Nam.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                            )
+                        }
+                    })}
+
                 </div>
                 <div style={{ backgroundColor: 'var(--primary1)' }} className='w-full mt-8 py-8 '>
                     <div className='text-center w-default mx-auto'>
